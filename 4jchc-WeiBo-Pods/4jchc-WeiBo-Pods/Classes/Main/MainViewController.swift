@@ -32,6 +32,11 @@ class MainViewController: UITabBarController {
     3.添加json解析字典代码块
     */
     
+    /*
+    1.添加基类修改继承
+    2.判断和创建未登录界面自定义view
+    3.添加小马哥自动布局代码
+    */
     override func viewDidLoad() {
         super.viewDidLoad()
         // 设置当前控制器对应tabBar的颜色

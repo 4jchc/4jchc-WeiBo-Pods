@@ -10,6 +10,9 @@
 		9653C62F1C5882EB000FAF68 /* DiscoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9653C62E1C5882EB000FAF68 /* DiscoverTableViewController.swift */; };
 		9653C6331C588ACD000FAF68 /* MainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = 9653C6311C588ACD000FAF68 /* MainVCSettings.json */; };
 		9653C6341C588ACD000FAF68 /* NullViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9653C6321C588ACD000FAF68 /* NullViewController.swift */; };
+		96812AEF1C58AC5F00A2349E /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96812AEE1C58AC5F00A2349E /* BaseTableViewController.swift */; };
+		96812AF11C58AD8E00A2349E /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96812AF01C58AD8E00A2349E /* VisitorView.swift */; };
+		96812AF31C58AE0200A2349E /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96812AF21C58AE0200A2349E /* UIView+AutoLayout.swift */; };
 		96B040901C57233E009DBC56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B0408F1C57233E009DBC56 /* AppDelegate.swift */; };
 		96B040951C57233E009DBC56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96B040931C57233E009DBC56 /* Main.storyboard */; };
 		96B040971C57233E009DBC56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96B040961C57233E009DBC56 /* Assets.xcassets */; };
@@ -43,6 +46,9 @@
 		9653C62E1C5882EB000FAF68 /* DiscoverTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverTableViewController.swift; sourceTree = "<group>"; };
 		9653C6311C588ACD000FAF68 /* MainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MainVCSettings.json; sourceTree = "<group>"; };
 		9653C6321C588ACD000FAF68 /* NullViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NullViewController.swift; sourceTree = "<group>"; };
+		96812AEE1C58AC5F00A2349E /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		96812AF01C58AD8E00A2349E /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
+		96812AF21C58AE0200A2349E /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
 		96B0408C1C57233E009DBC56 /* Fjchc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fjchc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96B0408F1C57233E009DBC56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		96B040941C57233E009DBC56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -91,6 +97,8 @@
 			children = (
 				9653C6311C588ACD000FAF68 /* MainVCSettings.json */,
 				9653C6321C588ACD000FAF68 /* NullViewController.swift */,
+				96812AEE1C58AC5F00A2349E /* BaseTableViewController.swift */,
+				96812AF01C58AD8E00A2349E /* VisitorView.swift */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -211,6 +219,7 @@
 		96EE27FE1C586FAD00002CF4 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				96812AF21C58AE0200A2349E /* UIView+AutoLayout.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -352,9 +361,12 @@
 			files = (
 				96EE280D1C5870DD00002CF4 /* ProfileTableViewController.swift in Sources */,
 				96EE28051C58709600002CF4 /* MainViewController.swift in Sources */,
+				96812AEF1C58AC5F00A2349E /* BaseTableViewController.swift in Sources */,
 				96B040901C57233E009DBC56 /* AppDelegate.swift in Sources */,
 				9653C62F1C5882EB000FAF68 /* DiscoverTableViewController.swift in Sources */,
+				96812AF31C58AE0200A2349E /* UIView+AutoLayout.swift in Sources */,
 				96EE28071C5870B100002CF4 /* HomeTableViewController.swift in Sources */,
+				96812AF11C58AD8E00A2349E /* VisitorView.swift in Sources */,
 				96EE280B1C5870D400002CF4 /* MessageTableViewController.swift in Sources */,
 				9653C6341C588ACD000FAF68 /* NullViewController.swift in Sources */,
 			);
