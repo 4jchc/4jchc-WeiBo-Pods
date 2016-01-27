@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9653C62F1C5882EB000FAF68 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9653C62E1C5882EB000FAF68 /* DiscoverViewController.swift */; };
 		96B040901C57233E009DBC56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B0408F1C57233E009DBC56 /* AppDelegate.swift */; };
 		96B040951C57233E009DBC56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96B040931C57233E009DBC56 /* Main.storyboard */; };
 		96B040971C57233E009DBC56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96B040961C57233E009DBC56 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9653C62E1C5882EB000FAF68 /* DiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		96B0408C1C57233E009DBC56 /* 4jchc-WeiBo-Pods.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "4jchc-WeiBo-Pods.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96B0408F1C57233E009DBC56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		96B040941C57233E009DBC56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 		96EE27F41C586FAD00002CF4 /* Discover */ = {
 			isa = PBXGroup;
 			children = (
+				9653C62E1C5882EB000FAF68 /* DiscoverViewController.swift */,
 			);
 			path = Discover;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				96EE280D1C5870DD00002CF4 /* ProfileViewController.swift in Sources */,
 				96EE28051C58709600002CF4 /* MainViewController.swift in Sources */,
 				96B040901C57233E009DBC56 /* AppDelegate.swift in Sources */,
+				9653C62F1C5882EB000FAF68 /* DiscoverViewController.swift in Sources */,
 				96EE28071C5870B100002CF4 /* HomeViewController.swift in Sources */,
 				96EE280B1C5870D400002CF4 /* MessageViewController.swift in Sources */,
 			);
