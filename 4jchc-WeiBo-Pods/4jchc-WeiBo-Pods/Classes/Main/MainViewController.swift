@@ -19,6 +19,12 @@ class MainViewController: UITabBarController {
     2.动态获取命名空间infoDictionary!["CFBundleExecutable"]
     3.通过服务器json来动态加载节日标题图片
     */
+    /*
+    1.报错ns unable to read data
+    2.修改命名空间(build settings)product name
+    3.命名空间不可以有-
+    4.修改类名
+    */
     
     override func viewDidLoad() {
         super.viewDidLoad()

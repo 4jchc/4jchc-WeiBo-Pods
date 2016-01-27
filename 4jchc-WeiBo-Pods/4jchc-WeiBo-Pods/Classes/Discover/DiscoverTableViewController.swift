@@ -1,5 +1,5 @@
 //
-//  ProfileViewController.swift
+//  DiscoverViewController.swift
 //  4jchc-WeiBo-Pods
 //
 //  Created by 蒋进 on 16/1/27.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileViewController: UITableViewController {
+class DiscoverTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

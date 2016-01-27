@@ -1,5 +1,5 @@
 //
-//  MessageViewController.swift
+//  ProfileViewController.swift
 //  4jchc-WeiBo-Pods
 //
 //  Created by 蒋进 on 16/1/27.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MessageViewController: UITableViewController {
+class ProfileTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
