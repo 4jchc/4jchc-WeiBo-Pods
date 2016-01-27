@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9653C62F1C5882EB000FAF68 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9653C62E1C5882EB000FAF68 /* DiscoverViewController.swift */; };
+		9653C6331C588ACD000FAF68 /* MainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = 9653C6311C588ACD000FAF68 /* MainVCSettings.json */; };
+		9653C6341C588ACD000FAF68 /* NullViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9653C6321C588ACD000FAF68 /* NullViewController.swift */; };
 		96B040901C57233E009DBC56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B0408F1C57233E009DBC56 /* AppDelegate.swift */; };
 		96B040951C57233E009DBC56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96B040931C57233E009DBC56 /* Main.storyboard */; };
 		96B040971C57233E009DBC56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96B040961C57233E009DBC56 /* Assets.xcassets */; };
@@ -39,6 +41,8 @@
 
 /* Begin PBXFileReference section */
 		9653C62E1C5882EB000FAF68 /* DiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
+		9653C6311C588ACD000FAF68 /* MainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MainVCSettings.json; sourceTree = "<group>"; };
+		9653C6321C588ACD000FAF68 /* NullViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NullViewController.swift; sourceTree = "<group>"; };
 		96B0408C1C57233E009DBC56 /* 4jchc-WeiBo-Pods.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "4jchc-WeiBo-Pods.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96B0408F1C57233E009DBC56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		96B040941C57233E009DBC56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -82,6 +86,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9653C6301C588ACD000FAF68 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				9653C6311C588ACD000FAF68 /* MainVCSettings.json */,
+				9653C6321C588ACD000FAF68 /* NullViewController.swift */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		96B040831C57233E009DBC56 = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +186,7 @@
 		96EE27F81C586FAD00002CF4 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				9653C6301C588ACD000FAF68 /* Resource */,
 				96EE28041C58709600002CF4 /* MainViewController.swift */,
 			);
 			path = Main;
@@ -310,6 +324,7 @@
 			files = (
 				96B0409A1C57233E009DBC56 /* LaunchScreen.storyboard in Resources */,
 				96B040971C57233E009DBC56 /* Assets.xcassets in Resources */,
+				9653C6331C588ACD000FAF68 /* MainVCSettings.json in Resources */,
 				96B040951C57233E009DBC56 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,6 +356,7 @@
 				9653C62F1C5882EB000FAF68 /* DiscoverViewController.swift in Sources */,
 				96EE28071C5870B100002CF4 /* HomeViewController.swift in Sources */,
 				96EE280B1C5870D400002CF4 /* MessageViewController.swift in Sources */,
+				9653C6341C588ACD000FAF68 /* NullViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
