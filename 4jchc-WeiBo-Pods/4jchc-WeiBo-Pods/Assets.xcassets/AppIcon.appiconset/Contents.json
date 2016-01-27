@@ -3,6 +3,11 @@
     {
       "idiom" : "iphone",
       "size" : "29x29",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "iphone",
+      "size" : "29x29",
       "scale" : "2x"
     },
     {
@@ -21,28 +26,45 @@
       "scale" : "3x"
     },
     {
+      "size" : "57x57",
       "idiom" : "iphone",
-      "size" : "60x60",
+      "filename" : "icon.png",
+      "scale" : "1x"
+    },
+    {
+      "size" : "57x57",
+      "idiom" : "iphone",
+      "filename" : "icon@2x.png",
       "scale" : "2x"
     },
     {
-      "idiom" : "iphone",
       "size" : "60x60",
+      "idiom" : "iphone",
+      "filename" : "icon_os7@2x.png",
+      "scale" : "2x"
+    },
+    {
+      "size" : "60x60",
+      "idiom" : "iphone",
+      "filename" : "icon@3x.png",
       "scale" : "3x"
     },
     {
       "idiom" : "ipad",
       "size" : "29x29",
+       "filename" : "icon@3x.png",
       "scale" : "1x"
     },
     {
       "idiom" : "ipad",
       "size" : "29x29",
+       "filename" : "icon@3x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "ipad",
       "size" : "40x40",
+       "filename" : "icon@3x.png",
       "scale" : "1x"
     },
     {
@@ -53,11 +75,19 @@
     {
       "idiom" : "ipad",
       "size" : "76x76",
+       "filename" : "icon@3x.png",
       "scale" : "1x"
     },
     {
       "idiom" : "ipad",
       "size" : "76x76",
+       "filename" : "icon@3x.png",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "ipad",
+      "size" : "83.5x83.5",
+       "filename" : "icon@3x.png",
       "scale" : "2x"
     }
   ],
