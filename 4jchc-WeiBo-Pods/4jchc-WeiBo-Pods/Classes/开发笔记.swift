@@ -6,14 +6,21 @@
 //  Copyright © 2016年 蒋进. All rights reserved.
 //
 import UIKit
+//MARK: - 快捷键
 
-/*
-command + shift + j -> 定位到当前文件的目录结构
-⬆️⬇️键选择文件夹
-按回车 -> command + c 拷贝文件名称
-command + n 创建文件
-*/
+    /*
+    command + shift + j -> 定位到当前文件的目录结构
+    ⬆️⬇️键选择文件夹
+    按回车 -> command + c 拷贝文件名称
+    command + n 创建文件
 
+    // command + control + e 替换文字
+    */
+
+
+
+
+//MARK: - 注释第一天
     /*
     1.命名空间修改:product name
     2.动态获取命名空间infoDictionary!["CFBundleExecutable"]
@@ -41,10 +48,18 @@ command + n 创建文件
 
 
 
-/*
-1.设置view的尺寸不然图片太低了
-2.添加代理协议设置每一个控制器的view
-3.设置导航条和工具条的外观和未登录按钮
-4.完善未登录界面
-*/
+    /*
+    1.设置view的尺寸不然图片太低了
+    2.添加代理协议设置每一个控制器的view
+    3.设置导航条和工具条的外观和未登录按钮
+    4.完善未登录界面
+    */
+
+
+    /*
+    1.自定义标题按钮 调整按钮位置
+    2.layoutSubviews会调用2次
+    3.按钮图片文字的偏移可以用offsetInPlace
+    4.文字图片太挤,文字可以加空格
+    */
 

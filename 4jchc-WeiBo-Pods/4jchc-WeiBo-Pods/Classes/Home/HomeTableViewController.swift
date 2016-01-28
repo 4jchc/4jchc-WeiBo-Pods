@@ -35,7 +35,7 @@ class HomeTableViewController: BaseTableViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBtn)
         
         // 2.右边按钮
-        // command + control + e
+        
         let rightBtn = UIButton()
         rightBtn.setImage(UIImage(named: "navigationbar_pop"), forState: UIControlState.Normal)
         rightBtn.setImage(UIImage(named: "navigationbar_pop_highlighted"), forState: UIControlState.Highlighted)
@@ -50,6 +50,17 @@ class HomeTableViewController: BaseTableViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem.creatBarButtonItem("navigationbar_friendattention", target: self, action: "leftItemClick")
         //navigationItem.rightBarButtonItem = UIBarButtonItem.creatBarButtonItem("navigationbar_pop", target: self, action: "rightItemClick")
         navigationItem.rightBarButtonItem = UIBarButtonItem(image_Nor_Hig_name: "navigationbar_pop", target: self, action: "rightItemClick")
+        
+        // 2.初始化标题按钮
+        let titleBtn = TitleButton()
+        titleBtn.setTitle("4jchc ", forState: UIControlState.Normal)
+        titleBtn.addTarget(self, action: "titleBtnClick:", forControlEvents: UIControlEvents.TouchUpInside)
+        navigationItem.titleView = titleBtn
+    }
+    
+    func titleBtnClick(btn: TitleButton)
+    {
+        btn.selected = !btn.selected
     }
     
     func leftItemClick()
@@ -62,18 +73,6 @@ class HomeTableViewController: BaseTableViewController {
         print(__FUNCTION__)
     }
     
-    /*
-    private func creatBarButtonItem(imageName:String, target: AnyObject?, action:Selector) ->UIBarButtonItem
-    {
-    let btn = UIButton()
-    btn.setImage(UIImage(named: imageName), forState: UIControlState.Normal)
-    btn.setImage(UIImage(named: imageName + "_highlighted"), forState: UIControlState.Highlighted)
-    btn.addTarget(target, action: action, forControlEvents: UIControlEvents.TouchUpInside)
-    btn.sizeToFit()
-    return UIBarButtonItem(customView: btn)
-    }
-    */
-
 
 
 }
