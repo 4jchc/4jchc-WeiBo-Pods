@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9621911E1C59FA1200C3CE35 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9621911D1C59FA1200C3CE35 /* UIBarButtonItem+Extension.swift */; };
 		9653C62F1C5882EB000FAF68 /* DiscoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9653C62E1C5882EB000FAF68 /* DiscoverTableViewController.swift */; };
 		9653C6331C588ACD000FAF68 /* MainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = 9653C6311C588ACD000FAF68 /* MainVCSettings.json */; };
 		9653C6341C588ACD000FAF68 /* NullViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9653C6321C588ACD000FAF68 /* NullViewController.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9621911D1C59FA1200C3CE35 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
 		9653C62E1C5882EB000FAF68 /* DiscoverTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverTableViewController.swift; sourceTree = "<group>"; };
 		9653C6311C588ACD000FAF68 /* MainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MainVCSettings.json; sourceTree = "<group>"; };
 		9653C6321C588ACD000FAF68 /* NullViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NullViewController.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 		96EE27F31C586FAD00002CF4 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				9621911D1C59FA1200C3CE35 /* UIBarButtonItem+Extension.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 				96EE28051C58709600002CF4 /* MainViewController.swift in Sources */,
 				96812AEF1C58AC5F00A2349E /* BaseTableViewController.swift in Sources */,
 				96B040901C57233E009DBC56 /* AppDelegate.swift in Sources */,
+				9621911E1C59FA1200C3CE35 /* UIBarButtonItem+Extension.swift in Sources */,
 				9653C62F1C5882EB000FAF68 /* DiscoverTableViewController.swift in Sources */,
 				96812AF51C58B23200A2349E /* 开发笔记.swift in Sources */,
 				96812AF31C58AE0200A2349E /* UIView+AutoLayout.swift in Sources */,
