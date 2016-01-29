@@ -68,7 +68,7 @@ import UIKit
 //MARK: - 注释第二天
 
     /*
-    0.显示标题菜单
+    0.显示标题菜单💗
     1.图片拉升单词:tiles平铺stretches伸长(展开,铺设;adj.弹性的)会填充屏幕
     2.默认情况下modal会移除以前控制器的view, 替换为当前弹出的view
     如果自定义转场, 那么就不会移除以前控制器的view
@@ -86,7 +86,7 @@ import UIKit
     /*
     1.完善菜单自定义动画
     2.默认的锚点是(0.5,0.5)
-    3.自定义转场的动画
+    3.自定义转场的动画💗
     0.1一定要将视图添加到容器上transitionContext.containerView()?.addSubview(toView)
     0.2动画执行完毕, 一定要告诉系统.如果不写, 可能导致一些未知错误
     transitionContext.completeTransition(true)
@@ -106,17 +106,17 @@ import UIKit
 
     /*
     1.二维码界面搭建
-    2.自动布局一般要设置宽高XY4个
+    2.自动布局一般要设置宽高XY4个💗
     0.1X轴有top-botton-center+Horizontally3个选项
     0.2Y轴有leading-trailing-center+Vertically3个选项
     0.3 leading靠前 trailing靠后拖尾
     */
 
 
-
-
-
-
+    /*
+    二维码界面动画
+    1.模拟器bug真机运行可以
+    */
 
 
 
