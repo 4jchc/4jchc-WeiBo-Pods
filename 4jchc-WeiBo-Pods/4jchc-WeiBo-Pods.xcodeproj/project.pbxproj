@@ -22,6 +22,9 @@
 		96B0409A1C57233E009DBC56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96B040981C57233E009DBC56 /* LaunchScreen.storyboard */; };
 		96B040A51C57233E009DBC56 /* _jchc_WeiBo_PodsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B040A41C57233E009DBC56 /* _jchc_WeiBo_PodsTests.swift */; };
 		96B040B01C57233E009DBC56 /* _jchc_WeiBo_PodsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B040AF1C57233E009DBC56 /* _jchc_WeiBo_PodsUITests.swift */; };
+		96C7B81B1C5B1652000A176C /* PopoverPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C7B81A1C5B1652000A176C /* PopoverPresentationController.swift */; };
+		96C7B81D1C5B1665000A176C /* PopoverViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96C7B81C1C5B1665000A176C /* PopoverViewController.storyboard */; };
+		96C7B8211C5B2BB6000A176C /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C7B8201C5B2BB6000A176C /* PopoverViewController.swift */; };
 		96EE28051C58709600002CF4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EE28041C58709600002CF4 /* MainViewController.swift */; };
 		96EE28071C5870B100002CF4 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EE28061C5870B100002CF4 /* HomeTableViewController.swift */; };
 		96EE280B1C5870D400002CF4 /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EE280A1C5870D400002CF4 /* MessageTableViewController.swift */; };
@@ -67,6 +70,9 @@
 		96B040AB1C57233E009DBC56 /* 4jchc-WeiBo-PodsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "4jchc-WeiBo-PodsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96B040AF1C57233E009DBC56 /* _jchc_WeiBo_PodsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _jchc_WeiBo_PodsUITests.swift; sourceTree = "<group>"; };
 		96B040B11C57233E009DBC56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96C7B81A1C5B1652000A176C /* PopoverPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverPresentationController.swift; sourceTree = "<group>"; };
+		96C7B81C1C5B1665000A176C /* PopoverViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PopoverViewController.storyboard; sourceTree = "<group>"; };
+		96C7B8201C5B2BB6000A176C /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
 		96EE28041C58709600002CF4 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		96EE28061C5870B100002CF4 /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		96EE280A1C5870D400002CF4 /* MessageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
@@ -159,6 +165,16 @@
 			path = "4jchc-WeiBo-PodsUITests";
 			sourceTree = "<group>";
 		};
+		96C7B8191C5B1627000A176C /* Popover */ = {
+			isa = PBXGroup;
+			children = (
+				96C7B81A1C5B1652000A176C /* PopoverPresentationController.swift */,
+				96C7B8201C5B2BB6000A176C /* PopoverViewController.swift */,
+				96C7B81C1C5B1665000A176C /* PopoverViewController.storyboard */,
+			);
+			name = Popover;
+			sourceTree = "<group>";
+		};
 		96EE27F21C586FAD00002CF4 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +211,7 @@
 		96EE27F61C586FAD00002CF4 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				96C7B8191C5B1627000A176C /* Popover */,
 				96EE28061C5870B100002CF4 /* HomeTableViewController.swift */,
 			);
 			path = Home;
@@ -342,6 +359,7 @@
 			files = (
 				96B0409A1C57233E009DBC56 /* LaunchScreen.storyboard in Resources */,
 				96B040971C57233E009DBC56 /* Assets.xcassets in Resources */,
+				96C7B81D1C5B1665000A176C /* PopoverViewController.storyboard in Resources */,
 				9653C6331C588ACD000FAF68 /* MainVCSettings.json in Resources */,
 				96B040951C57233E009DBC56 /* Main.storyboard in Resources */,
 			);
@@ -375,12 +393,14 @@
 				9621911E1C59FA1200C3CE35 /* UIBarButtonItem+Extension.swift in Sources */,
 				9653C62F1C5882EB000FAF68 /* DiscoverTableViewController.swift in Sources */,
 				96812AF51C58B23200A2349E /* 开发笔记.swift in Sources */,
+				96C7B8211C5B2BB6000A176C /* PopoverViewController.swift in Sources */,
 				96812AF31C58AE0200A2349E /* UIView+AutoLayout.swift in Sources */,
 				96EE28071C5870B100002CF4 /* HomeTableViewController.swift in Sources */,
 				96812AF11C58AD8E00A2349E /* VisitorView.swift in Sources */,
 				96EE280B1C5870D400002CF4 /* MessageTableViewController.swift in Sources */,
 				9688A92C1C5A05EF0002FE2D /* TitleButton.swift in Sources */,
 				9653C6341C588ACD000FAF68 /* NullViewController.swift in Sources */,
+				96C7B81B1C5B1652000A176C /* PopoverPresentationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
