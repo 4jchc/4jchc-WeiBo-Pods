@@ -22,9 +22,22 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fYa-R7-Wjk">
                                 <rect key="frame" x="20" y="20" width="560" height="560"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="customCell" id="mnC-8F-wL4">
+                                        <rect key="frame" x="0.0" y="28" width="560" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mnC-8F-wL4" id="68K-v8-VpA">
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="UY5-MH-cJ8" id="09T-vt-tsK"/>
+                                </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="9OQ-fT-Hsw" firstAttribute="top" secondItem="1FV-jw-ils" secondAttribute="top" id="Go8-6K-4Jl"/>
                             <constraint firstItem="fYa-R7-Wjk" firstAttribute="top" secondItem="1FV-jw-ils" secondAttribute="top" constant="20" id="H2C-Bs-sOR"/>
@@ -36,6 +49,9 @@
                             <constraint firstItem="e6a-NI-MXV" firstAttribute="top" secondItem="9OQ-fT-Hsw" secondAttribute="bottom" id="zDo-Xd-Fhi"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="fYa-R7-Wjk" id="nRc-Xu-PDM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PSY-KU-VEf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

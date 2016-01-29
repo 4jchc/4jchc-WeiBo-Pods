@@ -171,8 +171,8 @@
 			isa = PBXGroup;
 			children = (
 				96C7B81A1C5B1652000A176C /* PopoverPresentationController.swift */,
-				96C7B8201C5B2BB6000A176C /* PopoverViewController.swift */,
 				96B9D17D1C5B49C60037F52B /* PopoverAnimator.swift */,
+				96C7B8201C5B2BB6000A176C /* PopoverViewController.swift */,
 				96C7B81C1C5B1665000A176C /* PopoverViewController.storyboard */,
 			);
 			name = Popover;
