@@ -104,6 +104,14 @@ import UIKit
     */
 
 
+    /*
+    1.二维码界面搭建
+    2.自动布局一般要设置宽高XY4个
+    0.1X轴有top-botton-center+Horizontally3个选项
+    0.2Y轴有leading-trailing-center+Vertically3个选项
+    0.3 leading靠前 trailing靠后拖尾
+    */
+
 
 
 

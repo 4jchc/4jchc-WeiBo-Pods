@@ -23,6 +23,8 @@
 		96B040A51C57233E009DBC56 /* _jchc_WeiBo_PodsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B040A41C57233E009DBC56 /* _jchc_WeiBo_PodsTests.swift */; };
 		96B040B01C57233E009DBC56 /* _jchc_WeiBo_PodsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B040AF1C57233E009DBC56 /* _jchc_WeiBo_PodsUITests.swift */; };
 		96B9D17E1C5B49C60037F52B /* PopoverAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B9D17D1C5B49C60037F52B /* PopoverAnimator.swift */; };
+		96B9D1811C5B5F800037F52B /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B9D1801C5B5F800037F52B /* QRCodeViewController.swift */; };
+		96B9D1831C5B5F880037F52B /* QRCodeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96B9D1821C5B5F880037F52B /* QRCodeViewController.storyboard */; };
 		96C7B81B1C5B1652000A176C /* PopoverPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C7B81A1C5B1652000A176C /* PopoverPresentationController.swift */; };
 		96C7B81D1C5B1665000A176C /* PopoverViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96C7B81C1C5B1665000A176C /* PopoverViewController.storyboard */; };
 		96C7B8211C5B2BB6000A176C /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C7B8201C5B2BB6000A176C /* PopoverViewController.swift */; };
@@ -72,6 +74,8 @@
 		96B040AF1C57233E009DBC56 /* _jchc_WeiBo_PodsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _jchc_WeiBo_PodsUITests.swift; sourceTree = "<group>"; };
 		96B040B11C57233E009DBC56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96B9D17D1C5B49C60037F52B /* PopoverAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverAnimator.swift; sourceTree = "<group>"; };
+		96B9D1801C5B5F800037F52B /* QRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
+		96B9D1821C5B5F880037F52B /* QRCodeViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = QRCodeViewController.storyboard; sourceTree = "<group>"; };
 		96C7B81A1C5B1652000A176C /* PopoverPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverPresentationController.swift; sourceTree = "<group>"; };
 		96C7B81C1C5B1665000A176C /* PopoverViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PopoverViewController.storyboard; sourceTree = "<group>"; };
 		96C7B8201C5B2BB6000A176C /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
@@ -167,6 +171,15 @@
 			path = "4jchc-WeiBo-PodsUITests";
 			sourceTree = "<group>";
 		};
+		96B9D17F1C5B5F390037F52B /* QRCode二维码 */ = {
+			isa = PBXGroup;
+			children = (
+				96B9D1801C5B5F800037F52B /* QRCodeViewController.swift */,
+				96B9D1821C5B5F880037F52B /* QRCodeViewController.storyboard */,
+			);
+			path = "QRCode二维码";
+			sourceTree = "<group>";
+		};
 		96C7B8191C5B1627000A176C /* Popover */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +227,7 @@
 		96EE27F61C586FAD00002CF4 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				96B9D17F1C5B5F390037F52B /* QRCode二维码 */,
 				96C7B8191C5B1627000A176C /* Popover */,
 				96EE28061C5870B100002CF4 /* HomeTableViewController.swift */,
 			);
@@ -365,6 +379,7 @@
 				96C7B81D1C5B1665000A176C /* PopoverViewController.storyboard in Resources */,
 				9653C6331C588ACD000FAF68 /* MainVCSettings.json in Resources */,
 				96B040951C57233E009DBC56 /* Main.storyboard in Resources */,
+				96B9D1831C5B5F880037F52B /* QRCodeViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +407,7 @@
 				96EE280D1C5870DD00002CF4 /* ProfileTableViewController.swift in Sources */,
 				96EE28051C58709600002CF4 /* MainViewController.swift in Sources */,
 				96812AEF1C58AC5F00A2349E /* BaseTableViewController.swift in Sources */,
+				96B9D1811C5B5F800037F52B /* QRCodeViewController.swift in Sources */,
 				96B040901C57233E009DBC56 /* AppDelegate.swift in Sources */,
 				9621911E1C59FA1200C3CE35 /* UIBarButtonItem+Extension.swift in Sources */,
 				9653C62F1C5882EB000FAF68 /* DiscoverTableViewController.swift in Sources */,
