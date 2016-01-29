@@ -7,7 +7,6 @@
 //
 import UIKit
 //MARK: - 快捷键
-
     /*
     💗
     command + shift + j -> 定位到当前文件的目录结构
@@ -80,4 +79,13 @@ import UIKit
      iOS8推出的专门用于负责转场动画的
     4.添加转场UIPresentationController案例快捷键
     5.添加懒加载蒙版快捷键
+    */
+
+    /*
+    1.完善菜单自定义动画
+    2.默认的锚点是(0.5,0.5)
+    3.自定义转场的动画
+    0.1一定要将视图添加到容器上transitionContext.containerView()?.addSubview(toView)
+    0.2动画执行完毕, 一定要告诉系统.如果不写, 可能导致一些未知错误
+    transitionContext.completeTransition(true)
     */
