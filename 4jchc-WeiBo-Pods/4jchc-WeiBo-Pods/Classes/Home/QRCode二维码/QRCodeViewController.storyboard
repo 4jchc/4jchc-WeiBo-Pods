@@ -67,14 +67,22 @@
                                     <constraint firstItem="V5G-dq-rBM" firstAttribute="centerX" secondItem="mGz-Hz-Uxf" secondAttribute="centerX" id="tpb-tA-AN9"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nd1-oz-Sbs">
+                                <rect key="frame" x="279" y="473" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="q20-Ek-ptf" firstAttribute="top" secondItem="Ucl-cm-LTb" secondAttribute="bottom" id="JXG-DW-gYg"/>
                             <constraint firstItem="mGz-Hz-Uxf" firstAttribute="centerX" secondItem="p1y-rA-6Do" secondAttribute="centerX" id="MPq-WP-8kw"/>
+                            <constraint firstItem="nd1-oz-Sbs" firstAttribute="top" secondItem="Dqs-Nj-QDK" secondAttribute="bottom" constant="23" id="PDi-vR-Djy"/>
                             <constraint firstItem="mGz-Hz-Uxf" firstAttribute="centerY" secondItem="p1y-rA-6Do" secondAttribute="centerY" id="cxq-WH-9Uh"/>
                             <constraint firstAttribute="trailing" secondItem="Ucl-cm-LTb" secondAttribute="trailing" id="f9Z-6R-SYt"/>
                             <constraint firstItem="Ucl-cm-LTb" firstAttribute="leading" secondItem="p1y-rA-6Do" secondAttribute="leading" id="rxQ-zi-9F6"/>
+                            <constraint firstItem="nd1-oz-Sbs" firstAttribute="centerX" secondItem="Dqs-Nj-QDK" secondAttribute="centerX" id="tMM-I7-m3u"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Eox-7h-Psd">
@@ -88,6 +96,7 @@
                     <connections>
                         <outlet property="containerHeightCons" destination="PGZ-st-0Pu" id="fJg-3r-UpT"/>
                         <outlet property="customTabBar" destination="Ucl-cm-LTb" id="8SZ-76-8ly"/>
+                        <outlet property="resultLabel" destination="nd1-oz-Sbs" id="E9m-ZZ-h4t"/>
                         <outlet property="scanLineCons" destination="6lL-iE-PL5" id="EXZ-Ue-Gt4"/>
                         <outlet property="scanLineView" destination="V5G-dq-rBM" id="n9F-f0-v6y"/>
                     </connections>

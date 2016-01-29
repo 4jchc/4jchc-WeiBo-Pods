@@ -118,6 +118,22 @@ import UIKit
     1.模拟器bug真机运行可以
     */
 
+    /*
+    二维码扫描步奏
+     0.import AVFoundation
+     0.1懒加载--会话 --输出对象 --输入设备 --创建预览图层
+     1.判断是否能够将输入添加到会话中 AVCaptureDeviceInput
+     2.判断是否能够将输出添加到会话中 AVCaptureMetadataOutput
+     3.将输入和输出都添加到会话中   AVCaptureSession
+     4.设置输出能够解析的数据类型   availableMetadataObjectTypes
+     注意: 设置能够解析的数据类型, 一定要在输出对象添加到会员之后设置, 否则会报错
+     output.metadataObjectTypes =  output.availableMetadataObjectTypes
+     5.设置输出对象的代理, 只要解析成功就会通知代理
+     output.setMetadataObjectsDelegate(self, queue: dispatch_get_main_queue())
+     6.添加预览图层 AVCaptureVideoPreviewLayer
+     7.告诉session开始扫描
+     8.AVCaptureMetadataOutputObjectsDelegate代理方法实现
+    */
 
 
 
