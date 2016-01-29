@@ -5,6 +5,7 @@
 //  Created by 蒋进 on 16/1/27.
 //  Copyright © 2016年 蒋进. All rights reserved.
 //
+//    【WeiBo-Pods】11
 import UIKit
 //MARK: - 快捷键
     /*
@@ -81,6 +82,7 @@ import UIKit
     5.添加懒加载蒙版快捷键
     */
 
+
     /*
     1.完善菜单自定义动画
     2.默认的锚点是(0.5,0.5)
@@ -89,3 +91,21 @@ import UIKit
     0.2动画执行完毕, 一定要告诉系统.如果不写, 可能导致一些未知错误
     transitionContext.completeTransition(true)
     */
+
+    /*
+    1.重构自定义菜单
+    2.新建一个类保存转场代理 懒加载转场代理并赋值
+    3.通知的使用
+    */
+
+
+
+
+
+
+
+
+
+
+
+
