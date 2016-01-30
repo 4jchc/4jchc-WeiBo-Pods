@@ -73,17 +73,52 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Nf-RU-SWi">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="我的名片" backgroundImage="qrcode_button_background"/>
+                                <connections>
+                                    <action selector="myCardBtnClick:" destination="Okz-93-Gx5" eventType="touchUpInside" id="O1M-1t-rGg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="8Nf-RU-SWi" firstAttribute="centerX" secondItem="Dqs-Nj-QDK" secondAttribute="centerX" id="DiJ-49-UNp"/>
+                            <constraint firstItem="8Nf-RU-SWi" firstAttribute="top" secondItem="Dqs-Nj-QDK" secondAttribute="bottom" constant="60" id="E1U-Pj-Bbt"/>
                             <constraint firstItem="q20-Ek-ptf" firstAttribute="top" secondItem="Ucl-cm-LTb" secondAttribute="bottom" id="JXG-DW-gYg"/>
                             <constraint firstItem="mGz-Hz-Uxf" firstAttribute="centerX" secondItem="p1y-rA-6Do" secondAttribute="centerX" id="MPq-WP-8kw"/>
                             <constraint firstItem="nd1-oz-Sbs" firstAttribute="top" secondItem="Dqs-Nj-QDK" secondAttribute="bottom" constant="23" id="PDi-vR-Djy"/>
+                            <constraint firstItem="nd1-oz-Sbs" firstAttribute="centerX" secondItem="Dqs-Nj-QDK" secondAttribute="centerX" id="SMH-6N-aqF"/>
+                            <constraint firstItem="Dqs-Nj-QDK" firstAttribute="top" secondItem="nd1-oz-Sbs" secondAttribute="bottom" constant="60" id="bWA-Ep-340"/>
                             <constraint firstItem="mGz-Hz-Uxf" firstAttribute="centerY" secondItem="p1y-rA-6Do" secondAttribute="centerY" id="cxq-WH-9Uh"/>
                             <constraint firstAttribute="trailing" secondItem="Ucl-cm-LTb" secondAttribute="trailing" id="f9Z-6R-SYt"/>
                             <constraint firstItem="Ucl-cm-LTb" firstAttribute="leading" secondItem="p1y-rA-6Do" secondAttribute="leading" id="rxQ-zi-9F6"/>
                             <constraint firstItem="nd1-oz-Sbs" firstAttribute="centerX" secondItem="Dqs-Nj-QDK" secondAttribute="centerX" id="tMM-I7-m3u"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="8Nf-RU-SWi"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="bWA-Ep-340"/>
+                                <exclude reference="SMH-6N-aqF"/>
+                                <exclude reference="DiJ-49-UNp"/>
+                                <exclude reference="E1U-Pj-Bbt"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="subviews">
+                                <include reference="8Nf-RU-SWi"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="bWA-Ep-340"/>
+                                <exclude reference="PDi-vR-Djy"/>
+                                <include reference="SMH-6N-aqF"/>
+                                <exclude reference="tMM-I7-m3u"/>
+                                <include reference="DiJ-49-UNp"/>
+                                <include reference="E1U-Pj-Bbt"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="Eox-7h-Psd">
                         <barButtonItem key="leftBarButtonItem" title="关闭" id="SHt-a5-SM8">
@@ -108,6 +143,7 @@
     </scenes>
     <resources>
         <image name="qrcode_border" width="51" height="51"/>
+        <image name="qrcode_button_background" width="34" height="32"/>
         <image name="qrcode_scanline_qrcode" width="218" height="170"/>
         <image name="qrcode_tabbar_icon_barcode" width="40" height="40"/>
         <image name="qrcode_tabbar_icon_qrcode" width="40" height="40"/>

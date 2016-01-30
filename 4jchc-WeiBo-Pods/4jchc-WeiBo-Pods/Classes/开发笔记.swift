@@ -158,12 +158,27 @@ import UIKit
      UIView.setAnimationRepeatCount(MAXFLOAT)
     2.添加一个NSLayoutConstraint的动画快捷键
     */
-    /*
 
+    /*
+    生成二维码
+
+    A1添加限制扫描区域 rectOfInterest兴趣
+    A2摄像头是全屏显示 videoGravity
+
+    1.创建滤镜Filter CIFilter(name: "CIQRCodeGenerator")
+    2.还原滤镜的默认属性 setDefaults()
+    3.设置需要生成二维码的数据 setValue("".dataUsingEncoding(NSUTF8StringEncoding), forKey: "inputMessage")
+    4.从滤镜中取出生成好的图片 outputImage
+    5.创建一个头像
+    6.合成图片(将二维码和头像进行合并)
+    7.返回生成好的二维码
 
     */
 
+
+
     /*
 
+    1.
 
     */

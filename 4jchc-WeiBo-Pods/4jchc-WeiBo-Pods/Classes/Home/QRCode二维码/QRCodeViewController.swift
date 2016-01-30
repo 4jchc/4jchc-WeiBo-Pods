@@ -29,12 +29,24 @@ class QRCodeViewController: UIViewController ,UITabBarDelegate{
     @IBOutlet weak var resultLabel: UILabel!
     
     
+    //MARK: - 击生成二维码
+    @IBAction func myCardBtnClick(sender: AnyObject) {
+        
+        let vc = QRCodeCardViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    private let ScreenWidth = UIScreen.mainScreen().bounds.size.width
+    private let ScreenHeight = UIScreen.mainScreen().bounds.size.height
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // 1.设置底部视图默认选中第0个
         customTabBar.selectedItem = customTabBar.items![0]
         customTabBar.delegate = self
+        // 2.设置标题
+        navigationItem.title = "二维码扫描"
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -107,6 +119,7 @@ class QRCodeViewController: UIViewController ,UITabBarDelegate{
         }else{
             print("条形码")
             self.containerHeightCons.constant = 150
+            navigationItem.title = "条形码扫描"
         }
         
         // 2.停止动画
@@ -133,26 +146,35 @@ class QRCodeViewController: UIViewController ,UITabBarDelegate{
         }
         // 3.将输入和输出都添加到会话中
         session.addInput(deviceInput)
-        print(output.availableMetadataObjectTypes)
         session.addOutput(output)
-        print(output.availableMetadataObjectTypes)
+        
+        // 高质量采集率
+        session.sessionPreset = AVCaptureSessionPresetHigh
+        
+        //设置扫码支持的编码格式(如下设置条形码和二维码兼容)
+        output.metadataObjectTypes=[AVMetadataObjectTypeQRCode,AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypeEAN8Code, AVMetadataObjectTypeCode128Code];
         
         // 4.设置输出能够解析的数据类型
         // 注意: 设置能够解析的数据类型, 一定要在输出对象添加到会员之后设置, 否则会报错
         output.metadataObjectTypes =  output.availableMetadataObjectTypes
         print(output.availableMetadataObjectTypes)
+        
         // 5.设置输出对象的代理, 只要解析成功就会通知代理
         output.setMetadataObjectsDelegate(self, queue: dispatch_get_main_queue())
         
+        //MARK:  感兴趣的区域，设置为中心，否则全屏可扫
+        self.output.rectOfInterest = CGRectMake(((ScreenHeight-220)/2)/ScreenHeight, ((ScreenWidth-220)/2)/ScreenWidth, 220/ScreenHeight, 220/ScreenWidth)
+ 
         // 添加预览图层
         view.layer.insertSublayer(previewLayer, atIndex: 0)
         print("view\(view.frame)")
+        
         //MARK:  添加绘制图层到预览图层上
         previewLayer.addSublayer(drawLayer)
         
         // 6.告诉session开始扫描
         session.startRunning()
-
+        
     }
     
     
@@ -182,7 +204,10 @@ class QRCodeViewController: UIViewController ,UITabBarDelegate{
     // 创建预览图层
     private lazy var previewLayer: AVCaptureVideoPreviewLayer = {
         let layer = AVCaptureVideoPreviewLayer(session: self.session)
-        layer.frame =  UIScreen.mainScreen().bounds
+        //MARK: 扫描全屏黑
+        layer.videoGravity = AVLayerVideoGravityResizeAspectFill
+        //layer.frame = self.view.layer.bounds
+        layer.frame = UIScreen.mainScreen().bounds
         print("创建预览图层\(layer.frame)--\(UIScreen.mainScreen().bounds.size.width)")
         return layer
     }()
@@ -278,7 +303,7 @@ extension QRCodeViewController: AVCaptureMetadataOutputObjectsDelegate
         
         // 1.创建一个图层
         let layer = CAShapeLayer()
-        layer.lineWidth = 4
+        layer.lineWidth = 8
         layer.strokeColor = UIColor.redColor().CGColor
         layer.fillColor = UIColor.clearColor().CGColor//不设置会黑
         
