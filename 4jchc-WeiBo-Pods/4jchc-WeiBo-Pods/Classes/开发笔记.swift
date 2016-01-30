@@ -135,5 +135,32 @@ import UIKit
      8.AVCaptureMetadataOutputObjectsDelegate代理方法实现
     */
 
+    /*
+    💗二维码定位
+    1.创建用于绘制边线的图层
+    2.获取扫描到的数据 要使用stringValue
+    3.转换坐标遍历获取坐标for object in metadataObjects
+    4.判断当前获取到的数据, 是否是机器可识别的类型AVMetadataMachineReadableCodeObject
+    5.将坐标转换成界面可识别的坐标
+    previewLayer.transformedMetadataObjectForMetadataObject(object as! AVMetadataObject) as! AVMetadataMachineReadableCodeObject
+    💗绘制图形
+    1.创建一个图层
+    2.创建路径--移动到点--关闭路径--绘制路径--添加到drawLayer上
+    3.添加代码段
+    4.从corners数组中取出第0个元素, 将这个字典中的x/y赋值给point
+    💗CGPointMakeWithDictionaryRepresentation((codeObject.corners[index++] as! CFDictionaryRef), &point)
+    */
+
+    /*
 
 
+    */
+    /*
+
+
+    */
+
+    /*
+
+
+    */
