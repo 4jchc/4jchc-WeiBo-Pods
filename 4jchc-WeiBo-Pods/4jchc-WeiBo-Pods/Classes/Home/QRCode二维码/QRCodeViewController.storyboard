@@ -45,7 +45,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mGz-Hz-Uxf" userLabel="容器">
                                 <rect key="frame" x="150" y="150" width="300" height="300"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qrcode_scanline_qrcode" translatesAutoresizingMaskIntoConstraints="NO" id="V5G-dq-rBM" userLabel="冲击波">
+                                    <imageView userInteractionEnabled="NO" alpha="0.050000000000000003" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qrcode_scanline_qrcode" translatesAutoresizingMaskIntoConstraints="NO" id="V5G-dq-rBM" userLabel="冲击波">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qrcode_border" translatesAutoresizingMaskIntoConstraints="NO" id="Dqs-Nj-QDK" userLabel="边框">
@@ -53,7 +53,7 @@
                                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="V5G-dq-rBM" firstAttribute="top" secondItem="mGz-Hz-Uxf" secondAttribute="top" id="6lL-iE-PL5"/>
                                     <constraint firstItem="Dqs-Nj-QDK" firstAttribute="height" secondItem="mGz-Hz-Uxf" secondAttribute="height" id="CIb-JX-bNp"/>
@@ -67,8 +67,8 @@
                                     <constraint firstItem="V5G-dq-rBM" firstAttribute="centerX" secondItem="mGz-Hz-Uxf" secondAttribute="centerX" id="tpb-tA-AN9"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nd1-oz-Sbs">
-                                <rect key="frame" x="279" y="473" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="要显示的数据" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nd1-oz-Sbs">
+                                <rect key="frame" x="249" y="473" width="102" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>

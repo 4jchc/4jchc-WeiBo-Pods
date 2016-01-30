@@ -103,7 +103,6 @@ import UIKit
     2.添加测试数据
     */
 
-
     /*
     1.二维码界面搭建
     2.自动布局一般要设置宽高XY4个💗
@@ -135,6 +134,7 @@ import UIKit
      8.AVCaptureMetadataOutputObjectsDelegate代理方法实现
     */
 
+
     /*
     💗二维码定位
     1.创建用于绘制边线的图层
@@ -151,9 +151,12 @@ import UIKit
     💗CGPointMakeWithDictionaryRepresentation((codeObject.corners[index++] as! CFDictionaryRef), &point)
     */
 
+
     /*
-
-
+    完善二维码动画self.view.layoutIfNeeded()不用设置NSLayoutConstraint的layoutIfNeeded()(已经真机测试)
+    1.设置动画指定的次数要💗放在动画执行的前面
+     UIView.setAnimationRepeatCount(MAXFLOAT)
+    2.添加一个NSLayoutConstraint的动画快捷键
     */
     /*
 

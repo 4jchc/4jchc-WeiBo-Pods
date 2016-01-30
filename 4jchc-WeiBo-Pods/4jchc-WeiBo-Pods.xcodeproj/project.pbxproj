@@ -61,6 +61,7 @@
 		96812AF21C58AE0200A2349E /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
 		96812AF41C58B23200A2349E /* 开发笔记.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "开发笔记.swift"; sourceTree = "<group>"; };
 		9688A92B1C5A05EF0002FE2D /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
+		968CE1381C5C9D26000DC2DB /* 4jchc-WeiBo-Pods copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "4jchc-WeiBo-Pods copy-Info.plist"; path = "/Users/jiangjin/C/$$黑马swift/美团-即时通讯-微博💗/4jchc-WeiBo-Pods/4jchc-WeiBo-Pods/4jchc-WeiBo-Pods copy-Info.plist"; sourceTree = "<absolute>"; };
 		96B0408C1C57233E009DBC56 /* Fjchc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fjchc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96B0408F1C57233E009DBC56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		96B040941C57233E009DBC56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -128,6 +129,7 @@
 				96B040A31C57233E009DBC56 /* 4jchc-WeiBo-PodsTests */,
 				96B040AE1C57233E009DBC56 /* 4jchc-WeiBo-PodsUITests */,
 				96B0408D1C57233E009DBC56 /* Products */,
+				968CE1381C5C9D26000DC2DB /* 4jchc-WeiBo-Pods copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -335,7 +337,7 @@
 				TargetAttributes = {
 					96B0408B1C57233E009DBC56 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = V68ZXL6SFQ;
+						DevelopmentTeam = PE2TM7382T;
 					};
 					96B0409F1C57233E009DBC56 = {
 						CreatedOnToolsVersion = 7.2;
@@ -492,6 +494,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -537,6 +540,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -563,11 +567,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "4jchc-WeiBo-Pods/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "-jchc.-jchc-WeiBo-Pods";
+				PRODUCT_BUNDLE_IDENTIFIER = swift.903;
 				PRODUCT_NAME = Fjchc;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -576,11 +583,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "4jchc-WeiBo-Pods/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "-jchc.-jchc-WeiBo-Pods";
+				PRODUCT_BUNDLE_IDENTIFIER = swift.903;
 				PRODUCT_NAME = Fjchc;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

@@ -18,7 +18,6 @@ class QRCodeViewController: UIViewController ,UITabBarDelegate{
     /// 底部视图
     @IBOutlet weak var customTabBar: UITabBar!
     
-    
     /// 扫描容器高度约束
     @IBOutlet weak var containerHeightCons: NSLayoutConstraint!
     /// 冲击波视图
@@ -46,44 +45,56 @@ class QRCodeViewController: UIViewController ,UITabBarDelegate{
         startScan()
     }
     
-
+    //MARK: 二维码动画
     ///执行动画
     private func startAnimation(){
         
-//        // 让约束从顶部开始
+//         //让约束从顶部开始
 //        self.scanLineCons.constant = -self.containerHeightCons.constant
-//        
-//        print("self.scanLineCons.constant==\(self.scanLineCons.constant)")
-//       // self.scanLineView.layoutIfNeeded()
-//        
 //        // 执行冲击波动画
 //        UIView.animateWithDuration(2.0, animations: { () -> Void in
 //            // 1.修改约束
-//            self.scanLineCons.constant = self.containerHeightCons.constant
+//            self.scanLineCons.constant = 0
+//            // 设置动画指定的次数
+//            UIView.setAnimationRepeatCount(MAXFLOAT)
+//            // 2.强制更新界面
+//            self.scanLineView.layoutIfNeeded()
+//            
+//  
+//        })
+        
+
+        self.scanLineView.alpha = 0.1
+        self.scanLineCons.constant = -self.containerHeightCons.constant
+        //self.scanLineView.layoutIfNeeded()//会变形
+        self.view.layoutIfNeeded()
+        UIView.animateWithDuration(1.5, animations: { () -> Void in
+            
+            // 设置动画指定的次数
+            UIView.setAnimationRepeatCount(MAXFLOAT)
+            self.scanLineCons.constant = 0
+            self.scanLineView.alpha = 1
+            // 2.更新界面
+            self.view.layoutIfNeeded()
+        })
+
+        
+
+        
+        
+//        // 让约束从顶部开始
+//        self.scanLineCons.constant = -self.containerHeightCons.constant
+//        // 1.修改约束
+//        self.scanLineCons.constant = 0
+//        // 执行冲击波动画
+//        UIView.animateWithDuration(2.0, animations: { () -> Void in
+//            self.scanLineView.setNeedsUpdateConstraints()
 //            // 设置动画指定的次数
 //            UIView.setAnimationRepeatCount(MAXFLOAT)
 //            // 2.强制更新界面
 //            self.scanLineView.layoutIfNeeded()
 //        })
-        
-        
-        // 让约束从顶部开始
-        self.scanLineCons.constant = -self.containerHeightCons.constant-300
-        // 1.修改约束
-        self.scanLineCons.constant = self.containerHeightCons.constant
-        
-        print("self.scanLineCons.constant==\(self.scanLineCons.constant)")
 
-        
-        // 执行冲击波动画
-        UIView.animateWithDuration(2.0, animations: { () -> Void in
-            //self.scanLineView.setNeedsUpdateConstraints()
-            // 设置动画指定的次数
-            UIView.setAnimationRepeatCount(MAXFLOAT)
-            // 2.强制更新界面
-            self.scanLineView.layoutIfNeeded()
-        })
-        
     }
     
     // MARK: - UITabBarDelegate
@@ -91,7 +102,7 @@ class QRCodeViewController: UIViewController ,UITabBarDelegate{
         
         // 1.修改容器的高度
         if item.tag == 1{
-            //            print("二维码")
+            print("二维码")
             self.containerHeightCons.constant = 300
         }else{
             print("条形码")
@@ -99,15 +110,15 @@ class QRCodeViewController: UIViewController ,UITabBarDelegate{
         }
         
         // 2.停止动画
-      
-        //self.scanLineView.layer.removeAllAnimations()
+        self.scanLineView.layer.removeAllAnimations()
         self.scanLineView.layoutIfNeeded()
         // 3.重新开始动画
         startAnimation()
     }
 
 
-    ///扫描二维码
+ 
+    //MARK: - 扫描二维码
     private func startScan(){
         
         // 1.判断是否能够将输入添加到会话中
@@ -135,9 +146,13 @@ class QRCodeViewController: UIViewController ,UITabBarDelegate{
         
         // 添加预览图层
         view.layer.insertSublayer(previewLayer, atIndex: 0)
+        print("view\(view.frame)")
+        //MARK:  添加绘制图层到预览图层上
+        previewLayer.addSublayer(drawLayer)
         
         // 6.告诉session开始扫描
         session.startRunning()
+
     }
     
     
@@ -167,17 +182,19 @@ class QRCodeViewController: UIViewController ,UITabBarDelegate{
     // 创建预览图层
     private lazy var previewLayer: AVCaptureVideoPreviewLayer = {
         let layer = AVCaptureVideoPreviewLayer(session: self.session)
-        layer.frame = UIScreen.mainScreen().bounds
+        layer.frame =  UIScreen.mainScreen().bounds
+        print("创建预览图层\(layer.frame)--\(UIScreen.mainScreen().bounds.size.width)")
         return layer
     }()
     
     
     
-    //MARK: - 二维码定位图层
+    //MARK: - 定位二维码图层
     // 创建用于绘制边线的图层
     private lazy var drawLayer: CALayer = {
         let layer = CALayer()
-        layer.frame = UIScreen.mainScreen().bounds
+        layer.frame = UIScreen.mainScreen().bounds//为二维码的大小
+        print("绘制边线的图层\(layer.frame)--\(UIScreen.mainScreen().bounds.size.width)")
         return layer
     }()
     
@@ -212,13 +229,46 @@ extension QRCodeViewController: AVCaptureMetadataOutputObjectsDelegate
                 drawCorners(codeObject)
             }
         }
+        
+        //MARK: - 打开网页
+        /*
+        var stringValue:String?
+        if metadataObjects.count > 0 {
+            let metadataObject = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
+            stringValue = metadataObject.stringValue
+        }else{
+            return
+        }
+
+        //解析二维码后的值
+        let urlString = stringValue ?? ""
+        //设置正则表达式规则
+        let regexString = "http(s)?:\\/\\/([\\w-]+\\.)+[\\w-]+(\\/[\\w- .\\/?%&=]*)?"
+        
+ 
+        //根据正则规则判断解析出来的值是否合法
+       
+        let regex:NSRegularExpression = try! NSRegularExpression(pattern: regexString, options: NSRegularExpressionOptions.CaseInsensitive)
+        let result:NSTextCheckingResult? = regex.firstMatchInString(urlString, options: NSMatchingOptions(), range: NSMakeRange(0, (urlString as NSString).length))
+        //如果合法则调用系统系统openURL处理url（调用系统浏览器打开URL）,否则弹出警告框
+        if result != nil {
+            UIApplication.sharedApplication().openURL(NSURL(string: urlString)!)
+            print("\(urlString)\n")
+        }else{
+            print("非法的URL")
+        }
+
+        */
+        
+        
+        
     }
     
     /**
      绘制图形
-     
      :param: codeObject 保存了坐标的对象
      */
+    //MARK: - 绘制图形
     private func drawCorners(codeObject: AVMetadataMachineReadableCodeObject)
     {
         if codeObject.corners.isEmpty
@@ -230,7 +280,7 @@ extension QRCodeViewController: AVCaptureMetadataOutputObjectsDelegate
         let layer = CAShapeLayer()
         layer.lineWidth = 4
         layer.strokeColor = UIColor.redColor().CGColor
-        layer.fillColor = UIColor.clearColor().CGColor
+        layer.fillColor = UIColor.clearColor().CGColor//不设置会黑
         
         // 2.创建路径
         //        layer.path = UIBezierPath(rect: CGRect(x: 100, y: 100, width: 200, height: 200)).CGPath
@@ -257,9 +307,8 @@ extension QRCodeViewController: AVCaptureMetadataOutputObjectsDelegate
         // 3.将绘制好的图层添加到drawLayer上
         drawLayer.addSublayer(layer)
     }
-    /**
-     清空边线
-     */
+
+    //MARK: - 清空边线
     private func clearConers(){
         // 1.判断drawLayer上是否有其它图层
         if drawLayer.sublayers == nil || drawLayer.sublayers?.count == 0{
