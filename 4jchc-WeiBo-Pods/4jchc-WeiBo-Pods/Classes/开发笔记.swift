@@ -196,14 +196,31 @@ import UIKit
     */
 //MARK: - 注释第三天
 
-//<key>NSAppTransportSecurity</key> Transport 运输 Security 安全(保护,保证
-//<dict>
-//<key>NSAllowsArbitraryLoads</key>
-//<true/>
-//</dict>
+    //<key>NSAppTransportSecurity</key> Transport 运输 Security 安全(保护,保证
+    //<dict>
+    //<key>NSAllowsArbitraryLoads</key>
+    //<true/>
+    //</dict>
 
     /*
     加载授权页面.把授权页面包装成导航控制器
     1.http网络请求设置 NSAppTransportSecurity dict NSAllowsArbitraryLoads true
     2.Transport 运输 Security 安全(保护,保证 Arbitrary任意的(随机的,独立的
     */
+
+
+
+    /*
+    获取已经授权RequestToken
+    1.url转字符串request.URL!.absoluteString
+    2.request.URL!.query? 获取query查询?后面的字符串
+    3.codeStr.endIndex是拿到code=最后的位置
+    */
+
+
+
+
+
+
+
+
