@@ -194,5 +194,16 @@ import UIKit
     /*如果真机运行错误
     1.设置build phases 里添加copy files Destination:framework pods.framework
     */
+//MARK: - 注释第三天
 
+//<key>NSAppTransportSecurity</key> Transport 运输 Security 安全(保护,保证
+//<dict>
+//<key>NSAllowsArbitraryLoads</key>
+//<true/>
+//</dict>
 
+    /*
+    加载授权页面.把授权页面包装成导航控制器
+    1.http网络请求设置 NSAppTransportSecurity dict NSAllowsArbitraryLoads true
+    2.Transport 运输 Security 安全(保护,保证 Arbitrary任意的(随机的,独立的
+    */

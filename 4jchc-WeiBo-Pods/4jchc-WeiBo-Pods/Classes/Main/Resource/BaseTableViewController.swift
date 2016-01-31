@@ -41,8 +41,17 @@ class BaseTableViewController: UITableViewController, VisitorViewDelegate {
     
     // MARK: - VisitorViewDelegate
     func loginBtnWillClick() {
+        
+        // 弹出登录界面
+        let oauthVC = OAuthViewController()
+        let nav = UINavigationController(rootViewController: oauthVC)
+        presentViewController(nav, animated: true, completion: nil)
 
     }
+    
+
+    
+
     func registerBtnWillClick() {
     
     }
