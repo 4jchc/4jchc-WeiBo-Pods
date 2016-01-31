@@ -47,7 +47,7 @@ class QRCodeCardViewController: UIViewController {
         let bgImage = createNonInterpolatedUIImageFormCIImage(ciImage!, size: 300)
         
         // 5.创建一个头像
-        let icon = UIImage(named: "nange.jpg")
+        let icon = UIImage(named: "navigationbar_friendattention_highlighted")
         
         // 6.合成图片(将二维码和头像进行合并)
         let newImage = creteImage(bgImage, iconImage: icon!)

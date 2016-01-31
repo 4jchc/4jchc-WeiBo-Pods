@@ -172,13 +172,21 @@ import UIKit
     5.创建一个头像
     6.合成图片(将二维码和头像进行合并)
     7.返回生成好的二维码
-
     */
 
 
+    
+
 
     /*
+    添加cocopods的xcode插件
+    1.use_frameworks!
+     pod 'AFNetworking'
+     pod 'SDWebImage'
+     pod 'SVProgressHUD'
 
-    1.
-
+    2.报错 :Resolved command path for "pod" is invalid.有病的
+    Expanded GEM_PATH: /usr/bin 修改为 :/usr/local/bin
+    3.试了第三次又可以了,所以没有改
+    4.修改生成二维码时的图片是空.和导航栏标题文字颜色
     */

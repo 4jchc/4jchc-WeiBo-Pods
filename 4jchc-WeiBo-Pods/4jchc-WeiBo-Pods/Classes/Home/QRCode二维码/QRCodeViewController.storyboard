@@ -12,6 +12,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="0.075982618850000003" blue="0.06571433132" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="Okz-93-Gx5" kind="relationship" relationship="rootViewController" id="lIf-ps-SG4"/>
@@ -19,7 +22,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Edk-Xe-fxs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-900" y="15"/>
+            <point key="canvasLocation" x="-1072" y="2"/>
         </scene>
         <!--Code View Controller-->
         <scene sceneID="xEL-E2-8aA">
@@ -100,10 +103,10 @@
                                 <exclude reference="8Nf-RU-SWi"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="bWA-Ep-340"/>
-                                <exclude reference="SMH-6N-aqF"/>
                                 <exclude reference="DiJ-49-UNp"/>
                                 <exclude reference="E1U-Pj-Bbt"/>
+                                <exclude reference="bWA-Ep-340"/>
+                                <exclude reference="SMH-6N-aqF"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
@@ -111,12 +114,12 @@
                                 <include reference="8Nf-RU-SWi"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="DiJ-49-UNp"/>
+                                <include reference="E1U-Pj-Bbt"/>
                                 <include reference="bWA-Ep-340"/>
                                 <exclude reference="PDi-vR-Djy"/>
                                 <include reference="SMH-6N-aqF"/>
                                 <exclude reference="tMM-I7-m3u"/>
-                                <include reference="DiJ-49-UNp"/>
-                                <include reference="E1U-Pj-Bbt"/>
                             </mask>
                         </variation>
                     </view>
@@ -138,7 +141,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1fH-cS-WFL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-48" y="-25"/>
+            <point key="canvasLocation" x="-29" y="-11"/>
         </scene>
     </scenes>
     <resources>
