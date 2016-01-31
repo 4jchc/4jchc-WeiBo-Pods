@@ -218,7 +218,13 @@ import UIKit
     */
 
 
-
+    /*
+    获取AccessToken
+    1.AFN单例--baseURL一定要以/结尾
+    2.设置AFN能够接收得数据类型 responseSerializer.acceptableContentTypes
+    💗response响应 Serializer串行器转换数据模型为RDF/XML格式.acceptable可接受的 Content内容Types类型
+    AFN的POST请求更新了带进度的方法
+    */
 
 
 

@@ -15,7 +15,12 @@ class OAuthViewController: UIViewController {
     let WB_redirect_uri = "http://www.baidu.com/"//没有/无法显示登录页面
     //4c55e50bb30c37cafd96405ebc028c8e&from=844b&vit=fps
     ///https://api.weibo.com/oauth2/authorize?client_id=1620692692&redirect_uri=http://www.baidu.com/
-    
+    /*
+    "access_token" = "2.00T53ksCiMQglBfca9810132k7niSC";
+    "expires_in" = 157679999;
+    "remind_in" = 157679999;
+    uid = 2641236981;
+    */
     override func loadView() {
         view = webView
     }
@@ -86,7 +91,9 @@ extension OAuthViewController: UIWebViewDelegate
             // 取出已经授权的RequestToken
             // codeStr.endIndex是拿到code=最后的位置
             let code = request.URL!.query?.substringFromIndex(codeStr.endIndex)
-            print(code)
+            
+            // 2.利用已经授权的RequestToken换取AccessToken
+            loadAccessToken(code!)
         }else
         {
             // 取消授权
@@ -97,6 +104,34 @@ extension OAuthViewController: UIWebViewDelegate
         
         return false
     }
+    
+    
+    
+    /**
+     换取AccessToken
+     
+     :param: code 已经授权的RequestToken
+     */
+     //MARK: -  换取AccessToken
+     ///   换取AccessToken
+    private func loadAccessToken(code: String) {
+        
+        // 1.定义URL路径
+        let path = "oauth2/access_token"
+        // 2.封装参数
+        let params = ["client_id":WB_App_Key, "client_secret":WB_App_Secret, "grant_type":"authorization_code", "code":code, "redirect_uri":WB_redirect_uri]
+        
+        // 3.发送POST请求
+        NetworkTools.shareNetworkTools().POST(path, parameters: params, progress: { (_) -> Void in
+            
+            }, success: { (_, JSON) -> Void in
+                print(JSON)
+            }) { (_, error) -> Void in
+                print(error)
+        }
+
+    }
+    
 }
 
 
