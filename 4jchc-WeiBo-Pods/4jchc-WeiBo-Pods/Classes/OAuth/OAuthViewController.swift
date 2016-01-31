@@ -124,13 +124,50 @@ extension OAuthViewController: UIWebViewDelegate
         // 3.发送POST请求
         NetworkTools.shareNetworkTools().POST(path, parameters: params, progress: { (_) -> Void in
             
-            }, success: { (_, JSON) -> Void in
-                print(JSON)
+            }, success: { (_, JSON) -> Void in//返回的是字典对象anyobject
+
+                /*
+                do{
+                // 验证expires_in不是字符串Serialization
+                let data = try NSJSONSerialization.dataWithJSONObject(JSON!, options: NSJSONWritingOptions.PrettyPrinted)
+                let str =  NSString(data: data, encoding: NSUTF8StringEncoding)
+                print(str)
+                
+                }catch{
+                
+                }
+                */
+                /*
+                结论:
+                同一个用户对同一个应用程序授权多次access_token是一样的
+                每个access_token都是有过期时间的:
+                1.如果自己对自己的应用进行授权, 有效时间是5年差1天
+                2.如果其他人对你的应用进行授权, 优先时间是3天
+                */
+
+                
+                /*
+                plist : 特点只能存储系统自带的数据类型
+                将对象转换为json之后写入文件中 --> 在公司中已经开始使用
+                偏好设置: 本质plist
+                归档 : 可以存储自定义对象
+                数据库: 用于存储大数据 , 特点效率较高
+                */
+                
+                // 1.字典转模型
+                let account = UserAccount(dict: JSON as! [String : AnyObject])
+                
+                // 2.归档模型
+                account.saveAccount()
+ 
+                
+                
             }) { (_, error) -> Void in
                 print(error)
         }
 
     }
+
     
 }
 

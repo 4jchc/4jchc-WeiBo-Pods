@@ -226,7 +226,12 @@ import UIKit
     AFN的POST请求更新了带进度的方法
     */
 
-
+    /*
+    保存授权信息
+    1.重写description打印信息
+    2.AFN返回的JSON是字典对象anyobject->as [String : AnyObject]
+    3.归档保存 1.字典转模型 2.归档模型
+    */
 
 
 

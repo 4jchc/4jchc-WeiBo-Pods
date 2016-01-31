@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		420D77E430A16994ABE72253 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2A5ECAEFE23CAE5CF1CA6A1 /* Pods.framework */; };
+		960C4CBE1C5E365400735B33 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960C4CBD1C5E365400735B33 /* UserAccount.swift */; };
 		9621911E1C59FA1200C3CE35 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9621911D1C59FA1200C3CE35 /* UIBarButtonItem+Extension.swift */; };
 		9653C62F1C5882EB000FAF68 /* DiscoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9653C62E1C5882EB000FAF68 /* DiscoverTableViewController.swift */; };
 		9653C6331C588ACD000FAF68 /* MainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = 9653C6311C588ACD000FAF68 /* MainVCSettings.json */; };
@@ -71,6 +72,7 @@
 
 /* Begin PBXFileReference section */
 		317053ECD3DDD745CCEC4AD2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		960C4CBD1C5E365400735B33 /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
 		9621911D1C59FA1200C3CE35 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
 		9653C62E1C5882EB000FAF68 /* DiscoverTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverTableViewController.swift; sourceTree = "<group>"; };
 		9653C6311C588ACD000FAF68 /* MainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MainVCSettings.json; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				96A26CEE1C5DDBCE001BC12F /* OAuthViewController.swift */,
+				960C4CBD1C5E365400735B33 /* UserAccount.swift */,
 			);
 			path = OAuth;
 			sourceTree = "<group>";
@@ -533,6 +536,7 @@
 				9688A92C1C5A05EF0002FE2D /* TitleButton.swift in Sources */,
 				9653C6341C588ACD000FAF68 /* NullViewController.swift in Sources */,
 				96C7B81B1C5B1652000A176C /* PopoverPresentationController.swift in Sources */,
+				960C4CBE1C5E365400735B33 /* UserAccount.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
