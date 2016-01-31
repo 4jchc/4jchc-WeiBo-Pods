@@ -18,6 +18,7 @@
 		96812AF11C58AD8E00A2349E /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96812AF01C58AD8E00A2349E /* VisitorView.swift */; };
 		96812AF31C58AE0200A2349E /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96812AF21C58AE0200A2349E /* UIView+AutoLayout.swift */; };
 		96812AF51C58B23200A2349E /* 开发笔记.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96812AF41C58B23200A2349E /* 开发笔记.swift */; };
+		968249831C5E5150004A17FF /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968249821C5E5150004A17FF /* String+Extension.swift */; };
 		9688A92C1C5A05EF0002FE2D /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688A92B1C5A05EF0002FE2D /* TitleButton.swift */; };
 		96A26CEC1C5DD10C001BC12F /* Pods.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B2A5ECAEFE23CAE5CF1CA6A1 /* Pods.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		96A26CEF1C5DDBCE001BC12F /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A26CEE1C5DDBCE001BC12F /* OAuthViewController.swift */; };
@@ -82,6 +83,7 @@
 		96812AF01C58AD8E00A2349E /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 		96812AF21C58AE0200A2349E /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
 		96812AF41C58B23200A2349E /* 开发笔记.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "开发笔记.swift"; sourceTree = "<group>"; };
+		968249821C5E5150004A17FF /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		9688A92B1C5A05EF0002FE2D /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
 		968CE1381C5C9D26000DC2DB /* 4jchc-WeiBo-Pods copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "4jchc-WeiBo-Pods copy-Info.plist"; path = "/Users/jiangjin/C/$$黑马swift/美团-即时通讯-微博💗/4jchc-WeiBo-Pods/4jchc-WeiBo-Pods/4jchc-WeiBo-Pods copy-Info.plist"; sourceTree = "<absolute>"; };
 		96A26CEE1C5DDBCE001BC12F /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 		96EE27FE1C586FAD00002CF4 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				968249821C5E5150004A17FF /* String+Extension.swift */,
 				96812AF21C58AE0200A2349E /* UIView+AutoLayout.swift */,
 				96EBA0041C5DFEA100F523A6 /* NetworkTools.swift */,
 			);
@@ -528,6 +531,7 @@
 				96C7B8211C5B2BB6000A176C /* PopoverViewController.swift in Sources */,
 				96812AF31C58AE0200A2349E /* UIView+AutoLayout.swift in Sources */,
 				96EE28071C5870B100002CF4 /* HomeTableViewController.swift in Sources */,
+				968249831C5E5150004A17FF /* String+Extension.swift in Sources */,
 				96EBA0051C5DFEA100F523A6 /* NetworkTools.swift in Sources */,
 				96A26CEF1C5DDBCE001BC12F /* OAuthViewController.swift in Sources */,
 				965947121C5CE5F600BE4617 /* QRCodeCardViewController.swift in Sources */,

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SVProgressHUD
 class OAuthViewController: UIViewController {
     
     let WB_App_Key = "1620692692"
@@ -168,7 +168,15 @@ extension OAuthViewController: UIWebViewDelegate
 
     }
 
+    func webViewDidStartLoad(webView: UIWebView) {
+        // 提示用户正在加载
+        SVProgressHUD.showInfoWithStatus("正在加载...", maskType: SVProgressHUDMaskType.Black)
+    }
     
+    func webViewDidFinishLoad(webView: UIWebView) {
+        // 关闭提示
+        SVProgressHUD.dismiss()
+    }
 }
 
 
