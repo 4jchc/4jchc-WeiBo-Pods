@@ -190,3 +190,9 @@ import UIKit
     3.试了第三次又可以了,所以没有改
     4.修改生成二维码时的图片是空.和导航栏标题文字颜色
     */
+
+    /*如果真机运行错误
+    1.设置build phases 里添加copy files Destination:framework pods.framework
+    */
+
+

@@ -18,6 +18,7 @@
 		96812AF31C58AE0200A2349E /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96812AF21C58AE0200A2349E /* UIView+AutoLayout.swift */; };
 		96812AF51C58B23200A2349E /* 开发笔记.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96812AF41C58B23200A2349E /* 开发笔记.swift */; };
 		9688A92C1C5A05EF0002FE2D /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688A92B1C5A05EF0002FE2D /* TitleButton.swift */; };
+		96A26CEC1C5DD10C001BC12F /* Pods.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B2A5ECAEFE23CAE5CF1CA6A1 /* Pods.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		96B040901C57233E009DBC56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B0408F1C57233E009DBC56 /* AppDelegate.swift */; };
 		96B040951C57233E009DBC56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96B040931C57233E009DBC56 /* Main.storyboard */; };
 		96B040971C57233E009DBC56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96B040961C57233E009DBC56 /* Assets.xcassets */; };
@@ -52,6 +53,19 @@
 			remoteInfo = "4jchc-WeiBo-Pods";
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		96A26CEB1C5DD0F9001BC12F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				96A26CEC1C5DD10C001BC12F /* Pods.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		317053ECD3DDD745CCEC4AD2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -309,6 +323,7 @@
 				96B0408A1C57233E009DBC56 /* Resources */,
 				B502926818CFCE77FDF9F277 /* Embed Pods Frameworks */,
 				AE91D019923EA79932AF9CD4 /* Copy Pods Resources */,
+				96A26CEB1C5DD0F9001BC12F /* CopyFiles */,
 			);
 			buildRules = (
 			);
