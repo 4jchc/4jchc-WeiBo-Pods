@@ -260,3 +260,11 @@ import UIKit
     2.prepareLayout()的调用顺序
      先调用一个有多少行cell 2.调用准备布局 3.调用返回cell
     */
+
+
+    /*完善新特性
+    1.如果当前类需要监听按钮的点击方法, 那么当前类不能是私有的
+    2.新学的动画方法
+    Damping--振幅 Velocity--速度
+    UIView.animateWithDuration(2, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity:
+    */

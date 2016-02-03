@@ -67,11 +67,35 @@ class NewfeatureCollectionViewController: UICollectionViewController {
         // 3.返回cell
         return cell
     }
+    
+    
+    
+    //MARK: - 完全显示一个cell之后调用
+    ///  完全显示一个cell之后调用
+    override func collectionView(collectionView: UICollectionView, didEndDisplayingCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
+        
+        // 传递给我们的是上一页的索引
+        //        print(indexPath)
+        
+        // 1.拿到当前显示的cell对应的索引
+        let path = collectionView.indexPathsForVisibleItems().last!
+        print(path)
+        if path.item == (pageCount - 1)
+        {
+            // 2.拿到当前索引对应的cell
+            let cell = collectionView.cellForItemAtIndexPath(path) as! NewfeatureCell
+            // 3.让cell执行按钮动画
+            cell.startBtnAnimation()
+        }
+    }
 }
+
+
 
 // Swift中一个文件中是可以定义多个类的
 //MARK: - 自定义cell
-private class NewfeatureCell: UICollectionViewCell
+// 如果当前类需要监听按钮的点击方法, 那么当前类不能是私有的
+ class NewfeatureCell: UICollectionViewCell
 {
     /// 保存图片的索引
     // Swift中被private休息的东西, 如果是在同一个文件中是可以访问的
@@ -80,6 +104,32 @@ private class NewfeatureCell: UICollectionViewCell
             iconView.image = UIImage(named: "new_feature_\(imageIndex! + 1)")
         }
     }
+    
+
+     //MARK: - 让按钮做动画
+     ///  让按钮做动画
+    func startBtnAnimation()
+    {
+        startButton.hidden = false
+        
+        // 执行动画
+        startButton.transform = CGAffineTransformMakeScale(0.0, 0.0)
+        startButton.userInteractionEnabled = false
+        
+        // UIViewAnimationOptions(rawValue: 0) == OC knilOptions
+        // Damping--振幅 Velocity--速度
+        UIView.animateWithDuration(2, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 10, options: UIViewAnimationOptions(rawValue: 0), animations: { () -> Void in
+            // 清空形变
+            self.startButton.transform = CGAffineTransformIdentity
+            }) { (_) -> Void in
+                self.startButton.userInteractionEnabled = true
+        }
+
+    }
+    
+
+    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -94,13 +144,27 @@ private class NewfeatureCell: UICollectionViewCell
     private func setupUI(){
         // 1.添加子控件到contentView上
         contentView.addSubview(iconView)
+        contentView.addSubview(startButton)
         
         // 2.布局子控件的位置
         iconView.xmg_Fill(contentView)
+        startButton.xmg_AlignInner(type: XMG_AlignType.BottomCenter, referView: contentView, size: nil, offset: CGPoint(x: 0, y: -160))
     }
     
     // MARK: - 懒加载
     private lazy var iconView = UIImageView()
+    
+    private lazy var startButton: UIButton = {
+        let btn = UIButton()
+        btn.setBackgroundImage(UIImage(named: "new_feature_button"), forState: UIControlState.Normal)
+        btn.setBackgroundImage(UIImage(named: "new_feature_button_highlighted"), forState: UIControlState.Highlighted)
+        
+        btn.hidden = true
+        btn.addTarget(self, action: "customBtnClick", forControlEvents: UIControlEvents.TouchUpInside)
+        return btn
+    }()
+    
+    
 }
 //MARK: - 自定义FlowLayout
 private class NewfeatureLayout: UICollectionViewFlowLayout {
