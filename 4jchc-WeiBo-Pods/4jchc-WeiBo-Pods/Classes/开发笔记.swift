@@ -254,4 +254,9 @@ import UIKit
     2.新增的变量 一定要归档
     */
 
-
+    /*
+    添加新特性界面
+    1.自定义cell---自定义FlowLayout
+    2.prepareLayout()的调用顺序
+     先调用一个有多少行cell 2.调用准备布局 3.调用返回cell
+    */

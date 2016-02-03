@@ -4,7 +4,7 @@
 //
 //  Created by 蒋进 on 16/1/26.
 //  Copyright © 2016年 蒋进. All rights reserved.
-//
+
 
 import UIKit
 
@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window?.backgroundColor = UIColor.whiteColor()
         // 2.创建根控制器
-        window?.rootViewController = MainViewController()
+        window?.rootViewController = NewfeatureCollectionViewController()//MainViewController()
         window?.makeKeyAndVisible()
     
         return true
@@ -53,7 +53,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
 
 }
 

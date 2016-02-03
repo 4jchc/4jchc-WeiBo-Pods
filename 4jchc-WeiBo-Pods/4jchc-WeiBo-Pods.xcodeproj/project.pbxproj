@@ -10,6 +10,7 @@
 		420D77E430A16994ABE72253 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2A5ECAEFE23CAE5CF1CA6A1 /* Pods.framework */; };
 		960C4CBE1C5E365400735B33 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960C4CBD1C5E365400735B33 /* UserAccount.swift */; };
 		9621911E1C59FA1200C3CE35 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9621911D1C59FA1200C3CE35 /* UIBarButtonItem+Extension.swift */; };
+		963097F81C61D39B0073B432 /* NewfeatureCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963097F71C61D39B0073B432 /* NewfeatureCollectionViewController.swift */; };
 		9653C62F1C5882EB000FAF68 /* DiscoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9653C62E1C5882EB000FAF68 /* DiscoverTableViewController.swift */; };
 		9653C6331C588ACD000FAF68 /* MainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = 9653C6311C588ACD000FAF68 /* MainVCSettings.json */; };
 		9653C6341C588ACD000FAF68 /* NullViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9653C6321C588ACD000FAF68 /* NullViewController.swift */; };
@@ -75,6 +76,7 @@
 		317053ECD3DDD745CCEC4AD2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		960C4CBD1C5E365400735B33 /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
 		9621911D1C59FA1200C3CE35 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
+		963097F71C61D39B0073B432 /* NewfeatureCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewfeatureCollectionViewController.swift; sourceTree = "<group>"; };
 		9653C62E1C5882EB000FAF68 /* DiscoverTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverTableViewController.swift; sourceTree = "<group>"; };
 		9653C6311C588ACD000FAF68 /* MainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MainVCSettings.json; sourceTree = "<group>"; };
 		9653C6321C588ACD000FAF68 /* NullViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NullViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +148,14 @@
 				B2A5ECAEFE23CAE5CF1CA6A1 /* Pods.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		963097F61C61D3640073B432 /* Newfeature */ = {
+			isa = PBXGroup;
+			children = (
+				963097F71C61D39B0073B432 /* NewfeatureCollectionViewController.swift */,
+			);
+			path = Newfeature;
 			sourceTree = "<group>";
 		};
 		9653C6301C588ACD000FAF68 /* Resource */ = {
@@ -247,6 +257,7 @@
 			children = (
 				96B0408F1C57233E009DBC56 /* AppDelegate.swift */,
 				96812AF41C58B23200A2349E /* 开发笔记.swift */,
+				963097F61C61D3640073B432 /* Newfeature */,
 				96A26CED1C5DDB95001BC12F /* OAuth */,
 				96EE27F31C586FAD00002CF4 /* Common */,
 				96EE27F41C586FAD00002CF4 /* Discover */,
@@ -541,6 +552,7 @@
 				9653C6341C588ACD000FAF68 /* NullViewController.swift in Sources */,
 				96C7B81B1C5B1652000A176C /* PopoverPresentationController.swift in Sources */,
 				960C4CBE1C5E365400735B33 /* UserAccount.swift in Sources */,
+				963097F81C61D39B0073B432 /* NewfeatureCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
