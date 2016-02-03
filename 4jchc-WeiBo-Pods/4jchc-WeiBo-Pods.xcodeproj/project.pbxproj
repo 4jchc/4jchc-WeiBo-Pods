@@ -402,7 +402,7 @@
 				TargetAttributes = {
 					96B0408B1C57233E009DBC56 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = PE2TM7382T;
+						DevelopmentTeam = V68ZXL6SFQ;
 					};
 					96B0409F1C57233E009DBC56 = {
 						CreatedOnToolsVersion = 7.2;
@@ -691,7 +691,7 @@
 				INFOPLIST_FILE = "4jchc-WeiBo-Pods/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = swift.903;
+				PRODUCT_BUNDLE_IDENTIFIER = jiangjin;
 				PRODUCT_NAME = Fjchc;
 				PROVISIONING_PROFILE = "";
 			};
@@ -708,7 +708,7 @@
 				INFOPLIST_FILE = "4jchc-WeiBo-Pods/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = swift.903;
+				PRODUCT_BUNDLE_IDENTIFIER = jiangjin;
 				PRODUCT_NAME = Fjchc;
 				PROVISIONING_PROFILE = "";
 			};

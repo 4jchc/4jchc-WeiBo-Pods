@@ -240,4 +240,10 @@ import UIKit
     3.添加加载页面提示
     */
 
+    /*
+    判断授权信息是否过期
+    1.新增expires_Date保存用户过期时间 一定要归档
+    2.KVC找不到的值要设置忽略setValuesForKeysWithDictionary
+    重写 setValue(value: AnyObject?, forUndefinedKey key: String)
+    */
 
