@@ -247,3 +247,11 @@ import UIKit
     重写 setValue(value: AnyObject?, forUndefinedKey key: String)
     */
 
+
+    /*
+    获取用户信息
+    1.利用闭包回调传值
+    2.新增的变量 一定要归档
+    */
+
+

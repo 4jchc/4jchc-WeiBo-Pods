@@ -154,11 +154,23 @@ extension OAuthViewController: UIWebViewDelegate
                 数据库: 用于存储大数据 , 特点效率较高
                 */
                 
+//                // 1.字典转模型
+//                let account = UserAccount(dict: JSON as! [String : AnyObject])
+//                
+//                // 2.归档模型
+//                account.saveAccount()
+                
                 // 1.字典转模型
                 let account = UserAccount(dict: JSON as! [String : AnyObject])
-                
-                // 2.归档模型
-                account.saveAccount()
+                ///闭包回调
+                account.loadUserInfo { (account, error) -> () in
+                    if account != nil {
+                        
+                        account!.saveAccount()
+                    }
+                    
+                    SVProgressHUD.showInfoWithStatus("网络不给力", maskType: SVProgressHUDMaskType.Black)
+                }
  
                 
                 
