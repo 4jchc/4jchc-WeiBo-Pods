@@ -41,6 +41,7 @@
 		96EE28071C5870B100002CF4 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EE28061C5870B100002CF4 /* HomeTableViewController.swift */; };
 		96EE280B1C5870D400002CF4 /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EE280A1C5870D400002CF4 /* MessageTableViewController.swift */; };
 		96EE280D1C5870DD00002CF4 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EE280C1C5870DD00002CF4 /* ProfileTableViewController.swift */; };
+		96F5A5261C63394E0097AFDB /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F5A5251C63394E0097AFDB /* Status.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,7 @@
 		96EE28061C5870B100002CF4 /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		96EE280A1C5870D400002CF4 /* MessageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
 		96EE280C1C5870DD00002CF4 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
+		96F5A5251C63394E0097AFDB /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		B2A5ECAEFE23CAE5CF1CA6A1 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8F709DD6E4F69C75817B195 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -296,6 +298,7 @@
 				96B9D17F1C5B5F390037F52B /* QRCode二维码 */,
 				96C7B8191C5B1627000A176C /* Popover */,
 				96EE28061C5870B100002CF4 /* HomeTableViewController.swift */,
+				96F5A5251C63394E0097AFDB /* Status.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -534,6 +537,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96EE280D1C5870DD00002CF4 /* ProfileTableViewController.swift in Sources */,
+				96F5A5261C63394E0097AFDB /* Status.swift in Sources */,
 				96EE28051C58709600002CF4 /* MainViewController.swift in Sources */,
 				96812AEF1C58AC5F00A2349E /* BaseTableViewController.swift in Sources */,
 				96B9D1811C5B5F800037F52B /* QRCodeViewController.swift in Sources */,
