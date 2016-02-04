@@ -141,6 +141,11 @@ class NewfeatureCollectionViewController: UICollectionViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
+    func customBtnClick()
+    {
+        print("-----")
+    }
     private func setupUI(){
         // 1.添加子控件到contentView上
         contentView.addSubview(iconView)

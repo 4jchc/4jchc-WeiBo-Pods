@@ -268,3 +268,14 @@ import UIKit
     Damping--振幅 Velocity--速度
     UIView.animateWithDuration(2, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity:
     */
+
+
+    /*
+    添加欢迎界面判断版本号
+    1.代码的自动布局
+    2. compare比较用法 Ordered-有序的 Descending-降序 Ascending--升序
+    3.NSUserDefaults的使用--iOS7以后就不用调用同步方法了
+    */
+
+
+

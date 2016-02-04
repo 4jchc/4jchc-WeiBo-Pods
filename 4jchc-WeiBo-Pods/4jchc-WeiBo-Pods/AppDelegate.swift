@@ -26,12 +26,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window?.backgroundColor = UIColor.whiteColor()
         // 2.创建根控制器
-        window?.rootViewController = NewfeatureCollectionViewController()//MainViewController()
+        window?.rootViewController = WelcomeViewController()//NewfeatureCollectionViewController()//MainViewController()
         window?.makeKeyAndVisible()
-    
+        print(isNewupdate())
         return true
     }
 
+    private func isNewupdate() -> Bool{
+        // 1.获取当前软件的版本号 --> info.plist
+        let currentVersion = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"] as! String
+        
+        // 2.获取以前的软件版本号 --> 从本地文件中读取(以前自己存储的)
+        let sandboxVersion =  NSUserDefaults.standardUserDefaults().objectForKey("CFBundleShortVersionString") as? String ?? ""
+
+        print("current = \(currentVersion) sandbox = \(sandboxVersion)")
+        
+        // 3.比较当前版本号和以前版本号
+        //Ordered-有序的 Descending-降序 Ascending--升序
+        //   2.0                    1.0
+        if currentVersion.compare(sandboxVersion) == NSComparisonResult.OrderedDescending{
+            // 3.1如果当前>以前 --> 有新版本
+            // 3.1.1存储当前最新的版本号
+            // iOS7以后就不用调用同步方法了
+            NSUserDefaults.standardUserDefaults().setObject(currentVersion, forKey: "CFBundleShortVersionString")
+            return true
+        }
+        
+        // 3.2如果当前< | ==  --> 没有新版本
+        return false
+    }
+    
+    
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
