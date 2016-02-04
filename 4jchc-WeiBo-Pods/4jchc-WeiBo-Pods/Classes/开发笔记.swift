@@ -299,9 +299,15 @@ import UIKit
     */
 
     /*
+    //MARK: 3. 布局基本界面
     1.预估行高.自动调节尺寸
     tableView. estimated--估计的 RowHeight = 200
     tableView.rowHeight = UITableView Automatic自动的 Dimension-尺寸
     3.tableView. separator:分隔符 Style = UITableViewCellSeparatorStyle.None
     */
 
+
+    /*
+    完善界面代码.抽取lable和uibutton
+    1.UILabel纯代码自动布局要设置(自动布局的宽度)-preferred-优先的 Max-最大 LayoutWidth不然不会换行
+    */
