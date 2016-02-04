@@ -292,10 +292,16 @@ import UIKit
     */
 
     /*
-    加载用户数据-(字典里嵌套字典)
+    //MARK: 2. 加载用户数据-(字典里嵌套字典)
     1.KVC--setValuesForKeysWithDictionary内部会调用以下方法
     setValue(value: AnyObject?, forKey key: String)
     2.KVC内部调用setValue-拦截--字典--再进行字典转模型
     */
 
+    /*
+    1.预估行高.自动调节尺寸
+    tableView. estimated--估计的 RowHeight = 200
+    tableView.rowHeight = UITableView Automatic自动的 Dimension-尺寸
+    3.tableView. separator:分隔符 Style = UITableViewCellSeparatorStyle.None
+    */
 

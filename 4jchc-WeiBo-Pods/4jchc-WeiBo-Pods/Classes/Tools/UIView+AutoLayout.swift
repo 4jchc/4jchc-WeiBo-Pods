@@ -5,7 +5,16 @@
 //  Created by 李南江 on 15/9/1.
 //  Copyright © 2015年 xiaomage. All rights reserved.
 //
+//MARK: - 参考单词
 
+
+/*
+1.Tile--平铺
+2.horizontal--水平的
+3.Vertical--垂直的
+4.Align--排列 Inner--内部的
+
+*/
 import UIKit
 /**
     对齐类型枚举，设置控件相对于父视图的位置
@@ -99,7 +108,7 @@ public enum XMG_AlignType {
 
 extension UIView {
     
-
+    //MARK: - 填充子视图
     /**
     填充子视图
     
@@ -120,7 +129,7 @@ extension UIView {
         
         return cons
     }
-
+    //MARK: - 参照参考视图内部对齐
     /**
     参照参考视图内部对齐
     
@@ -135,7 +144,7 @@ extension UIView {
         
         return xmg_AlignLayout(referView, attributes: type.layoutAttributes(true, isVertical: true), size: size, offset: offset)
     }
-
+    //MARK: - 参照参考视图垂直对齐
     /**
     参照参考视图垂直对齐
     
@@ -150,7 +159,7 @@ extension UIView {
         
         return xmg_AlignLayout(referView, attributes: type.layoutAttributes(false, isVertical: true), size: size, offset: offset)
     }
-    
+    //MARK: - 参照参考视图水平对齐
     /**
     参照参考视图水平对齐
     
@@ -165,7 +174,7 @@ extension UIView {
         
         return xmg_AlignLayout(referView, attributes: type.layoutAttributes(false, isVertical: false), size: size, offset: offset)
     }
-
+    //MARK: - 在当前视图内部水平平铺控件--Tile平铺
     /**
     在当前视图内部水平平铺控件
     
@@ -199,7 +208,7 @@ extension UIView {
         addConstraints(cons)
         return cons
     }
-
+    //MARK: - 在当前视图内部垂直平铺控件
     /**
     在当前视图内部垂直平铺控件
     
@@ -234,7 +243,7 @@ extension UIView {
         
         return cons
     }
-
+    //MARK: - 从约束数组中查找指定 attribute 的约束
     /**
     从约束数组中查找指定 attribute 的约束
     

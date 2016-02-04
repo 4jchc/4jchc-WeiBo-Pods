@@ -43,6 +43,7 @@
 		96EE280D1C5870DD00002CF4 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EE280C1C5870DD00002CF4 /* ProfileTableViewController.swift */; };
 		96F5A5261C63394E0097AFDB /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F5A5251C63394E0097AFDB /* Status.swift */; };
 		96F5A5281C6347530097AFDB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F5A5271C6347530097AFDB /* User.swift */; };
+		96F5A52A1C634DEE0097AFDB /* StatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F5A5291C634DEE0097AFDB /* StatusTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +119,7 @@
 		96EE280C1C5870DD00002CF4 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		96F5A5251C63394E0097AFDB /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		96F5A5271C6347530097AFDB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		96F5A5291C634DEE0097AFDB /* StatusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusTableViewCell.swift; sourceTree = "<group>"; };
 		B2A5ECAEFE23CAE5CF1CA6A1 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8F709DD6E4F69C75817B195 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -300,6 +302,7 @@
 				96B9D17F1C5B5F390037F52B /* QRCode二维码 */,
 				96C7B8191C5B1627000A176C /* Popover */,
 				96EE28061C5870B100002CF4 /* HomeTableViewController.swift */,
+				96F5A5291C634DEE0097AFDB /* StatusTableViewCell.swift */,
 				96F5A5251C63394E0097AFDB /* Status.swift */,
 				96F5A5271C6347530097AFDB /* User.swift */,
 			);
@@ -557,6 +560,7 @@
 				968249831C5E5150004A17FF /* String+Extension.swift in Sources */,
 				96EBA0051C5DFEA100F523A6 /* NetworkTools.swift in Sources */,
 				96A26CEF1C5DDBCE001BC12F /* OAuthViewController.swift in Sources */,
+				96F5A52A1C634DEE0097AFDB /* StatusTableViewCell.swift in Sources */,
 				965947121C5CE5F600BE4617 /* QRCodeCardViewController.swift in Sources */,
 				96812AF11C58AD8E00A2349E /* VisitorView.swift in Sources */,
 				96EE280B1C5870D400002CF4 /* MessageTableViewController.swift in Sources */,
