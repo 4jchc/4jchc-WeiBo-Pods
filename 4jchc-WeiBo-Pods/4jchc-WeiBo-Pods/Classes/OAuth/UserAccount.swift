@@ -41,19 +41,7 @@ class UserAccount: NSObject , NSCoding{
     override init() {
         
     }
-    
-//    init(dict: [String: AnyObject])
-//    {
-//        super.init()
-//        
-//        access_token = dict["access_token"] as? String
-//        // 注意: 如果直接赋值, 不会调用didSet
-//        expires_in = dict["expires_in"] as? NSNumber
-//        uid = dict["uid"] as? String
-//
-//    }
-    
-    
+
     init(dict: [String: AnyObject])
     {
         super.init()

@@ -287,9 +287,15 @@ import UIKit
 
 
     /*
-    获取微博数据
+    //MARK: 1. 获取微博数据
     1.闭包回调的使用--通过闭包将数据传递给调用者
     */
 
+    /*
+    加载用户数据-(字典里嵌套字典)
+    1.KVC--setValuesForKeysWithDictionary内部会调用以下方法
+    setValue(value: AnyObject?, forKey key: String)
+    2.KVC内部调用setValue-拦截--字典--再进行字典转模型
+    */
 
 

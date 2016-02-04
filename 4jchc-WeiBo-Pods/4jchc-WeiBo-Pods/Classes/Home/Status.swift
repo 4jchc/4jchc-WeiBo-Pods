@@ -20,6 +20,9 @@ class Status: NSObject {
     /// 配图数组
     var pic_urls: [[String: AnyObject]]?
     
+    /// 用户信息
+    var user: User?
+    
     /// 加载微博数据
     class func loadStatuses(finished: (models:[Status]?, error:NSError?)->()){
         
@@ -33,7 +36,7 @@ class Status: NSObject {
             // 2.遍历数组, 将字典转换为模型
             let models = dict2Model(JSON!["statuses"] as! [[String: AnyObject]])
 
-            // 2.通过闭包将数据传递给调用者
+            //MARK: - 2.通过闭包将数据传递给调用者
             finished(models: models, error: nil)
                 
             }) { (_, error) -> Void in
@@ -61,9 +64,28 @@ class Status: NSObject {
         setValuesForKeysWithDictionary(dict)
     }
     
+    //MARK:KVC找不到的key要重写这个方法
     override func setValue(value: AnyObject?, forUndefinedKey key: String) {
         
     }
+    
+    //MARK: - KVC-setValuesForKeysWithDictionary内部会调用以下方法
+    override func setValue(value: AnyObject?, forKey key: String) {
+        
+        //        print("key = \(key), value = \(value)")
+        // 1.判断当前是否正在给微博字典中的user字典赋值
+        if "user" == key
+        {
+            // 2.根据user key对应的字典创建一个模型
+            user = User(dict: value as! [String : AnyObject])
+            return
+        }
+        
+        // 3,调用父类方法, 按照系统默认处理
+        super.setValue(value, forKey: key)
+    }
+    
+    
     
     // 打印当前模型
     var properties = ["created_at", "id", "text", "source", "pic_urls"]
