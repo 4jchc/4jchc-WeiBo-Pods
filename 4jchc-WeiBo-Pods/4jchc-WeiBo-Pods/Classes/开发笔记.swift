@@ -277,5 +277,9 @@ import UIKit
     3.NSUserDefaults的使用--iOS7以后就不用调用同步方法了
     */
 
-
+    /*
+    页面跳转
+    1.通知的使用
+    2.A ?? B a有值是a.没值是b
+    */
 

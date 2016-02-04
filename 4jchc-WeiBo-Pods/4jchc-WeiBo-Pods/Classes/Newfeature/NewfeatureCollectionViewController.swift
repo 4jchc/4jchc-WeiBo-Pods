@@ -144,8 +144,11 @@ class NewfeatureCollectionViewController: UICollectionViewController {
     
     func customBtnClick()
     {
-        print("-----")
+        //MARK: - 发出通知
+        // 去主页, 注意点: 企业开发中如果要切换根控制器, 最好都在appdelegate中切换
+        NSNotificationCenter.defaultCenter().postNotificationName(XMGSwitchRootViewControllerKey, object: true)
     }
+    
     private func setupUI(){
         // 1.添加子控件到contentView上
         contentView.addSubview(iconView)

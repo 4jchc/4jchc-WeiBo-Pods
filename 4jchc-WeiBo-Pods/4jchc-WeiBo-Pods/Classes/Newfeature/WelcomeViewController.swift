@@ -50,7 +50,7 @@ class WelcomeViewController: UIViewController {
         // 3.执行动画
         UIView.animateWithDuration(2, delay: 0, usingSpringWithDamping: 9, initialSpringVelocity: 5, options: UIViewAnimationOptions(rawValue: 0), animations: { () -> Void in
             
-            UIView.setAnimationRepeatCount(MAXFLOAT)
+            //UIView.setAnimationRepeatCount(MAXFLOAT)
             // 头像动画
             //self.iconView.layoutIfNeeded()--->这个没有动画效果
             
@@ -65,7 +65,10 @@ class WelcomeViewController: UIViewController {
                 UIView.animateWithDuration( 0.0, delay: 0.0, usingSpringWithDamping: 6, initialSpringVelocity: 4, options: UIViewAnimationOptions(rawValue: 0), animations: { () -> Void in
                     self.messageLabel.alpha = 1.0
                     }, completion: { (_) -> Void in
-                        print("OK")
+                        
+                        //MARK: - 发出通知跳到主页
+                        NSNotificationCenter.defaultCenter().postNotificationName(XMGSwitchRootViewControllerKey, object: true)
+                        print("*****欢迎界面发出通知")
                 })
         }
         
@@ -74,7 +77,7 @@ class WelcomeViewController: UIViewController {
     
     
     
-    // MARK: -懒加载
+    // MARK: - 懒加载
     private lazy var bgIV: UIImageView = UIImageView(image: UIImage(named: "ad_background"))
     //MARK: - 圆形图像
     private lazy var iconView: UIImageView = {

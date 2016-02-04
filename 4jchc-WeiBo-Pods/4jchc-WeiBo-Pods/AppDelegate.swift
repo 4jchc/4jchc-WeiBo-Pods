@@ -8,6 +8,9 @@
 
 import UIKit
 
+// 切换控制器通知
+let XMGSwitchRootViewControllerKey = "XMGSwitchRootViewControllerKey"
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -15,7 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        // 注册一个通知
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "switchRootViewController:", name: XMGSwitchRootViewControllerKey, object: nil)
+        
+        
         print("过期时间\(UserAccount.loadAccount()?.expires_Date)")
         // 设置导航条和工具条的外观
         // 因为外观一旦设置全局有效, 所以应该在程序一进来就设置
@@ -26,12 +33,49 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window?.backgroundColor = UIColor.whiteColor()
         // 2.创建根控制器
-        window?.rootViewController = WelcomeViewController()//NewfeatureCollectionViewController()//MainViewController()
+        window?.rootViewController = defaultContoller()//NewfeatureCollectionViewController()//MainViewController()
         window?.makeKeyAndVisible()
         print(isNewupdate())
         return true
     }
 
+    
+    
+    deinit{
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    func switchRootViewController(notify: NSNotification){
+        //        print(notify.object)
+        if notify.object as! Bool
+        {
+            window?.rootViewController = MainViewController()
+        }else
+        {
+            window?.rootViewController = WelcomeViewController()
+        }
+    }
+    
+    /**
+     :returns: 默认界面
+    */
+    //MARK: - 用于获取默认界面
+    private func defaultContoller() ->UIViewController
+    {
+        // 1.检测用户是否登录
+        if UserAccount.userLogin(){
+            return isNewupdate() ? NewfeatureCollectionViewController() : WelcomeViewController()
+        }
+        return MainViewController()
+    }
+    
+    
+    
+    
+    
+    
+    
+    
     private func isNewupdate() -> Bool{
         // 1.获取当前软件的版本号 --> info.plist
         let currentVersion = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"] as! String
