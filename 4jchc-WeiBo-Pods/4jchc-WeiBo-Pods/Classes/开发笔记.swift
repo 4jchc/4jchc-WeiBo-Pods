@@ -352,13 +352,16 @@ import UIKit
 
 
     /*
-    缓存行高
+    //MARK: 10.缓存行高
     1.利用字典作为容器. key就是微博的id, 值就是对应微博的行高
     2.内存警告清除字典 removeAll()
     3.预估行高，可以提高性能
     */
 
-
+    /*
+    代码重构
+    1.新建-顶部view-中部lable-UICollectionView-底部view类
+    */
 
 
 

@@ -13,6 +13,9 @@
 		963097F81C61D39B0073B432 /* NewfeatureCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963097F71C61D39B0073B432 /* NewfeatureCollectionViewController.swift */; };
 		964B20A81C645F41001BABF2 /* NSDate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964B20A71C645F41001BABF2 /* NSDate+Extension.swift */; };
 		964B20AA1C647642001BABF2 /* UIKit+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964B20A91C647642001BABF2 /* UIKit+Extension.swift */; };
+		964B20AC1C64EDE9001BABF2 /* StatusPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964B20AB1C64EDE9001BABF2 /* StatusPictureView.swift */; };
+		964B20AE1C64EE73001BABF2 /* StatusTableViewTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964B20AD1C64EE73001BABF2 /* StatusTableViewTopView.swift */; };
+		964B20B01C64EE94001BABF2 /* StatusTableViewBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964B20AF1C64EE94001BABF2 /* StatusTableViewBottomView.swift */; };
 		9653C62F1C5882EB000FAF68 /* DiscoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9653C62E1C5882EB000FAF68 /* DiscoverTableViewController.swift */; };
 		9653C6331C588ACD000FAF68 /* MainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = 9653C6311C588ACD000FAF68 /* MainVCSettings.json */; };
 		9653C6341C588ACD000FAF68 /* NullViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9653C6321C588ACD000FAF68 /* NullViewController.swift */; };
@@ -87,6 +90,9 @@
 		963097F71C61D39B0073B432 /* NewfeatureCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewfeatureCollectionViewController.swift; sourceTree = "<group>"; };
 		964B20A71C645F41001BABF2 /* NSDate+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Extension.swift"; sourceTree = "<group>"; };
 		964B20A91C647642001BABF2 /* UIKit+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIKit+Extension.swift"; sourceTree = "<group>"; };
+		964B20AB1C64EDE9001BABF2 /* StatusPictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusPictureView.swift; sourceTree = "<group>"; };
+		964B20AD1C64EE73001BABF2 /* StatusTableViewTopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusTableViewTopView.swift; sourceTree = "<group>"; };
+		964B20AF1C64EE94001BABF2 /* StatusTableViewBottomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusTableViewBottomView.swift; sourceTree = "<group>"; };
 		9653C62E1C5882EB000FAF68 /* DiscoverTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverTableViewController.swift; sourceTree = "<group>"; };
 		9653C6311C588ACD000FAF68 /* MainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MainVCSettings.json; sourceTree = "<group>"; };
 		9653C6321C588ACD000FAF68 /* NullViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NullViewController.swift; sourceTree = "<group>"; };
@@ -311,6 +317,9 @@
 				96C7B8191C5B1627000A176C /* Popover */,
 				96EE28061C5870B100002CF4 /* HomeTableViewController.swift */,
 				96F5A5291C634DEE0097AFDB /* StatusTableViewCell.swift */,
+				964B20AB1C64EDE9001BABF2 /* StatusPictureView.swift */,
+				964B20AD1C64EE73001BABF2 /* StatusTableViewTopView.swift */,
+				964B20AF1C64EE94001BABF2 /* StatusTableViewBottomView.swift */,
 				96F5A5251C63394E0097AFDB /* Status.swift */,
 				96F5A5271C6347530097AFDB /* User.swift */,
 			);
@@ -556,8 +565,10 @@
 			files = (
 				96F5A5281C6347530097AFDB /* User.swift in Sources */,
 				96EE280D1C5870DD00002CF4 /* ProfileTableViewController.swift in Sources */,
+				964B20AE1C64EE73001BABF2 /* StatusTableViewTopView.swift in Sources */,
 				96F5A5261C63394E0097AFDB /* Status.swift in Sources */,
 				96EE28051C58709600002CF4 /* MainViewController.swift in Sources */,
+				964B20B01C64EE94001BABF2 /* StatusTableViewBottomView.swift in Sources */,
 				96812AEF1C58AC5F00A2349E /* BaseTableViewController.swift in Sources */,
 				96B9D1811C5B5F800037F52B /* QRCodeViewController.swift in Sources */,
 				96B040901C57233E009DBC56 /* AppDelegate.swift in Sources */,
@@ -567,6 +578,7 @@
 				96B9D17E1C5B49C60037F52B /* PopoverAnimator.swift in Sources */,
 				96812AF51C58B23200A2349E /* 开发笔记.swift in Sources */,
 				96F5A52E1C6395670097AFDB /* UILabel +Extension.swift in Sources */,
+				964B20AC1C64EDE9001BABF2 /* StatusPictureView.swift in Sources */,
 				9663B5881C623101004D8775 /* WelcomeViewController.swift in Sources */,
 				96C7B8211C5B2BB6000A176C /* PopoverViewController.swift in Sources */,
 				96812AF31C58AE0200A2349E /* UIView+AutoLayout.swift in Sources */,
