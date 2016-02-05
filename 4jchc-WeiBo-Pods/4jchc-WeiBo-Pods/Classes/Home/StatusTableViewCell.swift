@@ -14,9 +14,7 @@ class StatusTableViewCell: UITableViewCell {
         didSet{
             //            textLabel?.text = status?.text
             nameLabel.text = status?.user?.name
-            
-            timeLabel.text = "刚刚"
-            sourceLabel.text = "来自: 小霸王学习机"
+
             contentLabel.text = status?.text
             // 设置用户头像
             /*

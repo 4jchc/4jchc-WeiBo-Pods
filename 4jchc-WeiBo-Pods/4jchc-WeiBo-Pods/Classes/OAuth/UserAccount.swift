@@ -18,7 +18,7 @@ class UserAccount: NSObject , NSCoding{
         didSet{
             // 根据过期的秒数, 生成真正地过期时间
             expires_Date = NSDate(timeIntervalSinceNow: expires_in!.doubleValue)
-            print(expires_Date)
+            printLog(expires_Date)
         }
     }
     
@@ -58,7 +58,7 @@ class UserAccount: NSObject , NSCoding{
     //MARK:KVC找不到的key要重写这个方法
     override func setValue(value: AnyObject?, forUndefinedKey key: String) {
         
-        print(key)
+        printLog(key)
     }
     
     
@@ -100,7 +100,7 @@ class UserAccount: NSObject , NSCoding{
                  finished(account: nil, error: nil)
             }) { (_, error) -> Void in
                 
-                print(error)
+                printLog(error)
                 
                 finished(account: nil, error: error)
         }
@@ -124,7 +124,7 @@ class UserAccount: NSObject , NSCoding{
     func saveAccount()
     {
         NSKeyedArchiver.archiveRootObject(self, toFile: "account.plist".cachePath())
-        print("*cachePath****\("account.plist".cachePath())")
+        printLog("*cachePath****\("account.plist".cachePath())")
     }
     /// 加载授权模型
     static var account: UserAccount?
@@ -133,7 +133,7 @@ class UserAccount: NSObject , NSCoding{
         // 1.判断是否已经加载过
         if account != nil
         {
-            print("***account**\(account)")
+            printLog("***account**\(account!)")
             return account
             
         }

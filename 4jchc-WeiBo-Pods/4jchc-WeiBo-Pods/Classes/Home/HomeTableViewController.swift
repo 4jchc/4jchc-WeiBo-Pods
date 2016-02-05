@@ -113,7 +113,7 @@ class HomeTableViewController: BaseTableViewController {
     
     func leftItemClick()
     {
-        print(__FUNCTION__)
+        printLog(__FUNCTION__)
     }
     
     func rightItemClick()

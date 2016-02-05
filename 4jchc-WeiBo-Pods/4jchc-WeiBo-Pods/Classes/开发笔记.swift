@@ -325,8 +325,20 @@ import UIKit
     */
 
     /*
-    设置微博时间
+    //MARK: 7.设置微博时间
     1.NS Calendar-日历的使用
     */
 
+    /*
+    缓存图片
+    1.图片异步下载-使用GCD建立一个group dispatch_group_create()
+    进入当前组dispatch_group_enter(group)  离开当前组 dispatch_group_leave(group)
 
+    2.当所有图片都下载完毕group再通过闭包通知调用者
+    dispatch_group_notify通知(group, dispatch_get_main_queue()) { () -> Void in
+    能够来到这个地方, 一定是所有图片都下载完毕---在调用闭包
+    finished(models: list, error: nil)
+    
+    3.闭包回调嵌套闭包回调
+    4.自定义在DEBUG下的打印print
+    */

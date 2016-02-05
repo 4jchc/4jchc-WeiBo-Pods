@@ -72,7 +72,7 @@ extension OAuthViewController: UIWebViewDelegate
         
         取消授权: http://www.baidu.com//?error_uri=%2Foauth2%2Fauthorize&error=access_denied&error_description=user%20denied%20your%20request.&error_code=21330
         */
-        print("request.URL?.absoluteString----\(request.URL?.absoluteString)")
+        printLog("request.URL?.absoluteString----\(request.URL?.absoluteString)")
         
         // 1.判断是否是授权回调页面, 如果不是就继续加载
         let urlStr = request.URL!.absoluteString
@@ -87,7 +87,7 @@ extension OAuthViewController: UIWebViewDelegate
         if request.URL!.query!.hasPrefix(codeStr)
         {
             // 授权成功
-            print("授权成功")
+            printLog("授权成功")
             // 取出已经授权的RequestToken
             // codeStr.endIndex是拿到code=最后的位置
             let code = request.URL!.query?.substringFromIndex(codeStr.endIndex)
@@ -97,7 +97,7 @@ extension OAuthViewController: UIWebViewDelegate
         }else
         {
             // 取消授权
-            print("取消授权")
+            printLog("取消授权")
             // 关闭界面
             close()
         }
@@ -129,9 +129,9 @@ extension OAuthViewController: UIWebViewDelegate
                 /*
                 do{
                 // 验证expires_in不是字符串Serialization
-                let data = try NSJSONSerialization.dataWithJSONObject(JSON!, options: NSJSONWritingOptions.PrettyPrinted)
+                let data = try NSJSONSerialization.dataWithJSONObject(JSON!, options: NSJSONWritingOptions.PrettyprintLoged)
                 let str =  NSString(data: data, encoding: NSUTF8StringEncoding)
-                print(str)
+                printLog(str)
                 
                 }catch{
                 
@@ -178,7 +178,7 @@ extension OAuthViewController: UIWebViewDelegate
                 
                 
             }) { (_, error) -> Void in
-                print(error)
+                printLog(error)
         }
 
     }

@@ -75,11 +75,11 @@ class NewfeatureCollectionViewController: UICollectionViewController {
     override func collectionView(collectionView: UICollectionView, didEndDisplayingCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
         
         // 传递给我们的是上一页的索引
-        //        print(indexPath)
+        //        printLog(indexPath)
         
         // 1.拿到当前显示的cell对应的索引
         let path = collectionView.indexPathsForVisibleItems().last!
-        print(path)
+        printLog(path)
         if path.item == (pageCount - 1)
         {
             // 2.拿到当前索引对应的cell

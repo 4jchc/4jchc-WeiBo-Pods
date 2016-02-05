@@ -68,7 +68,7 @@ class WelcomeViewController: UIViewController {
                         
                         //MARK: - 发出通知跳到主页
                         NSNotificationCenter.defaultCenter().postNotificationName(XMGSwitchRootViewControllerKey, object: true)
-                        print("*****欢迎界面发出通知")
+                        printLog("*****欢迎界面发出通知")
                 })
         }
         

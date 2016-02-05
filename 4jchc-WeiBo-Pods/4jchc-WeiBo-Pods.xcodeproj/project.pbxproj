@@ -12,6 +12,7 @@
 		9621911E1C59FA1200C3CE35 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9621911D1C59FA1200C3CE35 /* UIBarButtonItem+Extension.swift */; };
 		963097F81C61D39B0073B432 /* NewfeatureCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963097F71C61D39B0073B432 /* NewfeatureCollectionViewController.swift */; };
 		964B20A81C645F41001BABF2 /* NSDate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964B20A71C645F41001BABF2 /* NSDate+Extension.swift */; };
+		964B20AA1C647642001BABF2 /* UIKit+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964B20A91C647642001BABF2 /* UIKit+Extension.swift */; };
 		9653C62F1C5882EB000FAF68 /* DiscoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9653C62E1C5882EB000FAF68 /* DiscoverTableViewController.swift */; };
 		9653C6331C588ACD000FAF68 /* MainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = 9653C6311C588ACD000FAF68 /* MainVCSettings.json */; };
 		9653C6341C588ACD000FAF68 /* NullViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9653C6321C588ACD000FAF68 /* NullViewController.swift */; };
@@ -85,6 +86,7 @@
 		9621911D1C59FA1200C3CE35 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
 		963097F71C61D39B0073B432 /* NewfeatureCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewfeatureCollectionViewController.swift; sourceTree = "<group>"; };
 		964B20A71C645F41001BABF2 /* NSDate+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Extension.swift"; sourceTree = "<group>"; };
+		964B20A91C647642001BABF2 /* UIKit+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIKit+Extension.swift"; sourceTree = "<group>"; };
 		9653C62E1C5882EB000FAF68 /* DiscoverTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverTableViewController.swift; sourceTree = "<group>"; };
 		9653C6311C588ACD000FAF68 /* MainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MainVCSettings.json; sourceTree = "<group>"; };
 		9653C6321C588ACD000FAF68 /* NullViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NullViewController.swift; sourceTree = "<group>"; };
@@ -343,6 +345,7 @@
 		96EE27FE1C586FAD00002CF4 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				964B20A91C647642001BABF2 /* UIKit+Extension.swift */,
 				964B20A71C645F41001BABF2 /* NSDate+Extension.swift */,
 				96F5A52B1C63952E0097AFDB /* UIButton+Extention.swift */,
 				96F5A52D1C6395670097AFDB /* UILabel +Extension.swift */,
@@ -560,6 +563,7 @@
 				96B040901C57233E009DBC56 /* AppDelegate.swift in Sources */,
 				9621911E1C59FA1200C3CE35 /* UIBarButtonItem+Extension.swift in Sources */,
 				9653C62F1C5882EB000FAF68 /* DiscoverTableViewController.swift in Sources */,
+				964B20AA1C647642001BABF2 /* UIKit+Extension.swift in Sources */,
 				96B9D17E1C5B49C60037F52B /* PopoverAnimator.swift in Sources */,
 				96812AF51C58B23200A2349E /* 开发笔记.swift in Sources */,
 				96F5A52E1C6395670097AFDB /* UILabel +Extension.swift in Sources */,
@@ -731,6 +735,7 @@
 				INFOPLIST_FILE = "4jchc-WeiBo-Pods/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				"OTHER_SWIFT_FLAGS[arch=*]" = "-D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = jiangjin;
 				PRODUCT_NAME = Fjchc;
 				PROVISIONING_PROFILE = "";
