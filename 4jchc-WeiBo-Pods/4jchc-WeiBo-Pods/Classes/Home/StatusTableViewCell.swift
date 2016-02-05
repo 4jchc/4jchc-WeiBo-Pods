@@ -36,6 +36,8 @@ class StatusTableViewCell: UITableViewCell {
             vipView.image = status?.user?.mbrankImage
             // 设置来源
             sourceLabel.text = status?.source
+            // 设置时间
+            timeLabel.text = status?.created_at
         }
     }
     
