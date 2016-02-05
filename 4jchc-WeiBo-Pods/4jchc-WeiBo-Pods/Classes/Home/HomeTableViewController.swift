@@ -8,8 +8,9 @@
 
 import UIKit
 let XMGHomeReuseIdentifier = "XMGHomeReuseIdentifier"
-class HomeTableViewController: BaseTableViewController {
 
+class HomeTableViewController: BaseTableViewController {
+    
     /// 保存微博数组
     var statuses: [Status]?{
         didSet{
@@ -17,10 +18,10 @@ class HomeTableViewController: BaseTableViewController {
             tableView.reloadData()
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // 1.如果没有登录, 就设置未登录界面的信息
         if !userLogin
         {
@@ -55,9 +56,9 @@ class HomeTableViewController: BaseTableViewController {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
-
-     //MARK: - 获取微博数据
-     ///  获取微博数据
+    
+    //MARK: - 获取微博数据
+    ///  获取微博数据
     private func loadData(){
         Status.loadStatuses { (models, error) -> () in
             
@@ -73,7 +74,7 @@ class HomeTableViewController: BaseTableViewController {
     
     ///修改标题按钮的状态
     func change(){
- 
+        
         // 1.修改标题按钮的状态
         let titleBtn = navigationItem.titleView as! TitleButton
         titleBtn.selected = !titleBtn.selected
@@ -81,7 +82,7 @@ class HomeTableViewController: BaseTableViewController {
     
     
     private func setupNav(){
-
+        
         
         navigationItem.leftBarButtonItem = UIBarButtonItem.creatBarButtonItem("navigationbar_friendattention", target: self, action: "leftItemClick")
         //navigationItem.rightBarButtonItem = UIBarButtonItem.creatBarButtonItem("navigationbar_pop", target: self, action: "rightItemClick")
@@ -96,7 +97,7 @@ class HomeTableViewController: BaseTableViewController {
     
     func titleBtnClick(btn: TitleButton)
     {
-
+        
         
         // 2.弹出菜单
         let sb = UIStoryboard(name: "PopoverViewController", bundle: nil)
@@ -122,12 +123,12 @@ class HomeTableViewController: BaseTableViewController {
     
     func rightItemClick()
     {
-
+        
         let sb = UIStoryboard(name: "QRCodeViewController", bundle: nil)
         let vc = sb.instantiateInitialViewController()
         presentViewController(vc!, animated: true, completion: nil)
     }
-
+    
     // MARK: - 懒加载封装转场代理
     // 一定要定义一个属性来保存自定义转场对象, 否则会报错
     private lazy var popverAnimator:PopoverAnimator = {
@@ -135,16 +136,28 @@ class HomeTableViewController: BaseTableViewController {
         pa.presentFrame = CGRect(x: 100, y: 56, width: 200, height: 350)
         return pa
     }()
+    
+    // MARK: 微博行高的缓存, 利用字典作为容器. key就是微博的id, 值就是对应微博的行高
+    var rowCache: [Int: CGFloat] = [Int: CGFloat]()
+    //MARK: 内存警告
+    override func didReceiveMemoryWarning() {
+        // 清空缓存
+        rowCache.removeAll()
+    }
+    
+    
 }
 
-extension HomeTableViewController
-{
+
+extension HomeTableViewController{
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return statuses?.count ?? 0
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-
+        
         // 1.获取cell
         let cell = tableView.dequeueReusableCellWithIdentifier(XMGHomeReuseIdentifier, forIndexPath: indexPath) as! StatusTableViewCell
         // 2.设置数据
@@ -155,6 +168,41 @@ extension HomeTableViewController
         // 3.返回cell
         return cell
     }
+    
+    // 返回行高
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        // 1.取出对应行的模型
+        let status = statuses![indexPath.row]
+        
+        // 2.判断缓存中有没有
+        if let height = rowCache[status.id]
+        {
+            printLog("从缓存中获取")
+            return height
+        }
+        
+        // 3.拿到cell
+        let cell = tableView.dequeueReusableCellWithIdentifier(XMGHomeReuseIdentifier) as! StatusTableViewCell
+        // 注意点:不要使用以下方法获取, 在某些版本或者模拟器会有bug
+        //        tableView.dequeueReusableCellWithIdentifier(<#T##identifier: String##String#>, forIndexPath: <#T##NSIndexPath#>)
+        
+        // 4.拿到对应行的行高
+        let rowHeight = cell.rowHeight(status)
+        
+        // 5.缓存行高
+        rowCache[status.id] = rowHeight
+        printLog("重新计算")
+        
+        // 6.返回行高
+        return rowHeight
+    }
+    
+    // 预估行高，可以提高性能
+    override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 300
+    }
+    
+    
 }
 
 

@@ -344,12 +344,19 @@ import UIKit
     */
 
     /*
-    计算配图尺寸 & 显示配图
+    //MARK: 9.计算配图尺寸 & 显示配图
     1.元组的使用.有2个返回值
     2.获取自动布局Constraint约束的属性
     --pictureView.xmg_Constraint(cons, attribute: NSLayoutAttribute.Width)
     */
 
+
+    /*
+    缓存行高
+    1.利用字典作为容器. key就是微博的id, 值就是对应微博的行高
+    2.内存警告清除字典 removeAll()
+    3.预估行高，可以提高性能
+    */
 
 
 
