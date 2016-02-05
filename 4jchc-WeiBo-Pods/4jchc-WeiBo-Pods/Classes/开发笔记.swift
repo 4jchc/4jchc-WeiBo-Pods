@@ -330,7 +330,7 @@ import UIKit
     */
 
     /*
-    缓存图片
+    //MARK: 8.缓存图片
     1.图片异步下载-使用GCD建立一个group dispatch_group_create()
     进入当前组dispatch_group_enter(group)  离开当前组 dispatch_group_leave(group)
 
@@ -342,3 +342,22 @@ import UIKit
     3.闭包回调嵌套闭包回调
     4.自定义在DEBUG下的打印print
     */
+
+    /*
+    计算配图尺寸 & 显示配图
+    1.元组的使用.有2个返回值
+    2.获取自动布局Constraint约束的属性
+    --pictureView.xmg_Constraint(cons, attribute: NSLayoutAttribute.Width)
+    */
+
+
+
+
+
+
+
+
+
+
+
+

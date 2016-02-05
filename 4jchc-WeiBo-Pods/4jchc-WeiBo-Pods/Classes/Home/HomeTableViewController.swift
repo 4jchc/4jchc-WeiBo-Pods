@@ -39,8 +39,12 @@ class HomeTableViewController: BaseTableViewController {
         tableView.registerClass(StatusTableViewCell.self, forCellReuseIdentifier: XMGHomeReuseIdentifier)
         //        tableView.rowHeight = 200 estimated--估计的 RowHeight
         tableView.estimatedRowHeight = 200
-        tableView.rowHeight = UITableViewAutomaticDimension
+        //tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = 300
         tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        
+        
+        
         // 4.加载微博数据
         loadData()
     }
