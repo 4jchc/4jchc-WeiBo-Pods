@@ -32,6 +32,10 @@ class StatusTableViewCell: UITableViewCell {
             }
             // 设置认证图标
             verifiedView.image = status?.user?.verifiedImage
+            // 设置会员等级图标
+            vipView.image = status?.user?.mbrankImage
+            // 设置来源
+            sourceLabel.text = status?.source
         }
     }
     

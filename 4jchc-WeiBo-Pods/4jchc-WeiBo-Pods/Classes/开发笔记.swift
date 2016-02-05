@@ -313,6 +313,13 @@ import UIKit
     */
 
     /*
-    设置--用户头像MVC--认证图标
+    //MARK: 5.设置--用户头像MVC--认证图标
     1.view用来展示数据Model用来加载数据在didSet方法中设置接收的值
+    */
+
+
+    /*
+    设置--会员等级图标--微博来源
+    1.KVC基本数据类型要先赋值
+    2.字符串的截取 rangeOfString获取开始截取的位置 截取位置substringWithRange
     */

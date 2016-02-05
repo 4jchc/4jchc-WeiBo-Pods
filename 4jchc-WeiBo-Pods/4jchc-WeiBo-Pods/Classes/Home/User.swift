@@ -25,7 +25,7 @@ class User: NSObject {
             }
         }
     }
-    /// 用于保存用户头像的URL
+    //MARK: - 用于保存用户头像的URL
     var imageURL: NSURL?
     
 
@@ -47,8 +47,24 @@ class User: NSObject {
             }
         }
     }
-    /// 保存当前用户的认证图片
+    //MARK: -  保存当前用户的认证图片
     var verifiedImage: UIImage?
+    
+    
+    
+    /// 会员等级
+    var mbrank: Int = 0 // NSNumber?
+        {
+        didSet{
+            if mbrank > 0 && mbrank < 7
+            {
+                mbrankImage = UIImage(named: "common_icon_membership_level\(mbrank)")
+            }
+        }
+    }
+    //MARK: - 保存当前用户的会员等级图片
+    var mbrankImage: UIImage?
+    
     
     
     // 字典转模型
