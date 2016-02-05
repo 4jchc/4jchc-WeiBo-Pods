@@ -10,8 +10,7 @@ import UIKit
 
 class StatusTableViewCell: UITableViewCell {
     
-    var status: Status?
-        {
+    var status: Status?  {
         didSet{
             //            textLabel?.text = status?.text
             nameLabel.text = status?.user?.name
@@ -19,6 +18,20 @@ class StatusTableViewCell: UITableViewCell {
             timeLabel.text = "刚刚"
             sourceLabel.text = "来自: 小霸王学习机"
             contentLabel.text = status?.text
+            // 设置用户头像
+            /*
+            if let iconURL = status?.user?.profile_image_url
+            {
+            let url = NSURL(string: iconURL)
+            iconView.sd_setImageWithURL(url)
+            }
+            */
+            if let url = status?.user?.imageURL
+            {
+                iconView.sd_setImageWithURL(url)
+            }
+            // 设置认证图标
+            verifiedView.image = status?.user?.verifiedImage
         }
     }
     
@@ -75,7 +88,7 @@ class StatusTableViewCell: UITableViewCell {
         return iv
     }()
     /// 认证图标
-    private lazy var verifiedView: UIImageView = UIImageView(image: UIImage(named: "avatar_enterprise_vip"))
+    private lazy var verifiedView: UIImageView = UIImageView(image: UIImage(named: ""))
     
     /// 昵称
     private lazy var nameLabel: UILabel = UILabel.createLabel(UIColor.darkGrayColor(), fontSize: 14)

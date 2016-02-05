@@ -308,6 +308,11 @@ import UIKit
 
 
     /*
-    完善界面代码.抽取lable和uibutton
+    //MARK: 4. 完善界面代码.抽取lable和uibutton
     1.UILabel纯代码自动布局要设置(自动布局的宽度)-preferred-优先的 Max-最大 LayoutWidth不然不会换行
+    */
+
+    /*
+    设置--用户头像MVC--认证图标
+    1.view用来展示数据Model用来加载数据在didSet方法中设置接收的值
     */
