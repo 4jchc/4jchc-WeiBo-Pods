@@ -37,7 +37,7 @@ class HomeTableViewController: BaseTableViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "change", name: XMGPopoverAnimatorWilldismiss, object: nil)
         
         // 注册一个cell
-        tableView.registerClass(StatusTableViewCell.self, forCellReuseIdentifier: XMGHomeReuseIdentifier)
+        tableView.registerClass(StatusNormalTableViewCell.self, forCellReuseIdentifier: XMGHomeReuseIdentifier)
         //        tableView.rowHeight = 200 estimated--估计的 RowHeight
         tableView.estimatedRowHeight = 200
         //tableView.rowHeight = UITableViewAutomaticDimension

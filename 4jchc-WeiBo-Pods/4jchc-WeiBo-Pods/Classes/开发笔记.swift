@@ -359,11 +359,18 @@ import UIKit
     */
 
     /*
-    代码重构
+    //MARK: 11.代码重构
     1.新建-顶部view-中部lable-UICollectionView-底部view类
     */
 
+//MARK: - 💗注释第五天
 
+    /*
+    布局转发微博
+    1.cell的继承开发,相同的放在父类里.不同的放在子类
+    2.记录picture-cell的顶部约束.判断正文与底部的间距
+    3.测试只要修改注册cell时的类型
+    */
 
 
 

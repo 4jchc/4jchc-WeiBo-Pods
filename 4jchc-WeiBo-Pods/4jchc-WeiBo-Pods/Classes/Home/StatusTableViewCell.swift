@@ -18,6 +18,8 @@ class StatusTableViewCell: UITableViewCell {
     var pictureWidthCons: NSLayoutConstraint?
     /// 保存配图的高度约束
     var pictureHeightCons: NSLayoutConstraint?
+    /// 保存配图的顶部约束
+    var pictureTopCons: NSLayoutConstraint?
     
     var status: Status?
         {
@@ -37,7 +39,7 @@ class StatusTableViewCell: UITableViewCell {
             // 1.2设置配图的尺寸
             pictureWidthCons?.constant = size.width
             pictureHeightCons?.constant = size.height
-            
+            pictureTopCons?.constant = size.height == 0 ? 0 : 10
         }
     }
     
@@ -49,7 +51,7 @@ class StatusTableViewCell: UITableViewCell {
         setupUI()
     }
     
-    private func setupUI()
+    func setupUI()
     {
         // 1.添加子控件
         contentView.addSubview(topView)
@@ -63,18 +65,13 @@ class StatusTableViewCell: UITableViewCell {
         
         contentLabel.xmg_AlignVertical(type: XMG_AlignType.BottomLeft, referView: topView, size: nil, offset: CGPoint(x: 10, y: 10))
         
-        let cons = pictureView.xmg_AlignVertical(type: XMG_AlignType.BottomLeft, referView: contentLabel, size: CGSizeZero, offset: CGPoint(x: 0, y: 10))
-        
-        pictureWidthCons = pictureView.xmg_Constraint(cons, attribute: NSLayoutAttribute.Width)
-        pictureHeightCons =  pictureView.xmg_Constraint(cons, attribute: NSLayoutAttribute.Height)
-        
         footerView.xmg_AlignVertical(type: XMG_AlignType.BottomLeft, referView: pictureView, size: CGSize(width: width, height: 44), offset: CGPoint(x: -10, y: 10))
         
     }
     
-    
-    //MARK: - 用于获取行高
-    ///  用于获取行高
+    /**
+     用于获取行号
+     */
     func rowHeight(status: Status) -> CGFloat
     {
         // 1.为了能够调用didSet, 计算配图的高度
@@ -86,12 +83,13 @@ class StatusTableViewCell: UITableViewCell {
         // 3.返回底部视图最大的Y值
         return CGRectGetMaxY(footerView.frame)
     }
+    
     // MARK: - 懒加载
     /// 顶部视图
     private lazy var topView: StatusTableViewTopView = StatusTableViewTopView()
     
-    // MARK: 正文
-    private lazy var contentLabel: UILabel =
+    /// 正文
+    lazy var contentLabel: UILabel =
     {
         let label = UILabel.createLabel(UIColor.darkGrayColor(), fontSize: 15)
         label.numberOfLines = 0
@@ -99,17 +97,16 @@ class StatusTableViewCell: UITableViewCell {
         return label
     }()
     
-    // MARK: 配图
-    private lazy var pictureView: StatusPictureView = StatusPictureView()
+    /// 配图
+    lazy var pictureView: StatusPictureView = StatusPictureView()
     
-    // MARK: 底部工具条
-    private lazy var footerView: StatusTableViewBottomView = StatusTableViewBottomView()
+    /// 底部工具条
+    lazy var footerView: StatusTableViewBottomView = StatusTableViewBottomView()
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
-
 
 
 
