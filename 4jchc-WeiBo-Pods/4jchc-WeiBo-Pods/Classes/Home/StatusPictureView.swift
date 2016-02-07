@@ -10,6 +10,7 @@ import UIKit
 import SDWebImage
 
 class StatusPictureView: UICollectionView {
+    
     var status: Status?
         {
         didSet{

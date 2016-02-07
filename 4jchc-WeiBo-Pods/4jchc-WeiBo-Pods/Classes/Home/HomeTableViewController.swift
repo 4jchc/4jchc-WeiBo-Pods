@@ -37,13 +37,17 @@ class HomeTableViewController: BaseTableViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "change", name: XMGPopoverAnimatorWilldismiss, object: nil)
         
         // 注册一个cell
-        tableView.registerClass(StatusNormalTableViewCell.self, forCellReuseIdentifier: XMGHomeReuseIdentifier)
+        //tableView.registerClass(StatusNormalTableViewCell.self, forCellReuseIdentifier: XMGHomeReuseIdentifier)
         //        tableView.rowHeight = 200 estimated--估计的 RowHeight
+        
+        // 注册两个cell
+        tableView.registerClass(StatusNormalTableViewCell.self, forCellReuseIdentifier: StatusTableViewCellIdentifier.NormalCell.rawValue)
+        tableView.registerClass(StatusForwardTableViewCell.self, forCellReuseIdentifier: StatusTableViewCellIdentifier.ForwardCell.rawValue)
+        
         tableView.estimatedRowHeight = 200
-        //tableView.rowHeight = UITableViewAutomaticDimension
+        //tableView.rowHeight = UITableView Automatic Dimension尺寸
         tableView.rowHeight = 300
         tableView.separatorStyle = UITableViewCellSeparatorStyle.None
-        
         
         
         // 4.加载微博数据
@@ -159,9 +163,12 @@ extension HomeTableViewController{
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         // 1.获取cell
-        let cell = tableView.dequeueReusableCellWithIdentifier(XMGHomeReuseIdentifier, forIndexPath: indexPath) as! StatusTableViewCell
+        //let cell = tableView.dequeueReusableCellWithIdentifier(XMGHomeReuseIdentifier, forIndexPath: indexPath) as! StatusTableViewCell
+
         // 2.设置数据
         let status = statuses![indexPath.row]
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier(StatusTableViewCellIdentifier.cellID(status)) as! StatusTableViewCell
         // cell.textLabel?.text = status.text
         cell.status = status
         
@@ -182,7 +189,8 @@ extension HomeTableViewController{
         }
         
         // 3.拿到cell
-        let cell = tableView.dequeueReusableCellWithIdentifier(XMGHomeReuseIdentifier) as! StatusTableViewCell
+        //let cell = tableView.dequeueReusableCellWithIdentifier(XMGHomeReuseIdentifier) as! StatusTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(StatusTableViewCellIdentifier.cellID(status)) as! StatusTableViewCell
         // 注意点:不要使用以下方法获取, 在某些版本或者模拟器会有bug
         //        tableView.dequeueReusableCellWithIdentifier(<#T##identifier: String##String#>, forIndexPath: <#T##NSIndexPath#>)
         

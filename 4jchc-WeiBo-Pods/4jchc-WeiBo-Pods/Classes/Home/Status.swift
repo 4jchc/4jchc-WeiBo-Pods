@@ -75,14 +75,19 @@ class Status: NSObject {
     var storedPicURLS: [NSURL]?
     
     
-    
-    
-    
-    
-    
     /// 用户信息
     var user: User?
     
+    /// 转发微博
+    var retweeted_status: Status?
+    
+    // 如果有转发, 原创就没有配图
+    //MARK: 定义一个 计算属性, 用于返回原创获取转发配图的URL数组
+    var pictureURLS:[NSURL]?{
+        
+            return retweeted_status != nil ? retweeted_status?.storedPicURLS : storedPicURLS
+    }
+   
     /// 加载微博数据
     class func loadStatuses(finished: (models:[Status]?, error:NSError?)->()){
         
@@ -120,7 +125,17 @@ class Status: NSObject {
         // 1.缓存图片
         for status in list {
             
-            for url in status.storedPicURLS!{
+            // 1.1判断当前微博是否有配图, 如果没有就直接跳过
+            //            if status.storedPicURLS == nil{
+            //                continue
+            //            }
+            // Swift2.0新语法, 如果条件为nil, 那么就会执行else后面的语句
+            //            status.storedPicURLS = nil
+            guard let _ = status.pictureURLS else //storedPicURLS
+            {
+                continue
+            } //MARK: 动态判断是转发还是原创--->来加载URL数组
+            for url in status.pictureURLS!{//storedPicURLS
                 
                 // 将当前的下载操作添加到组中
                 dispatch_group_enter(group)
@@ -179,7 +194,12 @@ class Status: NSObject {
             user = User(dict: value as! [String : AnyObject])
             return
         }
-        
+        // 2.判断是否是转发微博, 如果是就自己处理
+        if "retweeted_status" == key
+        {
+            retweeted_status = Status(dict: value as! [String : AnyObject])
+            return
+        }
         // 3,调用父类方法, 按照系统默认处理
         super.setValue(value, forKey: key)
     }

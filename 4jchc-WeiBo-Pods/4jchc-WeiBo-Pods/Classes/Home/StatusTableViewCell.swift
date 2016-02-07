@@ -12,6 +12,27 @@ import UIKit
 import SDWebImage
 
 let XMGPictureViewCellReuseIdentifier = "XMGPictureViewCellReuseIdentifier"
+
+//MARK: - 用枚举保存cell的重用标示
+/**
+  用枚举保存cell的重用标示
+ - NormalCell:  原创微博的重用标识
+ - ForwardCell: 转发微博的重用标识
+ */
+enum StatusTableViewCellIdentifier: String
+{
+    case NormalCell = "NormalCell"
+    case ForwardCell = "ForwardCell"
+    
+    // 如果在枚举中利用static修饰一个方法 , 相当于类中的class修饰方法
+    // 如果调用枚举值的rawValue, 那么意味着拿到枚举对应的原始值
+    static func cellID(status: Status) ->String
+    {
+        return status.retweeted_status != nil ? ForwardCell.rawValue : NormalCell.rawValue
+    }
+}
+
+
 class StatusTableViewCell: UITableViewCell {
     
     /// 保存配图的宽度约束
@@ -31,8 +52,12 @@ class StatusTableViewCell: UITableViewCell {
             // 设置正文
             contentLabel.text = status?.text
             
+            
             // 设置配图的尺寸
-            pictureView.status = status
+            //pictureView.status = status 不设置判断会转发的 会没有配图
+            
+            // 设置配图的尺寸(didSet方法中赋值)--原创或者转发
+            pictureView.status = status?.retweeted_status != nil ? status?.retweeted_status :  status
             // 1.1根据模型计算配图的尺寸
             // 注意: 计算尺寸需要用到模型, 所以必须先传递模型
             let size = pictureView.calculateImageSize()
