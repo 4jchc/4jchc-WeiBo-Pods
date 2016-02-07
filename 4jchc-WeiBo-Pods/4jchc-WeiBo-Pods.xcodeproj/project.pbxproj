@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		420D77E430A16994ABE72253 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2A5ECAEFE23CAE5CF1CA6A1 /* Pods.framework */; };
 		960C4CBE1C5E365400735B33 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960C4CBD1C5E365400735B33 /* UserAccount.swift */; };
+		960FCF661C67268400997732 /* HomeRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 960FCF651C67268400997732 /* HomeRefreshView.xib */; };
+		960FCF681C6726F100997732 /* HomeRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960FCF671C6726F100997732 /* HomeRefreshControl.swift */; };
 		9621911E1C59FA1200C3CE35 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9621911D1C59FA1200C3CE35 /* UIBarButtonItem+Extension.swift */; };
 		963097F81C61D39B0073B432 /* NewfeatureCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963097F71C61D39B0073B432 /* NewfeatureCollectionViewController.swift */; };
 		964B20A81C645F41001BABF2 /* NSDate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964B20A71C645F41001BABF2 /* NSDate+Extension.swift */; };
@@ -88,6 +90,8 @@
 /* Begin PBXFileReference section */
 		317053ECD3DDD745CCEC4AD2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		960C4CBD1C5E365400735B33 /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
+		960FCF651C67268400997732 /* HomeRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeRefreshView.xib; sourceTree = "<group>"; };
+		960FCF671C6726F100997732 /* HomeRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeRefreshControl.swift; sourceTree = "<group>"; };
 		9621911D1C59FA1200C3CE35 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
 		963097F71C61D39B0073B432 /* NewfeatureCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewfeatureCollectionViewController.swift; sourceTree = "<group>"; };
 		964B20A71C645F41001BABF2 /* NSDate+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Extension.swift"; sourceTree = "<group>"; };
@@ -319,6 +323,8 @@
 			children = (
 				96B9D17F1C5B5F390037F52B /* QRCode二维码 */,
 				96C7B8191C5B1627000A176C /* Popover */,
+				960FCF651C67268400997732 /* HomeRefreshView.xib */,
+				960FCF671C6726F100997732 /* HomeRefreshControl.swift */,
 				96EE28061C5870B100002CF4 /* HomeTableViewController.swift */,
 				96F5A5291C634DEE0097AFDB /* StatusTableViewCell.swift */,
 				96A457DB1C65DAAB0014C069 /* StatusNormalTableViewCell.swift */,
@@ -493,6 +499,7 @@
 			files = (
 				96B0409A1C57233E009DBC56 /* LaunchScreen.storyboard in Resources */,
 				96B040971C57233E009DBC56 /* Assets.xcassets in Resources */,
+				960FCF661C67268400997732 /* HomeRefreshView.xib in Resources */,
 				96C7B81D1C5B1665000A176C /* PopoverViewController.storyboard in Resources */,
 				9653C6331C588ACD000FAF68 /* MainVCSettings.json in Resources */,
 				96B040951C57233E009DBC56 /* Main.storyboard in Resources */,
@@ -603,6 +610,7 @@
 				9688A92C1C5A05EF0002FE2D /* TitleButton.swift in Sources */,
 				9653C6341C588ACD000FAF68 /* NullViewController.swift in Sources */,
 				96C7B81B1C5B1652000A176C /* PopoverPresentationController.swift in Sources */,
+				960FCF681C6726F100997732 /* HomeRefreshControl.swift in Sources */,
 				960C4CBE1C5E365400735B33 /* UserAccount.swift in Sources */,
 				963097F81C61D39B0073B432 /* NewfeatureCollectionViewController.swift in Sources */,
 			);

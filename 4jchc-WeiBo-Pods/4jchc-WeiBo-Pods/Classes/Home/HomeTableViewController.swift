@@ -48,7 +48,18 @@ class HomeTableViewController: BaseTableViewController {
         //tableView.rowHeight = UITableView Automatic Dimension尺寸
         tableView.rowHeight = 300
         tableView.separatorStyle = UITableViewCellSeparatorStyle.None
-        
+        // 4.添加下拉刷新控件
+        /*
+        refreshControl = UIRefreshControl()
+        let refreshView = UIView()
+        refreshView.backgroundColor = UIColor.redColor()
+        refreshView.frame = CGRect(x: 0, y: 0, width: 375, height: 60)
+        refreshControl?.addSubview(refreshView)
+        refreshControl?.addTarget(self, action: "loadData", forControlEvents: UIControlEvents.ValueChanged)
+        //        refreshControl?.endRefreshing()
+        */
+        //MARK:  自定义刷新控件
+        refreshControl = HomeRefreshControl()
         
         // 4.加载微博数据
         loadData()

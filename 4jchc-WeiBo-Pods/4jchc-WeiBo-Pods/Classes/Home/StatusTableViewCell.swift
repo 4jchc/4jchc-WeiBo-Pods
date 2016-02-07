@@ -57,7 +57,7 @@ class StatusTableViewCell: UITableViewCell {
             //pictureView.status = status 不设置判断会转发的 会没有配图
             
             // 设置配图的尺寸(didSet方法中赋值)--原创或者转发
-            pictureView.status = status?.retweeted_status != nil ? status?.retweeted_status :  status
+            pictureView.status = status!.retweeted_status != nil ? status?.retweeted_status :  status
             // 1.1根据模型计算配图的尺寸
             // 注意: 计算尺寸需要用到模型, 所以必须先传递模型
             let size = pictureView.calculateImageSize()
