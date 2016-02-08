@@ -378,7 +378,7 @@ import UIKit
     */
 
     /*
-    添加自定义刷新控件
+    //MARK: 3 添加自定义刷新控件
     1.模型赋值Didset方法的重写
     2.自定义刷新view继承UIRefreshControl.设置旋转的view或者下拉的view的一个隐藏
     3.使用小马哥的自动布局代码刷新控件的view要设置尺寸
@@ -386,8 +386,11 @@ import UIKit
     4.点击菜单Debug--> workflow取消选中show Disassembly分解 when debug
     */
 
-
-
+    /*
+    1.KVO监听frame的改变会调用
+    observeValueForKeyPath
+    2.添加KVO案例代码段
+    */
 
 
 
