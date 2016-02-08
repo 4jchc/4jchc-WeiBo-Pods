@@ -323,9 +323,9 @@
 			children = (
 				96B9D17F1C5B5F390037F52B /* QRCode二维码 */,
 				96C7B8191C5B1627000A176C /* Popover */,
+				96EE28061C5870B100002CF4 /* HomeTableViewController.swift */,
 				960FCF651C67268400997732 /* HomeRefreshView.xib */,
 				960FCF671C6726F100997732 /* HomeRefreshControl.swift */,
-				96EE28061C5870B100002CF4 /* HomeTableViewController.swift */,
 				96F5A5291C634DEE0097AFDB /* StatusTableViewCell.swift */,
 				96A457DB1C65DAAB0014C069 /* StatusNormalTableViewCell.swift */,
 				96A457D91C65DA650014C069 /* StatusForwardTableViewCell.swift */,

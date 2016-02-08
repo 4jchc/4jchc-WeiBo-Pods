@@ -48,19 +48,17 @@ class HomeTableViewController: BaseTableViewController {
         //tableView.rowHeight = UITableView Automatic Dimension尺寸
         tableView.rowHeight = 300
         tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        
         // 4.添加下拉刷新控件
-        /*
-        refreshControl = UIRefreshControl()
-        let refreshView = UIView()
-        refreshView.backgroundColor = UIColor.redColor()
-        refreshView.frame = CGRect(x: 0, y: 0, width: 375, height: 60)
-        refreshControl?.addSubview(refreshView)
-        refreshControl?.addTarget(self, action: "loadData", forControlEvents: UIControlEvents.ValueChanged)
-        //        refreshControl?.endRefreshing()
-        */
+        //MARK: 系统刷新控件3句话
+//        refreshControl = UIRefreshControl()
+//        refreshControl!.attributedTitle = NSAttributedString(string: "松手刷新")
+//        refreshControl?.addTarget(self, action: "loadData", forControlEvents: UIControlEvents.ValueChanged)
+
+        
         //MARK:  自定义刷新控件
         refreshControl = HomeRefreshControl()
-        
+        refreshControl?.addTarget(self, action: "loadData", forControlEvents: UIControlEvents.ValueChanged)
         // 4.加载微博数据
         loadData()
     }
@@ -71,12 +69,18 @@ class HomeTableViewController: BaseTableViewController {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
-    
+    /**
+     获取微博数据
+     如果想调用一个私有的方法:
+     1.去掉private
+     2.@objc, 当做OC方法来处理
+     */
     //MARK: - 获取微博数据
     ///  获取微博数据
-    private func loadData(){
+   @objc private func loadData(){
         Status.loadStatuses { (models, error) -> () in
-            
+            // 结束刷新
+            self.refreshControl?.endRefreshing()
             if error != nil {
                 return
             }

@@ -387,11 +387,17 @@ import UIKit
     */
 
     /*
-    1.KVO监听frame的改变会调用
+    //MARK: 4 1.KVO监听frame的改变会调用
     observeValueForKeyPath
     2.添加KVO案例代码段
     */
-
+    /*
+    下拉刷新动画
+    1.自定义刷新控件refreshControl = HomeRefreshControl()
+    添加方法addTarget在方法中停止动画 self.refreshControl?.endRefreshing()
+    2.重写endRefreshing 复位标记
+    3.添加旋转-动画-代码段
+    */
 
 
 

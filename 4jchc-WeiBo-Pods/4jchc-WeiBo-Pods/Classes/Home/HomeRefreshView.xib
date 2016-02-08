@@ -38,6 +38,11 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="arrowIcon" destination="b5g-x4-BhT" id="p7W-3I-ykl"/>
+                <outlet property="loadingView" destination="G4f-Z3-edj" id="Iep-i2-dhc"/>
+                <outlet property="tipView" destination="Yda-Qh-FDr" id="50Z-FH-NNk"/>
+            </connections>
             <point key="canvasLocation" x="286" y="358"/>
         </view>
     </objects>

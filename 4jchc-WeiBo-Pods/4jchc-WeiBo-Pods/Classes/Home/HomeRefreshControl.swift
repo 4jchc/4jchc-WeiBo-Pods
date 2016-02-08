@@ -39,10 +39,12 @@ class HomeRefreshControl: UIRefreshControl {
     
     
     /// 定义变量记录是否需要旋转监听
-    private var rotationArrow = false
+    private var rotationArrowFlag = false
+    /// 定义变量记录当前是否正在执行圈圈动画
+    private var loadingViewAnimFlag = false
     
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
-        print(frame.origin.y)
+        //        print(frame.origin.y)
         
         // 过滤掉不需要的数据
         if frame.origin.y >= 0
@@ -50,21 +52,41 @@ class HomeRefreshControl: UIRefreshControl {
             return
         }
         
-        if frame.origin.y >= -50 && !rotationArrow
+        // 判断是否已经触发刷新事件
+        if refreshing && !loadingViewAnimFlag
         {
-            print("翻转")
-            rotationArrow = true
-        }else if frame.origin.y < -50 && rotationArrow
+            print("圈圈动画")
+            loadingViewAnimFlag = true
+            // 显示圈圈, 并且让圈圈执行动画
+            refreshView.startLoadingViewAnim()
+            return
+        }
+        
+        if frame.origin.y >= -50 && rotationArrowFlag
         {
             print("翻转回来")
-            rotationArrow = false
+            rotationArrowFlag = false
+            refreshView.rotaionArrowIcon(rotationArrowFlag)
+        }else if frame.origin.y < -50 && !rotationArrowFlag
+        {
+            print("翻转")
+            rotationArrowFlag = true
+            refreshView.rotaionArrowIcon(rotationArrowFlag)
         }
     }
     
-    deinit
-    {
-        removeObserver(self, forKeyPath: "frame")
+    override func endRefreshing() {
+        super.endRefreshing()
+        
+        // 关闭圈圈动画
+        refreshView.stopLoadingViewAnim()
+        
+        
+        
+        // 复位圈圈动画标记
+        loadingViewAnimFlag = false
     }
+    
     
     
     
@@ -81,10 +103,66 @@ class HomeRefreshControl: UIRefreshControl {
 
 class HomeRefreshView: UIView
 {
+    
+    @IBOutlet weak var arrowIcon: UIImageView!
+    
+    @IBOutlet weak var tipView: UIView!
+    
+    @IBOutlet weak var loadingView: UIImageView!
+    
+
+
+    
+     //MARK:  旋转箭头
+     ///  旋转箭头
+    func rotaionArrowIcon(flag: Bool)
+    {
+        var angle = M_PI
+        angle += flag ? -0.01 : 0.01
+        UIView.animateWithDuration(0.2) { () -> Void in
+            self.arrowIcon.transform = CGAffineTransformRotate(self.arrowIcon.transform, CGFloat(angle))
+        }
+    }
+    
+
+     //MARK:  开始圈圈动画
+     ///  开始圈圈动画
+    func startLoadingViewAnim()
+    {
+        tipView.hidden = true
+        
+        // 1.创建动画
+        let anim = CABasicAnimation(keyPath: "transform.rotation")
+        // 2.设置动画属性
+        anim.toValue = 2 * M_PI
+        anim.duration = 1
+        anim.repeatCount = MAXFLOAT
+        
+        // 该属性默认为YES, 代表动画只要执行完毕就移除
+        anim.removedOnCompletion = false
+        // 3.将动画添加到图层上
+        loadingView.layer.addAnimation(anim, forKey: nil)
+    }
+
+     //MARK:  停止圈圈动画
+     ///  停止圈圈动画
+    func stopLoadingViewAnim()
+    {
+        tipView.hidden = false
+        
+        loadingView.layer.removeAllAnimations()
+    }
+
+    
+    
+    
+    
+    
+    
+    
     class func refreshView() -> HomeRefreshView
     {
         return NSBundle.mainBundle().loadNibNamed("HomeRefreshView", owner: nil, options: nil).last as! HomeRefreshView
     }
 }
-
 
