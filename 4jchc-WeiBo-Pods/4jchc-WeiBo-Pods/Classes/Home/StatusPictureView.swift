@@ -57,9 +57,11 @@ class StatusPictureView: UICollectionView {
             let key = status?.storedPicURLS!.first?.absoluteString
             let image = SDWebImageManager.sharedManager().imageCache.imageFromDiskCacheForKey(key!)
             
-            pictureLayout.itemSize = image.size
+            pictureLayout.itemSize = (image?.size) ?? CGSize(width: 0, height: 0)
             // 3.2返回缓存图片的尺寸
-            return image.size
+            // 提取的image可能为nil
+            
+            return pictureLayout.itemSize//image.size
         }
         // 4.如果有4张配图, 计算田字格的大小
         let width = 90

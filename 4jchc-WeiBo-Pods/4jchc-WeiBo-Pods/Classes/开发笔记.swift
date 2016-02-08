@@ -406,5 +406,10 @@ import UIKit
     2.缓存图片判断.如果没有数据直接完成
     */
 
-
+    /*
+    添加刷新提示lable
+    1.加载lable插入navBar 下面，不然会随着 tableView 一起滚动
+    self.navigationController?.navigationBar.insertSubview(label, atIndex: 0)
+    2.根据id返回的数据个数决定提示的值
+    */
 

@@ -96,7 +96,6 @@ class HomeTableViewController: BaseTableViewController {
             
             // 接收刷新
             self.refreshControl?.endRefreshing()
-            
             if error != nil
             {
                 return
@@ -106,6 +105,8 @@ class HomeTableViewController: BaseTableViewController {
             {
                 // 如果是下拉刷新, 就将获取到的数据, 拼接在原有数据的前面
                 self.statuses = models! + self.statuses!
+                // 显示刷新提醒
+                self.showNewStatusCount(models?.count ?? 0)
             }else
             {
                 self.statuses = models
@@ -113,8 +114,42 @@ class HomeTableViewController: BaseTableViewController {
         }
     }
     
-    
-    
+    //MARK:  显示刷新提醒--动画
+    ///  显示刷新提醒动画
+    private func showNewStatusCount(count : Int)
+    {
+        newStatusLabel.hidden = false
+        newStatusLabel.text = (count == 0) ? "没有刷新到新的微博数据" : "刷新到\(count)条微博数据"
+        /*
+        // 1.记录提醒控件的frame
+        let rect = newStatusLabel.frame
+        // 2.执行动画
+        UIView.animateWithDuration(2, animations: { () -> Void in
+        // 3.设置动画自动翻转
+        UIView.set Animation Repeat Auto reverses(true)
+        self.newStatusLabel.frame = CGRectOffset(rect, 0, 3 * rect.height)
+        
+        }) { (_) -> Void in
+        self.newStatusLabel.frame = rect
+        }
+        */
+        // 2秒向下移动2秒还原然后隐藏 x轴移动0.Y轴移动视图的高度
+
+        UIView.animateWithDuration(2, delay: 0, usingSpringWithDamping: 10, initialSpringVelocity: 12, options: UIViewAnimationOptions(rawValue: 0), animations: { () -> Void in
+            
+            self.newStatusLabel.transform = CGAffineTransformMakeTranslation(0, self.newStatusLabel.frame.height+100.0)
+            self.newStatusLabel.transform = CGAffineTransformScale(self.newStatusLabel.transform, 0.7, 0.7);
+            }) { (_) -> Void in
+                
+                UIView.animateWithDuration(1, animations: { () -> Void in
+                    self.newStatusLabel.transform = CGAffineTransformIdentity
+                    }, completion: { (_) -> Void in
+                        self.newStatusLabel.hidden = true
+                })
+        }
+        
+        
+    }
     
     ///修改标题按钮的状态
     func change(){
@@ -173,12 +208,31 @@ class HomeTableViewController: BaseTableViewController {
         presentViewController(vc!, animated: true, completion: nil)
     }
     
-    // MARK: - 懒加载封装转场代理
+    // MARK: - 懒加载  封装转场代理
     // 一定要定义一个属性来保存自定义转场对象, 否则会报错
     private lazy var popverAnimator:PopoverAnimator = {
         let pa = PopoverAnimator()
         pa.presentFrame = CGRect(x: 100, y: 56, width: 200, height: 350)
         return pa
+    }()
+    
+    // MARK: 刷新提醒控件
+    private lazy var newStatusLabel: UILabel =
+    {
+        let label = UILabel()
+        let height: CGFloat = 44
+        //label.frame =  CGRect(x: 0, y: -2 * height, width: UIScreen.mainScreen().bounds.width, height: height)
+        label.frame =  CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.width, height: height)
+        
+        label.backgroundColor = UIColor.orangeColor()
+        label.textColor = UIColor.whiteColor()
+        label.textAlignment = NSTextAlignment.Center
+        
+        // 加载lable插入navBar 上面，不然会随着 tableView 一起滚动
+        self.navigationController?.navigationBar.insertSubview(label, atIndex: 0)
+        
+        label.hidden = true
+        return label
     }()
     
     // MARK: 微博行高的缓存, 利用字典作为容器. key就是微博的id, 值就是对应微博的行高
@@ -252,9 +306,6 @@ extension HomeTableViewController{
     
     
 }
-
-
-
 
 
 

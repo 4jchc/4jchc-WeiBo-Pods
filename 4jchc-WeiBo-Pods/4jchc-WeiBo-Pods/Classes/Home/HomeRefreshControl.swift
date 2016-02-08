@@ -80,9 +80,7 @@ class HomeRefreshControl: UIRefreshControl {
         
         // 关闭圈圈动画
         refreshView.stopLoadingViewAnim()
-        
-        
-        
+
         // 复位圈圈动画标记
         loadingViewAnimFlag = false
     }
@@ -117,6 +115,7 @@ class HomeRefreshView: UIView
      ///  旋转箭头
     func rotaionArrowIcon(flag: Bool)
     {
+        
         var angle = M_PI
         angle += flag ? -0.01 : 0.01
         UIView.animateWithDuration(0.2) { () -> Void in
@@ -149,7 +148,6 @@ class HomeRefreshView: UIView
     func stopLoadingViewAnim()
     {
         tipView.hidden = false
-        
         loadingView.layer.removeAllAnimations()
     }
 

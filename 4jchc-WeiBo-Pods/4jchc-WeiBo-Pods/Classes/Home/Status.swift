@@ -129,6 +129,7 @@ class Status: NSObject {
         if list.count == 0
         {
             finished(models: list, error: nil)
+            return
         }
         // 1.创建一个组
         let group = dispatch_group_create()
