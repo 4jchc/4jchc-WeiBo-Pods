@@ -89,10 +89,17 @@ class Status: NSObject {
     }
    
     /// 加载微博数据
-    class func loadStatuses(finished: (models:[Status]?, error:NSError?)->()){
+    class func loadStatuses(since_id: Int,finished: (models:[Status]?, error:NSError?)->()){
         
         let path = "2/statuses/home_timeline.json"
-        let params = ["access_token": UserAccount.loadAccount()!.access_token!]
+        var params = ["access_token": UserAccount.loadAccount()!.access_token!]
+        
+        // 下拉刷新
+        if since_id > 0
+        {
+            params["since_id"] = "\(since_id)"
+        }
+        
         NetworkTools.shareNetworkTools().GET(path, parameters: params , progress: { (_) -> Void in
             
             },success: { (_, JSON) -> Void in
@@ -118,7 +125,11 @@ class Status: NSObject {
     //MARK: - 缓存图片GCD创建一个组
     ///  缓存图片GCD创建一个组
     class func cacheStatusImages(list: [Status], finished: (models:[Status]?, error:NSError?)->()) {
-        
+        // 刷新有可能没有数据
+        if list.count == 0
+        {
+            finished(models: list, error: nil)
+        }
         // 1.创建一个组
         let group = dispatch_group_create()
         

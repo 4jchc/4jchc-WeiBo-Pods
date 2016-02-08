@@ -391,15 +391,20 @@ import UIKit
     observeValueForKeyPath
     2.添加KVO案例代码段
     */
+
     /*
-    下拉刷新动画
+    //MARK: 5 下拉刷新动画
     1.自定义刷新控件refreshControl = HomeRefreshControl()
     添加方法addTarget在方法中停止动画 self.refreshControl?.endRefreshing()
     2.重写endRefreshing 复位标记
     3.添加旋转-动画-代码段
     */
 
-
+    /*
+    加载下拉刷新数据
+    1.在原加载微博数据的方法loadData添加--属性判断id大小刷新数据
+    2.缓存图片判断.如果没有数据直接完成
+    */
 
 
 

@@ -77,14 +77,39 @@ class HomeTableViewController: BaseTableViewController {
      */
     //MARK: - 获取微博数据
     ///  获取微博数据
-   @objc private func loadData(){
-        Status.loadStatuses { (models, error) -> () in
-            // 结束刷新
+    @objc private func loadData()
+    {
+        /*
+        1.默认最新返回20条数据
+        2.since_id : 会返回比since_id大的微博
+        3.max_id: 会返回小于等于max_id的微博
+        
+        每条微博都有一个微博ID, 而且微博ID越后面发送的微博, 它的微博ID越大
+        递增
+        
+        新浪返回给我们的微博数据, 是从大到小的返回给我们的
+
+        */
+        let since_id = statuses?.first?.id ?? 0
+        
+        Status.loadStatuses(since_id) { (models, error) -> () in
+            
+            // 接收刷新
             self.refreshControl?.endRefreshing()
-            if error != nil {
+            
+            if error != nil
+            {
                 return
             }
-            self.statuses = models
+            // 下拉刷新
+            if since_id > 0
+            {
+                // 如果是下拉刷新, 就将获取到的数据, 拼接在原有数据的前面
+                self.statuses = models! + self.statuses!
+            }else
+            {
+                self.statuses = models
+            }
         }
     }
     
