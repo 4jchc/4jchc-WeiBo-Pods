@@ -427,9 +427,14 @@ import UIKit
 
 
     /*
-    大图界面布局
+    //MARK: 10 大图界面布局
     1.出现错误--"error":"User requests out of rate limit!","error_code":10023, 请求次数超出限制
     */
 
-
+    /*
+    显示大图
+    1.按照宽高比设置图片
+    2.自定义 UICollectionViewFlowLayout
+    3.自定义cell UICollectionViewCell
+    */
 

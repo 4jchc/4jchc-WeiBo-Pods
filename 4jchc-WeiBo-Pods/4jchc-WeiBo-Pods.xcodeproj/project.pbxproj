@@ -23,6 +23,8 @@
 		9653C6341C588ACD000FAF68 /* NullViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9653C6321C588ACD000FAF68 /* NullViewController.swift */; };
 		965947121C5CE5F600BE4617 /* QRCodeCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965947111C5CE5F600BE4617 /* QRCodeCardViewController.swift */; };
 		965AC70A1C69A39B001138DD /* PhotoBrowserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965AC7091C69A39B001138DD /* PhotoBrowserController.swift */; };
+		965AC70C1C69CCCC001138DD /* PhotoBrowserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965AC70B1C69CCCC001138DD /* PhotoBrowserCell.swift */; };
+		965AC70E1C69D570001138DD /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965AC70D1C69D570001138DD /* UIColor+Extension.swift */; };
 		9663B5881C623101004D8775 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9663B5871C623101004D8775 /* WelcomeViewController.swift */; };
 		96812AEF1C58AC5F00A2349E /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96812AEE1C58AC5F00A2349E /* BaseTableViewController.swift */; };
 		96812AF11C58AD8E00A2349E /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96812AF01C58AD8E00A2349E /* VisitorView.swift */; };
@@ -105,6 +107,8 @@
 		9653C6321C588ACD000FAF68 /* NullViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NullViewController.swift; sourceTree = "<group>"; };
 		965947111C5CE5F600BE4617 /* QRCodeCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeCardViewController.swift; sourceTree = "<group>"; };
 		965AC7091C69A39B001138DD /* PhotoBrowserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoBrowserController.swift; sourceTree = "<group>"; };
+		965AC70B1C69CCCC001138DD /* PhotoBrowserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoBrowserCell.swift; sourceTree = "<group>"; };
+		965AC70D1C69D570001138DD /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		9663B5871C623101004D8775 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		96812AEE1C58AC5F00A2349E /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		96812AF01C58AD8E00A2349E /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
@@ -205,6 +209,7 @@
 		965AC7081C69A364001138DD /* PhotoBrowser */ = {
 			isa = PBXGroup;
 			children = (
+				965AC70B1C69CCCC001138DD /* PhotoBrowserCell.swift */,
 				965AC7091C69A39B001138DD /* PhotoBrowserController.swift */,
 			);
 			path = PhotoBrowser;
@@ -377,13 +382,14 @@
 		96EE27FE1C586FAD00002CF4 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				964B20A91C647642001BABF2 /* UIKit+Extension.swift */,
-				964B20A71C645F41001BABF2 /* NSDate+Extension.swift */,
-				96F5A52B1C63952E0097AFDB /* UIButton+Extention.swift */,
-				96F5A52D1C6395670097AFDB /* UILabel +Extension.swift */,
-				968249821C5E5150004A17FF /* String+Extension.swift */,
-				96812AF21C58AE0200A2349E /* UIView+AutoLayout.swift */,
 				96EBA0041C5DFEA100F523A6 /* NetworkTools.swift */,
+				964B20A71C645F41001BABF2 /* NSDate+Extension.swift */,
+				968249821C5E5150004A17FF /* String+Extension.swift */,
+				96F5A52B1C63952E0097AFDB /* UIButton+Extention.swift */,
+				965AC70D1C69D570001138DD /* UIColor+Extension.swift */,
+				964B20A91C647642001BABF2 /* UIKit+Extension.swift */,
+				96F5A52D1C6395670097AFDB /* UILabel +Extension.swift */,
+				96812AF21C58AE0200A2349E /* UIView+AutoLayout.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -620,11 +626,13 @@
 				96A457DA1C65DA650014C069 /* StatusForwardTableViewCell.swift in Sources */,
 				96A457DC1C65DAAB0014C069 /* StatusNormalTableViewCell.swift in Sources */,
 				9688A92C1C5A05EF0002FE2D /* TitleButton.swift in Sources */,
+				965AC70C1C69CCCC001138DD /* PhotoBrowserCell.swift in Sources */,
 				9653C6341C588ACD000FAF68 /* NullViewController.swift in Sources */,
 				96C7B81B1C5B1652000A176C /* PopoverPresentationController.swift in Sources */,
 				960FCF681C6726F100997732 /* HomeRefreshControl.swift in Sources */,
 				960C4CBE1C5E365400735B33 /* UserAccount.swift in Sources */,
 				963097F81C61D39B0073B432 /* NewfeatureCollectionViewController.swift in Sources */,
+				965AC70E1C69D570001138DD /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
