@@ -401,32 +401,35 @@ import UIKit
     */
 
     /*
-    加载下拉刷新数据
+    //MARK: 6 加载下拉刷新数据
     1.在原加载微博数据的方法loadData添加--属性判断id大小刷新数据
     2.缓存图片判断.如果没有数据直接完成
     */
 
     /*
-    添加刷新提示lable
+    //MARK: 7 添加刷新提示lable
     1.加载lable插入navBar 下面，不然会随着 tableView 一起滚动
     self.navigationController?.navigationBar.insertSubview(label, atIndex: 0)
     2.根据id返回的数据个数决定提示的值
     */
 
     /*
-    添加上拉刷新
+    //MARK: 8 添加上拉刷新
     1.利用tableview的cell.row.是最后一个的时候加载数 据接着定义一个标记
     2.上拉--下拉的判断.
     3.字典模型拼接用+号
     */
 
     /*
-    添加大图地址.Didset方法中设置需要的大图
+    //MARK: 9 添加大图地址.Didset方法中设置需要的大图
     1.stringByReplacingOccurrencesOfString替换字符串
     */
 
 
-
+    /*
+    大图界面布局
+    1.出现错误--"error":"User requests out of rate limit!","error_code":10023, 请求次数超出限制
+    */
 
 
 

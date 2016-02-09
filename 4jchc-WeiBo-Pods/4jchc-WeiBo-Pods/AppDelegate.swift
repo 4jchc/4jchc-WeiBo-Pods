@@ -42,6 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     deinit{
+        
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     

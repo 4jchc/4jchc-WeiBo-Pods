@@ -122,7 +122,9 @@ extension OAuthViewController: UIWebViewDelegate
         let params = ["client_id":WB_App_Key, "client_secret":WB_App_Secret, "grant_type":"authorization_code", "code":code, "redirect_uri":WB_redirect_uri]
         
         // 3.发送POST请求
-        NetworkTools.shareNetworkTools().POST(path, parameters: params, progress: { (_) -> Void in
+        NetworkTools.shareNetworkTools().POST(path, parameters: params, progress: { (progress) -> Void in
+            
+            printLog("progress进度\(progress)")
             
             }, success: { (_, JSON) -> Void in//返回的是字典对象anyobject
 
@@ -170,6 +172,7 @@ extension OAuthViewController: UIWebViewDelegate
                         
                         //MARK: - 发出通知 去欢迎界面
                         NSNotificationCenter.defaultCenter().postNotificationName(XMGSwitchRootViewControllerKey, object: false)
+                        
                     }
                     
                     //SVProgressHUD.showInfoWithStatus("网络不给力", maskType: SVProgressHUDMaskType.Black)
@@ -179,7 +182,7 @@ extension OAuthViewController: UIWebViewDelegate
                 
                 
             }) { (_, error) -> Void in
-                printLog(error)
+                printLog("第一次加载信息出错\(error)")
         }
 
     }

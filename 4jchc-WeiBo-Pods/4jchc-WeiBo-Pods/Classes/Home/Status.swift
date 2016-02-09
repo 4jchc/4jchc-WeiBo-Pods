@@ -123,7 +123,9 @@ class Status: NSObject {
             params["max_id"] = "\(max_id - 1)"
         }
         
-        NetworkTools.shareNetworkTools().GET(path, parameters: params , progress: { (_) -> Void in
+        NetworkTools.shareNetworkTools().GET(path, parameters: params , progress: { (progress) -> Void in
+            
+            printLog("progress进度\(progress)")
             
             },success: { (_, JSON) -> Void in
             printLog("params \(params)")

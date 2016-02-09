@@ -98,9 +98,10 @@ class UserAccount: NSObject , NSCoding{
                 }
                 
                  finished(account: nil, error: nil)
+                
             }) { (_, error) -> Void in
                 
-                printLog(error)
+                printLog("加载用户信息\(error)")
                 
                 finished(account: nil, error: error)
         }
