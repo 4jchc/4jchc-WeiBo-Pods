@@ -118,13 +118,13 @@ class UserAccount: NSObject , NSCoding{
     
     
     // MARK: - 保存和读取  Keyed
-    /**
-    保存授权模型
-    */
+    static let filePath = "account.plist".cachePath()
+    //MARK:  保存授权模型
+    ///  保存授权模型
     func saveAccount()
     {
-        NSKeyedArchiver.archiveRootObject(self, toFile: "account.plist".cachePath())
-        printLog("*cachePath****\("account.plist".cachePath())")
+        NSKeyedArchiver.archiveRootObject(self, toFile: UserAccount.filePath)
+        printLog("UserAccount.filePath\(UserAccount.filePath)")
     }
     /// 加载授权模型
     static var account: UserAccount?
@@ -133,12 +133,12 @@ class UserAccount: NSObject , NSCoding{
         // 1.判断是否已经加载过
         if account != nil
         {
-            printLog("***account**\(account!)")
+            printLog("account \(account!)")
             return account
             
         }
         // 2.加载授权模型
-        account =  NSKeyedUnarchiver.unarchiveObjectWithFile("account.plist".cachePath()) as? UserAccount
+        account =  NSKeyedUnarchiver.unarchiveObjectWithFile(filePath) as? UserAccount
         
         
         // 3.判断授权信息是否过期

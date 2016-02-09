@@ -69,6 +69,9 @@ class HomeTableViewController: BaseTableViewController {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
+    //MARK:  定义变量记录当前是上拉还是下拉
+    var pullupRefreshFlag = false
+    
     /**
      获取微博数据
      如果想调用一个私有的方法:
@@ -90,14 +93,27 @@ class HomeTableViewController: BaseTableViewController {
         新浪返回给我们的微博数据, 是从大到小的返回给我们的
 
         */
-        let since_id = statuses?.first?.id ?? 0
+        var since_id = statuses?.first?.id ?? 0
         
-        Status.loadStatuses(since_id) { (models, error) -> () in
+        
+        var max_id = 0
+        //MARK:  2.判断是否是上拉
+        if pullupRefreshFlag
+        {
+            since_id = 0
+            max_id = statuses?.last?.id ?? 0
+        }
+        
+        printLog("statuses?.first?.id=\(statuses?.first?.id) statuses?.last?.id=\(statuses?.last?.id)")
+        
+        Status.loadStatuses(since_id,max_id: max_id) { (models, error) -> () in
             
+            printLog("since_id--max_id\(since_id)-\(max_id)")
             // 接收刷新
             self.refreshControl?.endRefreshing()
             if error != nil
             {
+                printLog("Status.loadStatuses加载数据失败\(error)")
                 return
             }
             // 下拉刷新
@@ -105,9 +121,16 @@ class HomeTableViewController: BaseTableViewController {
             {
                 // 如果是下拉刷新, 就将获取到的数据, 拼接在原有数据的前面
                 self.statuses = models! + self.statuses!
+                
                 // 显示刷新提醒
                 self.showNewStatusCount(models?.count ?? 0)
-            }else
+            //上拉刷新
+            }else if max_id > 0
+            {
+                // 如果是上拉加载更多, 就将获取到的数据, 拼接在原有数据的后面
+                self.statuses = self.statuses! + models!
+            }
+            else
             {
                 self.statuses = models
             }
@@ -125,8 +148,8 @@ class HomeTableViewController: BaseTableViewController {
         let rect = newStatusLabel.frame
         // 2.执行动画
         UIView.animateWithDuration(2, animations: { () -> Void in
-        // 3.设置动画自动翻转
-        UIView.set Animation Repeat Auto reverses(true)
+        // 3.设置动画自动reverses翻转
+        UIView.setAnimationRepeatAutoreverses(true)
         self.newStatusLabel.frame = CGRectOffset(rect, 0, 3 * rect.height)
         
         }) { (_) -> Void in
@@ -265,6 +288,15 @@ extension HomeTableViewController{
         let cell = tableView.dequeueReusableCellWithIdentifier(StatusTableViewCellIdentifier.cellID(status)) as! StatusTableViewCell
         // cell.textLabel?.text = status.text
         cell.status = status
+        
+        // 4.判断是否滚动到了最后一个cell---做一个标记
+        let count = statuses?.count ?? 0
+        if indexPath.row == (count - 1)
+        {
+            pullupRefreshFlag = true
+            printLog("上拉加载更多")
+            loadData()
+        }
         
         // 3.返回cell
         return cell

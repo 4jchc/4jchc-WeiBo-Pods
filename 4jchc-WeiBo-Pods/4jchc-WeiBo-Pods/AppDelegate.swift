@@ -46,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func switchRootViewController(notify: NSNotification){
-        //        print(notify.object)
+        printLog("notify.object--\(notify.object)")
         if notify.object as! Bool
         {
             window?.rootViewController = MainViewController()

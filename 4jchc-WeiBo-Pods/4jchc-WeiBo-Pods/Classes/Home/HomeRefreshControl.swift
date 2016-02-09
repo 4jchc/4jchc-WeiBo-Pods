@@ -37,11 +37,10 @@ class HomeRefreshControl: UIRefreshControl {
         addObserver(self, forKeyPath: "frame", options: NSKeyValueObservingOptions.New, context: nil)
     }
     
-    
     /// 定义变量记录是否需要旋转监听
     private var rotationArrowFlag = false
     /// 定义变量记录当前是否正在执行圈圈动画
-    private var loadingViewAnimFlag = false
+     var loadingViewAnimFlag = false
     
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
         //        print(frame.origin.y)
@@ -65,6 +64,7 @@ class HomeRefreshControl: UIRefreshControl {
         if frame.origin.y >= -50 && rotationArrowFlag
         {
             print("翻转回来")
+            
             rotationArrowFlag = false
             refreshView.rotaionArrowIcon(rotationArrowFlag)
         }else if frame.origin.y < -50 && !rotationArrowFlag
@@ -109,13 +109,14 @@ class HomeRefreshView: UIView
     @IBOutlet weak var loadingView: UIImageView!
     
 
+    @IBOutlet weak var loadicon: UIView!
 
     
      //MARK:  旋转箭头
      ///  旋转箭头
     func rotaionArrowIcon(flag: Bool)
     {
-        
+        tipView.hidden = false
         var angle = M_PI
         angle += flag ? -0.01 : 0.01
         UIView.animateWithDuration(0.2) { () -> Void in
@@ -129,7 +130,7 @@ class HomeRefreshView: UIView
     func startLoadingViewAnim()
     {
         tipView.hidden = true
-        
+        loadicon.hidden = false
         // 1.创建动画
         let anim = CABasicAnimation(keyPath: "transform.rotation")
         // 2.设置动画属性
@@ -148,7 +149,9 @@ class HomeRefreshView: UIView
     func stopLoadingViewAnim()
     {
         tipView.hidden = false
+        loadicon.hidden = true
         loadingView.layer.removeAllAnimations()
+
     }
 
     

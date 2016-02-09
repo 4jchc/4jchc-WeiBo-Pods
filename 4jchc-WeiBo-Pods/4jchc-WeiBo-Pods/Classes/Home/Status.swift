@@ -53,27 +53,37 @@ class Status: NSObject {
     }
     
     
-    
-    
-    /// 配图-数组
-    var pic_urls: [[String: AnyObject]]?{
+    /// 配图数组
+    var pic_urls: [[String: AnyObject]]?
+        {
         didSet{
             // 1.初始化数组
             storedPicURLS = [NSURL]()
+            
+            storedLargePicURLS = [NSURL]()
+            
             // 2遍历取出所有的图片路径字符串
             for dict in pic_urls!
             {
-                if let urlStr = dict["thumbnail_pic"]
+                if let urlStr = dict["thumbnail_pic"] as? String
                 {
-                    // 将字符串转换为URL保存到数组中
-                    storedPicURLS?.append(NSURL(string: urlStr as! String)!)
+                    // 1.将字符串转换为URL保存到数组中
+                    storedPicURLS!.append(NSURL(string: urlStr)!)
+                    
+                    // 2.处理大图
+                    let largeURLStr = urlStr.stringByReplacingOccurrencesOfString("thumbnail", withString: "large")
+                    storedLargePicURLS!.append(NSURL(string: largeURLStr)!)
+                    
                 }
             }
         }
     }
     //MARK: - 保存当前微博所有配图的URL
     var storedPicURLS: [NSURL]?
-    
+    //MARK: - 保存当前微博所有配图"大图"的URL
+    var storedLargePicURLS: [NSURL]?
+
+
     
     /// 用户信息
     var user: User?
@@ -87,9 +97,16 @@ class Status: NSObject {
         
             return retweeted_status != nil ? retweeted_status?.storedPicURLS : storedPicURLS
     }
-   
+    
+    //MARK: 定义一个 计算属性, 用于返回原创或者转发配图的大图URL数组
+    var LargePictureURLS:[NSURL]?
+        {
+            return retweeted_status != nil ? retweeted_status?.storedLargePicURLS : storedLargePicURLS
+    }
+    
+    
     /// 加载微博数据
-    class func loadStatuses(since_id: Int,finished: (models:[Status]?, error:NSError?)->()){
+    class func loadStatuses(since_id: Int,max_id: Int,finished: (models:[Status]?, error:NSError?)->()){
         
         let path = "2/statuses/home_timeline.json"
         var params = ["access_token": UserAccount.loadAccount()!.access_token!]
@@ -100,10 +117,16 @@ class Status: NSObject {
             params["since_id"] = "\(since_id)"
         }
         
+        // 上拉刷新
+        if max_id > 0
+        {
+            params["max_id"] = "\(max_id - 1)"
+        }
+        
         NetworkTools.shareNetworkTools().GET(path, parameters: params , progress: { (_) -> Void in
             
             },success: { (_, JSON) -> Void in
-            
+            printLog("params \(params)")
             // 1.取出statuses key对应的数组 (存储的都是字典)
             // 2.遍历数组, 将字典转换为模型
             let models = dict2Model(JSON!["statuses"] as! [[String: AnyObject]])
@@ -115,8 +138,8 @@ class Status: NSObject {
             cacheStatusImages(models, finished: finished)
 
             }) { (_, error) -> Void in
-                
-                printLog(error)
+                printLog("params--error \(params)")
+                printLog("NetworkTools.shareNetworkTools().GET加载数据 失败\(error)")
                 finished(models: nil, error: error)
         }
         

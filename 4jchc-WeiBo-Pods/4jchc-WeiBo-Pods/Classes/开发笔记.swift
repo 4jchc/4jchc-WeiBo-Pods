@@ -413,3 +413,20 @@ import UIKit
     2.根据id返回的数据个数决定提示的值
     */
 
+    /*
+    添加上拉刷新
+    1.利用tableview的cell.row.是最后一个的时候加载数 据接着定义一个标记
+    2.上拉--下拉的判断.
+    3.字典模型拼接用+号
+    */
+
+    /*
+    添加大图地址.Didset方法中设置需要的大图
+    1.stringByReplacingOccurrencesOfString替换字符串
+    */
+
+
+
+
+
+
