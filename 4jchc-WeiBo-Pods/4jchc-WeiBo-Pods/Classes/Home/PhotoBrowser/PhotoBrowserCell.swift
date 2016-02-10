@@ -8,9 +8,16 @@
 
 import UIKit
 import SDWebImage
+//MARK:  代理协议
+///  代理协议
+protocol PhotoBrowserCellDelegate : NSObjectProtocol
+{
+    func photoBrowserCellDidClose(cell: PhotoBrowserCell)
+}
 
 class PhotoBrowserCell: UICollectionViewCell {
     
+    weak var photoBrowserCellDelegate : PhotoBrowserCellDelegate?
     var imageURL: NSURL?
         {
         didSet{
@@ -114,6 +121,11 @@ class PhotoBrowserCell: UICollectionViewCell {
         scrollview.maximumZoomScale = 2.0
         scrollview.minimumZoomScale = 0.5
         
+        // 4.监听图片的点击UI Tap轻敲 Gesture手势 Recognizer识别器
+        let tap = UITapGestureRecognizer(target: self, action: "close")
+        iconView.addGestureRecognizer(tap)
+        iconView.userInteractionEnabled = true
+        
     }
     
     //MARK:   重置scrollview和imageview的属性
@@ -128,6 +140,15 @@ class PhotoBrowserCell: UICollectionViewCell {
         // 重置imageview
         iconView.transform = CGAffineTransformIdentity
     }
+    
+    //MARK:  关闭浏览器
+    ///  关闭浏览器
+    func close()
+    {
+        print("close")
+        photoBrowserCellDelegate?.photoBrowserCellDidClose(self)
+    }
+    
     // MARK: - 懒加载
     private lazy var scrollview: UIScrollView = UIScrollView()
     private lazy var iconView: UIImageView = UIImageView()
