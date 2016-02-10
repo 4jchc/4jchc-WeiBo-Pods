@@ -151,7 +151,7 @@ class PhotoBrowserCell: UICollectionViewCell {
     
     // MARK: - 懒加载
     private lazy var scrollview: UIScrollView = UIScrollView()
-    private lazy var iconView: UIImageView = UIImageView()
+    lazy var iconView: UIImageView = UIImageView()
     // 菊花
     private lazy var activity: UIActivityIndicatorView =  UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge)
     

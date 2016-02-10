@@ -451,11 +451,22 @@ import UIKit
     */
 
     /*
-    点击图片退出控制器
+    //MARK: 14 点击图片退出控制器
     1.添加代理->监听图片点击->控制器销毁控制器
     2.添加手势识别
     */
 
+    /*
+    保存图片
+    1.拿到当前正在显示的cell  Visible可见的
+    let index = collectionView.indexPathsForVisibleItems().last!
+    let cell = collectionView.cellForItemAtIndexPath(index) as! PhotoBrowserCell
+    2.保存图片
+    let image = cell.iconView.image
+    UIImageWriteToSavedPhotosAlbum(image!, self, "image:didFinishSavingWithError:contextInfo:", nil)
+    3.保存图片会调用
+    func image(image:UIImage, didFinishSavingWithError error:NSError?, contextInfo:AnyObject)
+    */
 
 
 
