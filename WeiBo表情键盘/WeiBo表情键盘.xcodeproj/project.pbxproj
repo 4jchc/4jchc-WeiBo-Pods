@@ -1,0 +1,507 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		96E1BA111C6B76AD004A2422 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E1BA101C6B76AD004A2422 /* AppDelegate.swift */; };
+		96E1BA131C6B76AD004A2422 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E1BA121C6B76AD004A2422 /* ViewController.swift */; };
+		96E1BA161C6B76AD004A2422 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96E1BA141C6B76AD004A2422 /* Main.storyboard */; };
+		96E1BA181C6B76AD004A2422 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96E1BA171C6B76AD004A2422 /* Assets.xcassets */; };
+		96E1BA1B1C6B76AD004A2422 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96E1BA191C6B76AD004A2422 /* LaunchScreen.storyboard */; };
+		96E1BA261C6B76AD004A2422 /* WeiBo____Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E1BA251C6B76AD004A2422 /* WeiBo____Tests.swift */; };
+		96E1BA311C6B76AD004A2422 /* WeiBo____UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E1BA301C6B76AD004A2422 /* WeiBo____UITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		96E1BA221C6B76AD004A2422 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96E1BA051C6B76AD004A2422 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 96E1BA0C1C6B76AD004A2422;
+			remoteInfo = "WeiBo表情键盘";
+		};
+		96E1BA2D1C6B76AD004A2422 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96E1BA051C6B76AD004A2422 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 96E1BA0C1C6B76AD004A2422;
+			remoteInfo = "WeiBo表情键盘";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		96E1BA0D1C6B76AD004A2422 /* WeiBo表情键盘.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WeiBo表情键盘.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		96E1BA101C6B76AD004A2422 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		96E1BA121C6B76AD004A2422 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		96E1BA151C6B76AD004A2422 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		96E1BA171C6B76AD004A2422 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		96E1BA1A1C6B76AD004A2422 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		96E1BA1C1C6B76AD004A2422 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96E1BA211C6B76AD004A2422 /* WeiBo表情键盘Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WeiBo表情键盘Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		96E1BA251C6B76AD004A2422 /* WeiBo____Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeiBo____Tests.swift"; sourceTree = "<group>"; };
+		96E1BA271C6B76AD004A2422 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96E1BA2C1C6B76AD004A2422 /* WeiBo表情键盘UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WeiBo表情键盘UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		96E1BA301C6B76AD004A2422 /* WeiBo____UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeiBo____UITests.swift"; sourceTree = "<group>"; };
+		96E1BA321C6B76AD004A2422 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		96E1BA0A1C6B76AD004A2422 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96E1BA1E1C6B76AD004A2422 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96E1BA291C6B76AD004A2422 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		96E1BA041C6B76AD004A2422 = {
+			isa = PBXGroup;
+			children = (
+				96E1BA0F1C6B76AD004A2422 /* WeiBo表情键盘 */,
+				96E1BA241C6B76AD004A2422 /* WeiBo表情键盘Tests */,
+				96E1BA2F1C6B76AD004A2422 /* WeiBo表情键盘UITests */,
+				96E1BA0E1C6B76AD004A2422 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		96E1BA0E1C6B76AD004A2422 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				96E1BA0D1C6B76AD004A2422 /* WeiBo表情键盘.app */,
+				96E1BA211C6B76AD004A2422 /* WeiBo表情键盘Tests.xctest */,
+				96E1BA2C1C6B76AD004A2422 /* WeiBo表情键盘UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		96E1BA0F1C6B76AD004A2422 /* WeiBo表情键盘 */ = {
+			isa = PBXGroup;
+			children = (
+				96E1BA101C6B76AD004A2422 /* AppDelegate.swift */,
+				96E1BA121C6B76AD004A2422 /* ViewController.swift */,
+				96E1BA141C6B76AD004A2422 /* Main.storyboard */,
+				96E1BA171C6B76AD004A2422 /* Assets.xcassets */,
+				96E1BA191C6B76AD004A2422 /* LaunchScreen.storyboard */,
+				96E1BA1C1C6B76AD004A2422 /* Info.plist */,
+			);
+			path = "WeiBo表情键盘";
+			sourceTree = "<group>";
+		};
+		96E1BA241C6B76AD004A2422 /* WeiBo表情键盘Tests */ = {
+			isa = PBXGroup;
+			children = (
+				96E1BA251C6B76AD004A2422 /* WeiBo____Tests.swift */,
+				96E1BA271C6B76AD004A2422 /* Info.plist */,
+			);
+			path = "WeiBo表情键盘Tests";
+			sourceTree = "<group>";
+		};
+		96E1BA2F1C6B76AD004A2422 /* WeiBo表情键盘UITests */ = {
+			isa = PBXGroup;
+			children = (
+				96E1BA301C6B76AD004A2422 /* WeiBo____UITests.swift */,
+				96E1BA321C6B76AD004A2422 /* Info.plist */,
+			);
+			path = "WeiBo表情键盘UITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		96E1BA0C1C6B76AD004A2422 /* WeiBo表情键盘 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96E1BA351C6B76AD004A2422 /* Build configuration list for PBXNativeTarget "WeiBo表情键盘" */;
+			buildPhases = (
+				96E1BA091C6B76AD004A2422 /* Sources */,
+				96E1BA0A1C6B76AD004A2422 /* Frameworks */,
+				96E1BA0B1C6B76AD004A2422 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WeiBo表情键盘";
+			productName = "WeiBo表情键盘";
+			productReference = 96E1BA0D1C6B76AD004A2422 /* WeiBo表情键盘.app */;
+			productType = "com.apple.product-type.application";
+		};
+		96E1BA201C6B76AD004A2422 /* WeiBo表情键盘Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96E1BA381C6B76AD004A2422 /* Build configuration list for PBXNativeTarget "WeiBo表情键盘Tests" */;
+			buildPhases = (
+				96E1BA1D1C6B76AD004A2422 /* Sources */,
+				96E1BA1E1C6B76AD004A2422 /* Frameworks */,
+				96E1BA1F1C6B76AD004A2422 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				96E1BA231C6B76AD004A2422 /* PBXTargetDependency */,
+			);
+			name = "WeiBo表情键盘Tests";
+			productName = "WeiBo表情键盘Tests";
+			productReference = 96E1BA211C6B76AD004A2422 /* WeiBo表情键盘Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		96E1BA2B1C6B76AD004A2422 /* WeiBo表情键盘UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96E1BA3B1C6B76AD004A2422 /* Build configuration list for PBXNativeTarget "WeiBo表情键盘UITests" */;
+			buildPhases = (
+				96E1BA281C6B76AD004A2422 /* Sources */,
+				96E1BA291C6B76AD004A2422 /* Frameworks */,
+				96E1BA2A1C6B76AD004A2422 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				96E1BA2E1C6B76AD004A2422 /* PBXTargetDependency */,
+			);
+			name = "WeiBo表情键盘UITests";
+			productName = "WeiBo表情键盘UITests";
+			productReference = 96E1BA2C1C6B76AD004A2422 /* WeiBo表情键盘UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		96E1BA051C6B76AD004A2422 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "蒋进";
+				TargetAttributes = {
+					96E1BA0C1C6B76AD004A2422 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					96E1BA201C6B76AD004A2422 = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = 96E1BA0C1C6B76AD004A2422;
+					};
+					96E1BA2B1C6B76AD004A2422 = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = 96E1BA0C1C6B76AD004A2422;
+					};
+				};
+			};
+			buildConfigurationList = 96E1BA081C6B76AD004A2422 /* Build configuration list for PBXProject "WeiBo表情键盘" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 96E1BA041C6B76AD004A2422;
+			productRefGroup = 96E1BA0E1C6B76AD004A2422 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				96E1BA0C1C6B76AD004A2422 /* WeiBo表情键盘 */,
+				96E1BA201C6B76AD004A2422 /* WeiBo表情键盘Tests */,
+				96E1BA2B1C6B76AD004A2422 /* WeiBo表情键盘UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		96E1BA0B1C6B76AD004A2422 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96E1BA1B1C6B76AD004A2422 /* LaunchScreen.storyboard in Resources */,
+				96E1BA181C6B76AD004A2422 /* Assets.xcassets in Resources */,
+				96E1BA161C6B76AD004A2422 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96E1BA1F1C6B76AD004A2422 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96E1BA2A1C6B76AD004A2422 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		96E1BA091C6B76AD004A2422 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96E1BA131C6B76AD004A2422 /* ViewController.swift in Sources */,
+				96E1BA111C6B76AD004A2422 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96E1BA1D1C6B76AD004A2422 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96E1BA261C6B76AD004A2422 /* WeiBo____Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96E1BA281C6B76AD004A2422 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96E1BA311C6B76AD004A2422 /* WeiBo____UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		96E1BA231C6B76AD004A2422 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 96E1BA0C1C6B76AD004A2422 /* WeiBo表情键盘 */;
+			targetProxy = 96E1BA221C6B76AD004A2422 /* PBXContainerItemProxy */;
+		};
+		96E1BA2E1C6B76AD004A2422 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 96E1BA0C1C6B76AD004A2422 /* WeiBo表情键盘 */;
+			targetProxy = 96E1BA2D1C6B76AD004A2422 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		96E1BA141C6B76AD004A2422 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				96E1BA151C6B76AD004A2422 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		96E1BA191C6B76AD004A2422 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				96E1BA1A1C6B76AD004A2422 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		96E1BA331C6B76AD004A2422 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		96E1BA341C6B76AD004A2422 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		96E1BA361C6B76AD004A2422 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "WeiBo表情键盘/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-jchc.WeiBo----";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		96E1BA371C6B76AD004A2422 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "WeiBo表情键盘/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-jchc.WeiBo----";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		96E1BA391C6B76AD004A2422 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "WeiBo表情键盘Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-jchc.WeiBo----Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeiBo表情键盘.app/WeiBo表情键盘";
+			};
+			name = Debug;
+		};
+		96E1BA3A1C6B76AD004A2422 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "WeiBo表情键盘Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-jchc.WeiBo----Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeiBo表情键盘.app/WeiBo表情键盘";
+			};
+			name = Release;
+		};
+		96E1BA3C1C6B76AD004A2422 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "WeiBo表情键盘UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-jchc.WeiBo----UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "WeiBo表情键盘";
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		96E1BA3D1C6B76AD004A2422 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "WeiBo表情键盘UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-jchc.WeiBo----UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "WeiBo表情键盘";
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		96E1BA081C6B76AD004A2422 /* Build configuration list for PBXProject "WeiBo表情键盘" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96E1BA331C6B76AD004A2422 /* Debug */,
+				96E1BA341C6B76AD004A2422 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		96E1BA351C6B76AD004A2422 /* Build configuration list for PBXNativeTarget "WeiBo表情键盘" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96E1BA361C6B76AD004A2422 /* Debug */,
+				96E1BA371C6B76AD004A2422 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		96E1BA381C6B76AD004A2422 /* Build configuration list for PBXNativeTarget "WeiBo表情键盘Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96E1BA391C6B76AD004A2422 /* Debug */,
+				96E1BA3A1C6B76AD004A2422 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		96E1BA3B1C6B76AD004A2422 /* Build configuration list for PBXNativeTarget "WeiBo表情键盘UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96E1BA3C1C6B76AD004A2422 /* Debug */,
+				96E1BA3D1C6B76AD004A2422 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 96E1BA051C6B76AD004A2422 /* Project object */;
+}

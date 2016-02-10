@@ -313,6 +313,7 @@ extension HomeTableViewController{
         let status = statuses![indexPath.row]
         
        // let cell = tableView.dequeueReusableCellWithIdentifier(StatusTableViewCellIdentifier.cellID(status)) as! StatusTableViewCell
+        //MARK: 💗不加forIndexPath会调用很多次,会超过新浪请求次数
         let cell = tableView.dequeueReusableCellWithIdentifier(StatusTableViewCellIdentifier.cellID(status), forIndexPath: indexPath) as! StatusTableViewCell
         // cell.textLabel?.text = status.text
         cell.status = status
