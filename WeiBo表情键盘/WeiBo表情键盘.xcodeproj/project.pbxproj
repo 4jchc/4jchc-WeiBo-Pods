@@ -14,6 +14,8 @@
 		96E1BA1B1C6B76AD004A2422 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96E1BA191C6B76AD004A2422 /* LaunchScreen.storyboard */; };
 		96E1BA261C6B76AD004A2422 /* WeiBo____Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E1BA251C6B76AD004A2422 /* WeiBo____Tests.swift */; };
 		96E1BA311C6B76AD004A2422 /* WeiBo____UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E1BA301C6B76AD004A2422 /* WeiBo____UITests.swift */; };
+		96E1BA401C6B7900004A2422 /* EmoticonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E1BA3F1C6B7900004A2422 /* EmoticonViewController.swift */; };
+		96E1BA421C6B795F004A2422 /* 开发笔记.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E1BA411C6B795F004A2422 /* 开发笔记.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		96E1BA2C1C6B76AD004A2422 /* WeiBo表情键盘UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WeiBo表情键盘UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96E1BA301C6B76AD004A2422 /* WeiBo____UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeiBo____UITests.swift"; sourceTree = "<group>"; };
 		96E1BA321C6B76AD004A2422 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96E1BA3F1C6B7900004A2422 /* EmoticonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmoticonViewController.swift; path = EmoticonView/EmoticonViewController.swift; sourceTree = "<group>"; };
+		96E1BA411C6B795F004A2422 /* 开发笔记.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "开发笔记.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,8 @@
 		96E1BA0F1C6B76AD004A2422 /* WeiBo表情键盘 */ = {
 			isa = PBXGroup;
 			children = (
+				96E1BA411C6B795F004A2422 /* 开发笔记.swift */,
+				96E1BA3E1C6B78C2004A2422 /* EmoticonView */,
 				96E1BA101C6B76AD004A2422 /* AppDelegate.swift */,
 				96E1BA121C6B76AD004A2422 /* ViewController.swift */,
 				96E1BA141C6B76AD004A2422 /* Main.storyboard */,
@@ -123,6 +129,14 @@
 				96E1BA321C6B76AD004A2422 /* Info.plist */,
 			);
 			path = "WeiBo表情键盘UITests";
+			sourceTree = "<group>";
+		};
+		96E1BA3E1C6B78C2004A2422 /* EmoticonView */ = {
+			isa = PBXGroup;
+			children = (
+				96E1BA3F1C6B7900004A2422 /* EmoticonViewController.swift */,
+			);
+			name = EmoticonView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +271,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				96E1BA131C6B76AD004A2422 /* ViewController.swift in Sources */,
+				96E1BA401C6B7900004A2422 /* EmoticonViewController.swift in Sources */,
+				96E1BA421C6B795F004A2422 /* 开发笔记.swift in Sources */,
 				96E1BA111C6B76AD004A2422 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
