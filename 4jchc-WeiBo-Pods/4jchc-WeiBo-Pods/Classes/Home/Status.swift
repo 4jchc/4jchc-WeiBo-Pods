@@ -115,12 +115,14 @@ class Status: NSObject {
         if since_id > 0
         {
             params["since_id"] = "\(since_id)"
+            printLog("下拉刷新--")
         }
         
         // 上拉刷新
         if max_id > 0
         {
-            params["max_id"] = "\(max_id - 1)"
+            params["max_id"] = "\(max_id )"//- 1
+            
         }
         
         NetworkTools.shareNetworkTools().GET(path, parameters: params , progress: { (progress) -> Void in
@@ -128,11 +130,11 @@ class Status: NSObject {
             printLog("progress进度\(progress)")
             
             },success: { (_, JSON) -> Void in
-            printLog("params \(params)")
+            
             // 1.取出statuses key对应的数组 (存储的都是字典)
             // 2.遍历数组, 将字典转换为模型
             let models = dict2Model(JSON!["statuses"] as! [[String: AnyObject]])
-
+            printLog("params \(params)models.count\(models.count)")
             //MARK: - 2.通过闭包将数据传递给调用者
            // finished(models: models, error: nil)
                 

@@ -479,7 +479,7 @@ import UIKit
 //MARK: - 💗注释第六天
 
     /*
-    布局发送微博界面
+    //MARK: 1 布局发送微博界面
     1.导航条中间视图是2个lable.使用小马哥的自动布局代码实现
     2.UITextViewDelegate的使用
     textViewDidChange(textView: UITextView)
@@ -488,7 +488,9 @@ import UIKit
     */
 
 
-
+    /*
+    发送文本微博
+    */
 
 
 

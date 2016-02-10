@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SVProgressHUD
 class ComposeViewController: UIViewController {
     
     override func viewDidLoad() {
@@ -85,9 +85,27 @@ class ComposeViewController: UIViewController {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
+    //MARK: 发送文本微博
     func sendStatus()
     {
-        print(__FUNCTION__)
+        let path = "2/statuses/update.json"
+        let params = ["access_token":UserAccount.loadAccount()?.access_token! , "status": textView.text]
+        
+        NetworkTools.shareNetworkTools().POST(path, parameters: params , progress: { (progress) -> Void in
+            
+            printLog("progress进度\(progress)")
+            
+            },success: { (_, JSON) -> Void in
+
+            // 1.提示用户发送成功
+            SVProgressHUD.showSuccessWithStatus("发送成功", maskType: SVProgressHUDMaskType.Black)
+            // 2.关闭发送界面
+            self.close()
+            }) { (_, error) -> Void in
+                print(error)
+                // 3.提示用户发送失败
+                SVProgressHUD.showErrorWithStatus("发送失败", maskType: SVProgressHUDMaskType.Black)
+        }
     }
     
     // MARK: - 懒加载
@@ -106,9 +124,10 @@ class ComposeViewController: UIViewController {
     }()
 }
 
-extension ComposeViewController: UITextViewDelegate
-{
+extension ComposeViewController: UITextViewDelegate {
+    
     func textViewDidChange(textView: UITextView) {
+        
         placeholderLabel.hidden = textView.hasText()
         navigationItem.rightBarButtonItem?.enabled = textView.hasText()
     }

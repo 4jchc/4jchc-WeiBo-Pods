@@ -107,7 +107,7 @@ class HomeTableViewController: BaseTableViewController {
      */
     //MARK: - 获取微博数据
     ///  获取微博数据
-    @objc private func loadData()
+     func loadData()//@objc private
     {
         /*
         1.默认最新返回20条数据
@@ -129,13 +129,11 @@ class HomeTableViewController: BaseTableViewController {
         {
             since_id = 0
             max_id = statuses?.last?.id ?? 0
-        }
-        
-        printLog("statuses?.first?.id=\(statuses?.first?.id) statuses?.last?.id=\(statuses?.last?.id)")
+        }//1377704907
         
         Status.loadStatuses(since_id,max_id: max_id) { (models, error) -> () in
             
-            printLog("since_id--max_id\(since_id)-\(max_id)")
+            printLog("since_id--max_id\(since_id)***\(max_id)")
             // 接收刷新
             self.refreshControl?.endRefreshing()
             if error != nil
@@ -151,11 +149,13 @@ class HomeTableViewController: BaseTableViewController {
                 
                 // 显示刷新提醒
                 self.showNewStatusCount(models?.count ?? 0)
+                printLog("下拉刷新--显示刷新提醒\(models?.count)")
             //上拉刷新
             }else if max_id > 0
             {
                 // 如果是上拉加载更多, 就将获取到的数据, 拼接在原有数据的后面
                 self.statuses = self.statuses! + models!
+                printLog("上拉刷新--显示刷新提醒\(models?.count)")
             }
             else
             {
@@ -312,7 +312,8 @@ extension HomeTableViewController{
         // 2.设置数据
         let status = statuses![indexPath.row]
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(StatusTableViewCellIdentifier.cellID(status)) as! StatusTableViewCell
+       // let cell = tableView.dequeueReusableCellWithIdentifier(StatusTableViewCellIdentifier.cellID(status)) as! StatusTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(StatusTableViewCellIdentifier.cellID(status), forIndexPath: indexPath) as! StatusTableViewCell
         // cell.textLabel?.text = status.text
         cell.status = status
         
