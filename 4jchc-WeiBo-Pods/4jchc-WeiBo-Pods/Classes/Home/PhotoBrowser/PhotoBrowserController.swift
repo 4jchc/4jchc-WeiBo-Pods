@@ -80,7 +80,7 @@ class PhotoBrowserController: UIViewController {
         return btn
     }()
     
-    private lazy var collectionView: UICollectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: UICollectionViewFlowLayout())
+    private lazy var collectionView: UICollectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: PhotoBrowserLayout())
 }
 
 

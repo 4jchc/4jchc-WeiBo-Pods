@@ -432,9 +432,13 @@ import UIKit
     */
 
     /*
-    显示大图
+    //MARK: 11 显示大图
     1.按照宽高比设置图片
     2.自定义 UICollectionViewFlowLayout
     3.自定义cell UICollectionViewCell
+    */
+
+    /*
+    图片居中显示 -长图-短图判断
     */
 
