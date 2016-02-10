@@ -48,6 +48,7 @@
 		96C7B81B1C5B1652000A176C /* PopoverPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C7B81A1C5B1652000A176C /* PopoverPresentationController.swift */; };
 		96C7B81D1C5B1665000A176C /* PopoverViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96C7B81C1C5B1665000A176C /* PopoverViewController.storyboard */; };
 		96C7B8211C5B2BB6000A176C /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C7B8201C5B2BB6000A176C /* PopoverViewController.swift */; };
+		96E1BA031C6B22A6004A2422 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E1BA021C6B22A6004A2422 /* ComposeViewController.swift */; };
 		96EBA0051C5DFEA100F523A6 /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EBA0041C5DFEA100F523A6 /* NetworkTools.swift */; };
 		96EE28051C58709600002CF4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EE28041C58709600002CF4 /* MainViewController.swift */; };
 		96EE28071C5870B100002CF4 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EE28061C5870B100002CF4 /* HomeTableViewController.swift */; };
@@ -138,6 +139,7 @@
 		96C7B81A1C5B1652000A176C /* PopoverPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverPresentationController.swift; sourceTree = "<group>"; };
 		96C7B81C1C5B1665000A176C /* PopoverViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PopoverViewController.storyboard; sourceTree = "<group>"; };
 		96C7B8201C5B2BB6000A176C /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
+		96E1BA021C6B22A6004A2422 /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		96EBA0041C5DFEA100F523A6 /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
 		96EE28041C58709600002CF4 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		96EE28061C5870B100002CF4 /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
@@ -298,11 +300,20 @@
 			name = Popover;
 			sourceTree = "<group>";
 		};
+		96E1BA011C6B2280004A2422 /* Compose */ = {
+			isa = PBXGroup;
+			children = (
+				96E1BA021C6B22A6004A2422 /* ComposeViewController.swift */,
+			);
+			path = Compose;
+			sourceTree = "<group>";
+		};
 		96EE27F21C586FAD00002CF4 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				96B0408F1C57233E009DBC56 /* AppDelegate.swift */,
 				96812AF41C58B23200A2349E /* 开发笔记.swift */,
+				96E1BA011C6B2280004A2422 /* Compose */,
 				963097F61C61D3640073B432 /* Newfeature */,
 				96A26CED1C5DDB95001BC12F /* OAuth */,
 				96EE27F31C586FAD00002CF4 /* Common */,
@@ -604,6 +615,7 @@
 				96B040901C57233E009DBC56 /* AppDelegate.swift in Sources */,
 				9621911E1C59FA1200C3CE35 /* UIBarButtonItem+Extension.swift in Sources */,
 				9653C62F1C5882EB000FAF68 /* DiscoverTableViewController.swift in Sources */,
+				96E1BA031C6B22A6004A2422 /* ComposeViewController.swift in Sources */,
 				964B20AA1C647642001BABF2 /* UIKit+Extension.swift in Sources */,
 				96B9D17E1C5B49C60037F52B /* PopoverAnimator.swift in Sources */,
 				96812AF51C58B23200A2349E /* 开发笔记.swift in Sources */,

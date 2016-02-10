@@ -457,7 +457,7 @@ import UIKit
     */
 
     /*
-    保存图片
+    //MARK: 15 保存图片
     1.拿到当前正在显示的cell  Visible可见的
     let index = collectionView.indexPathsForVisibleItems().last!
     let cell = collectionView.cellForItemAtIndexPath(index) as! PhotoBrowserCell
@@ -469,12 +469,23 @@ import UIKit
     */
 
     /*
-    添加git标志
+    //MARK: 16 添加git标志
     0.在didset方法里赋值判断
     1.判断是否需要显示gif图标要转为小写 path Extension lowercase小写的 String
     if (imageURL!.absoluteString as NSString).pathExtension.lowercaseString == "gif"
     */
 
+
+//MARK: - 💗注释第六天
+
+    /*
+    布局发送微博界面
+    1.导航条中间视图是2个lable.使用小马哥的自动布局代码实现
+    2.UITextViewDelegate的使用
+    textViewDidChange(textView: UITextView)
+    3.hasText有值是true妹纸是false
+    4.UITextView上添加lable为placeholderLabel 在值改变时调用lable的隐藏
+    */
 
 
 
