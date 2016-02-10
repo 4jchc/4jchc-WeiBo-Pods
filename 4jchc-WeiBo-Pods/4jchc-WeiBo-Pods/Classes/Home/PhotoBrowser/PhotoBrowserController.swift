@@ -68,7 +68,7 @@ class PhotoBrowserController: UIViewController {
         
         // - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo;
     }
-    func image(image:UIImage, didFinishSavingWithError error:NSError?, contextInfo:AnyObject){
+    func image(image:UIImage, didFinishSavingWithError error:NSError?, contextInfo:AnyObject){//UnsafePointer<Void>
         if error != nil
         {
             SVProgressHUD.showErrorWithStatus("保存失败", maskType: SVProgressHUDMaskType.Black)

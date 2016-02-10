@@ -97,9 +97,16 @@ class StatusPictureView: UICollectionView {
         var imageURL: NSURL?
             {
             didSet{
+                // 1.设置图片
                 iconImageView.sd_setImageWithURL(imageURL!)
+                // 2.判断是否需要显示gif图标 // GIF
+                if (imageURL!.absoluteString as NSString).pathExtension.lowercaseString == "gif"
+                {
+                    gifImageView.hidden = false
+                }
             }
         }
+        
         
         override init(frame: CGRect) {
             super.init(frame: frame)
@@ -111,13 +118,21 @@ class StatusPictureView: UICollectionView {
         {
             // 1.添加子控件
             contentView.addSubview(iconImageView)
+            iconImageView.addSubview(gifImageView)
+            
             // 2.布局子控件
             iconImageView.xmg_Fill(contentView)
+            gifImageView.xmg_AlignInner(type: XMG_AlignType.BottomRight, referView: iconImageView, size: nil)
         }
         
         // MARK: - 懒加载
         private lazy var iconImageView:UIImageView = UIImageView()
-        
+        // MARK: git标签
+        private lazy var gifImageView: UIImageView = {
+            let iv = UIImageView(image: UIImage(named: "timeline_image_gif"))
+            iv.hidden = true
+            return iv
+        }()
         required init?(coder aDecoder: NSCoder) {
             fatalError("init(coder:) has not been implemented")
         }

@@ -468,7 +468,12 @@ import UIKit
     func image(image:UIImage, didFinishSavingWithError error:NSError?, contextInfo:AnyObject)
     */
 
-
+    /*
+    添加git标志
+    0.在didset方法里赋值判断
+    1.判断是否需要显示gif图标要转为小写 path Extension lowercase小写的 String
+    if (imageURL!.absoluteString as NSString).pathExtension.lowercaseString == "gif"
+    */
 
 
 
