@@ -93,12 +93,21 @@ import UIKit
     */
 
     /*
-    获取发送文本
+    //MARK: - 9 获取发送文本
     1.迭代遍历属性文本
      self.customTextView.attributedText.enumerate列举AttributesInRange
      遍历的时候传递给我们的objc是一个字典, 如果字典中的NSAttachment这个key有值
      那么就证明当前是一个图片
     2.自定义NSTextAttachment 设置属性-保存当时插入时的对应表情的文字
+    */
+
+    /*
+    重构-删除按钮处理-最近表情添加
+    1.deleteBackward
+    2.排序对数组进行排序
+    var result = emoticons?.sort({ (e1, e2) -> Bool in
+    return e1.times > e2.times
+    })
     */
 
 //MARK: - 开始💗

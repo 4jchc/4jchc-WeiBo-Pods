@@ -7,23 +7,23 @@
 //
 
 import UIKit
-    /*
-    结构:
-    1. 加载emoticons.plist拿到每组表情的路径
+/*
+结构:
+1. 加载emoticons.plist拿到每组表情的路径
 
-    emoticons.plist(字典)  存储了所有组表情的数据
-    |----packages(字典数组)
-    |-------id(存储了对应组表情对应的文件夹)
+emoticons.plist(字典)  存储了所有组表情的数据
+|----packages(字典数组)
+|-------id(存储了对应组表情对应的文件夹)
 
-    2. 根据拿到的路径加载对应组表情的info.plist
-    info.plist(字典)
-    |----id(当前组表情文件夹的名称)
-    |----group_name_cn(组的名称)
-    |----emoticons(字典数组, 里面存储了所有表情)
-    |----chs(表情对应的文字)
-    |----png(表情对应的图片)
-    |----code(emoji表情对应的十六进制字符串)
-    */
+2. 根据拿到的路径加载对应组表情的info.plist
+info.plist(字典)
+|----id(当前组表情文件夹的名称)
+|----group_name_cn(组的名称)
+|----emoticons(字典数组, 里面存储了所有表情)
+|----chs(表情对应的文字)
+|----png(表情对应的图片)
+|----code(emoji表情对应的十六进制字符串)
+*/
 class EmoticonPackage: NSObject {
     /// 当前组表情文件夹的名称
     var id: String?
@@ -45,7 +45,7 @@ class EmoticonPackage: NSObject {
         pk.emoticons = [Emoticon]()
         pk.appendEmtyEmoticons()
         packages.append(pk)
-
+        
         let path = NSBundle.mainBundle().pathForResource("emoticons.plist", ofType: nil, inDirectory: "Emoticons.bundle")!
         // 1.加载emoticons.plist
         let dict = NSDictionary(contentsOfFile: path)!
@@ -83,7 +83,7 @@ class EmoticonPackage: NSObject {
             index++
         }
     }
-
+    
     //MARK: 追加空白按钮
     // 如果一页不足21个,那么就添加一些空白按钮补齐
     func appendEmtyEmoticons()
@@ -104,12 +104,52 @@ class EmoticonPackage: NSObject {
         print(emoticons?.count)
         print("---------")
     }
+    
+    //MARK: - 用于给最近添加表情
+    ///  用于给最近添加表情
+    func appendEmoticons(emoticon: Emoticon)
+    {
+        // 1.判断是否是删除按钮
+        if emoticon.isRemoveButton
+        {
+            return
+        }
+        // 2.判断当前点击的表情是否已经添加到最近数组中
+        let contains = emoticons!.contains(emoticon)
+        if !contains
+        {
+            // 删除删除按钮
+            emoticons?.removeLast()
+            emoticons?.append(emoticon)
+        }
+        
+        // 3.对数组进行排序
+        var result = emoticons?.sort({ (e1, e2) -> Bool in
+            return e1.times > e2.times
+        })
+        
+        // 4.删除多余的表情
+        if !contains
+        {
+            result?.removeLast()
+            // 添加一个删除按钮
+            result?.append(Emoticon(isRemoveButton: true))
+        }
+        
+        emoticons = result
+        
+        print(emoticons?.count)
+        
+    }
+    
+    
+    
     /**
      :param: fileName 文件的名称
      
      :returns: 全路径
      */
-    //MARK: 获取指定文件的全路径
+     //MARK: 获取指定文件的全路径
     func infoPath(fileName: String) -> String {
         return (EmoticonPackage.emoticonPath().stringByAppendingPathComponent(id!) as NSString).stringByAppendingPathComponent(fileName)
     }
@@ -158,6 +198,9 @@ class Emoticon: NSObject {
     
     /// 标记是否是删除按钮
     var isRemoveButton: Bool = false
+    
+    /// 记录当前表情被使用的次数
+    var times: Int = 0
     
     /// 表情图片的全路径
     var imagePath: String?

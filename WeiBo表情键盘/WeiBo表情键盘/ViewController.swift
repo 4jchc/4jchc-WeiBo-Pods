@@ -13,38 +13,41 @@ class ViewController: UIViewController {
     
     
     @IBAction func itemClick(sender: AnyObject) {
-        
+        /*
         var strM = String()
         // 后去需要发送给服务器的数据
         self.customTextView.attributedText.enumerateAttributesInRange( NSMakeRange(0, self.customTextView.attributedText.length), options: NSAttributedStringEnumerationOptions(rawValue: 0)) { (objc, range, _) -> Void in
-            /*
-            // 遍历的时候传递给我们的objc是一个字典, 如果字典中的NSAttachment这个key有值
-            // 那么就证明当前是一个图片
-            print(objc["NSAttachment"])
-            // range就是纯字符串的范围
-            // 如果纯字符串中间有图片表情, 那么range就会传递多次
-            print(range)
-            let res = (self.customTextView.text as NSString).substringWithRange(range)
-            print(res)
-            print("++++++++++++++++++++++++++")
-            */
-            
-            
-            if objc["NSAttachment"] != nil
-            {
-                let attachment =  objc["NSAttachment"] as! EmoticonTextAttachment
-                // 图片
-                //                strM += "[图片]"
-                strM += attachment.chs!
-            }else
-            {
-                // 文字
-                strM += (self.customTextView.text as NSString).substringWithRange(range)
-            }
-            
-            
+        /*
+        // 遍历的时候传递给我们的objc是一个字典, 如果字典中的NSAttachment这个key有值
+        // 那么就证明当前是一个图片
+        print(objc["NSAttachment"])
+        // range就是纯字符串的范围
+        // 如果纯字符串中间有图片表情, 那么range就会传递多次
+        print(range)
+        let res = (self.customTextView.text as NSString).substringWithRange(range)
+        print(res)
+        print("++++++++++++++++++++++++++")
+        */
+        
+        
+        if objc["NSAttachment"] != nil
+        {
+        let attachment =  objc["NSAttachment"] as! EmoticonTextAttachment
+        // 图片
+        //                strM += "[图片]"
+        strM += attachment.chs!
+        }else
+        {
+        // 文字
+        strM += (self.customTextView.text as NSString).substringWithRange(range)
+        }
+        
+        
         }
         print("strM = \(strM)")
+        */
+
+         print(self.customTextView.emoticonAttributedText())
         
     }
     
@@ -69,6 +72,7 @@ class ViewController: UIViewController {
     // unowned 相当于OC中的 unsafe_unretained, 特点对象释放之后不会将变量设置为nil
     private lazy var emoticonVC: EmoticonViewController = EmoticonViewController { [unowned self] (emoticon) -> () in
         
+        /*
         // 1.判断当前点击的是否是emoji表情
         if emoticon.emojiStr != nil{
             self.customTextView.replaceRange(self.customTextView.selectedTextRange!, withText: emoticon.emojiStr!)
@@ -103,6 +107,9 @@ class ViewController: UIViewController {
             self.customTextView.selectedRange = NSMakeRange(range.location + 1, 0)
             
         }
+        */
+        // TODO: 还不够完美
+        self.customTextView.insertEmoticon(emoticon, font: 20)
     }
     
     deinit

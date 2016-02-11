@@ -129,7 +129,13 @@ extension EmoticonViewController: UICollectionViewDataSource, UICollectionViewDe
     // 选中某一个cell时调用
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         //        print(indexPath.item)
+        // 1.处理最近表情, 将当前使用的表情添加到最近表情的数组中
         let emoticon = packages[indexPath.section].emoticons![indexPath.item]
+        emoticon.times++
+        packages[0].appendEmoticons(emoticon)
+        //        collectionView.reloadSections(NSIndexSet(index: 0))
+        
+        // 2.回调通知使用者当前点击了那个表情
         emoticonDidSelectedCallBack(emoticon: emoticon)
     }
     
