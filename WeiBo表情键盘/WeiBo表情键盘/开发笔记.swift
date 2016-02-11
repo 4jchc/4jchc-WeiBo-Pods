@@ -21,7 +21,7 @@ import UIKit
     */
 
     /*
-    完善键盘表情布局
+    //MARK: - 2.完善键盘表情布局
     1.input输入 Accessory副的,辅助的 View
     2.设置内边距 里面的视图相对于主视图
     iconButton.frame = CGRectInset(contentView.bounds, 4, 4)
@@ -29,6 +29,13 @@ import UIKit
     collectionView?.contentInset = UIEdgeInsets(top: y, left: 0, bottom: y, right: 0)
     */
 
+    /*
+    准备表情模型 扫描emoji表情
+    1.获取微博表情的主路径
+    (NSBundle.mainBundle().bundlePath as NSString).stringByAppendingPathComponent("Emoticons.bundle")
+    2.stringByAppendingPathComponent拼接路径
+    3.KVC的使用
+    */
 
 
 
