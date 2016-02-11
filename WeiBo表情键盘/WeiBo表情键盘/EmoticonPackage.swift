@@ -46,10 +46,12 @@ class EmoticonPackage: NSObject {
         var packages = [EmoticonPackage]()
         for d in dictArray
         {
-            // 4.取出ID, 创建对应的组
+            //MARK: 4.通过取出ID, 创建对应的组
             let package = EmoticonPackage(id: d["id"]! as! String)
             packages.append(package)
             package.loadEmoticons()
+            // 追加空白按钮
+            package.appendEmtyEmoticons()
         }
         return packages
     }
@@ -60,12 +62,39 @@ class EmoticonPackage: NSObject {
         group_name_cn = emoticonDict["group_name_cn"] as? String
         let dictArray = emoticonDict["emoticons"] as! [[String: String]]
         emoticons = [Emoticon]()
-        for dict in dictArray{
-            // 添加模型
+        var index = 0
+        for dict in dictArray{ // 固定102
+            
+            if index == 20 {
+                print("添加删除")
+                emoticons?.append(Emoticon(isRemoveButton: true))
+                index = 0
+            }
             emoticons?.append(Emoticon(dict: dict, id: id!))
+            index++
         }
     }
-    
+
+    //MARK: 追加空白按钮
+    // 如果一页不足21个,那么就添加一些空白按钮补齐
+    func appendEmtyEmoticons()
+    {
+        print(emoticons?.count)
+        let count = emoticons!.count % 21
+        print("count = \(count)")
+        
+        // 追加空白按钮
+        for _ in count..<20
+        {
+            // 追加空白按钮
+            emoticons?.append(Emoticon(isRemoveButton: false))
+        }
+        // 追加一个删除按钮
+        emoticons?.append(Emoticon(isRemoveButton: true))
+        
+        print(emoticons?.count)
+        print("---------")
+    }
     /**
      :param: fileName 文件的名称
      
@@ -117,8 +146,18 @@ class Emoticon: NSObject {
     /// 当前表情对应的文件夹
     var id: String?
     
+    
+    /// 标记是否是删除按钮
+    var isRemoveButton: Bool = false
+    
     /// 表情图片的全路径
     var imagePath: String?
+    
+    init(isRemoveButton: Bool)
+    {
+        super.init()
+        self.isRemoveButton = isRemoveButton
+    }
     
     init(dict: [String: String], id: String)
     {

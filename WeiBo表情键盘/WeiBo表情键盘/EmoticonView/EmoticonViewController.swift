@@ -129,6 +129,13 @@ class EmoticonCell: UICollectionViewCell {
             // 2.设置emoji表情
             // 注意: 加上??可以防止重用
             iconButton.setTitle(emoticon!.emojiStr ?? "", forState: UIControlState.Normal)
+            
+            //MARK: 3.判断是否是删除按钮
+            if emoticon!.isRemoveButton
+            {
+                iconButton.setImage(UIImage(named: "compose_emotion_delete"), forState: UIControlState.Normal)
+                iconButton.setImage(UIImage(named: "compose_emotion_delete_highlighted"), forState: UIControlState.Highlighted)
+            }
         }
     }
     
