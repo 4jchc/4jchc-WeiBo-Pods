@@ -9,24 +9,40 @@ import UIKit
 
 
     /*
-    界面布局
+    //MARK: - 1.界面布局
     1.控制器嵌套控制器要设置父子控制器
     addChildViewController
     2.设置UITextView的弹出自定义键盘
-     customTextView.inputView = emoticonVC.view
+    customTextView.inputView = emoticonVC.view
     3.取消自动布局translates转化 Autoresizing自动调整尺寸 Mask屏蔽 Into变成,除 Constraints约束
     collectionVeiw.translatesAutoresizingMaskIntoConstraints = false
     4.添加约束数组 [NSLayoutConstraint]()
     view.addConstraints(cons)
     */
 
+    /*
+    完善键盘表情布局
+    1.input输入 Accessory副的,辅助的 View
+    2.设置内边距 里面的视图相对于主视图
+    iconButton.frame = CGRectInset(contentView.bounds, 4, 4)
+    3.主视图的内边距
+    collectionView?.contentInset = UIEdgeInsets(top: y, left: 0, bottom: y, right: 0)
+    */
 
 
 
+
+
+
+
+
+//MARK: - 开始💗
+
+/*
 
 class ViewController1: UIViewController {
     
-   weak var customTextView: UITextView!
+    weak var customTextView: UITextView!
     
     
     override func viewDidLoad() {
@@ -37,7 +53,8 @@ class ViewController1: UIViewController {
         
         // 2.将表情键盘控制器的view设置为UITextView的inputView
         customTextView.inputView = emoticonVC.view
-        
+        // 初始化UI
+        setupUI()
     }
     
     //MARK: - 初始化UI
@@ -51,11 +68,49 @@ class ViewController1: UIViewController {
         
         // 2.布局子控件
         
+        <#setupConstraint()#>
+    }
+    //MARK:  纯代码设置约束
+    func setupConstraint(){
+        
+        //使用Auto Layout的方式来布局
+        button.translatesAutoresizingMaskIntoConstraints = false
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        
+        
+        // 创建一个约束数组
+        var cons = [NSLayoutConstraint]()
+        // 创建一个控件数组
+        let dict = ["collectionVeiw": collectionVeiw, "toolbar": toolbar]
+        
+        //创建一个水平居中约束（按钮）
+        cons += NSLayoutConstraint(
+            item: button, attribute: .CenterX, relatedBy: .Equal,
+            toItem: self.view, attribute: .CenterX, multiplier: 1.0, constant: 0.0)
+        //创建水平方向约束
+        cons += NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[collectionVeiw]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: dict)
+        cons += NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[toolbar]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: dict)
+        //创建垂直方向约束
+        cons += NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[collectionVeiw]-[toolbar(44)]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: dict)
+        
+        view.addConstraints(cons)
+        
         
     }
     
+    
     // MARK: - 懒加载
     private lazy var emoticonVC = <#collectionVeiw#>()
-
-
+    
+    
 }
+
+*/
+
+//MARK: - 结束💗
+
+
+
+
+

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+private let XMGEmoticonCellReuseIdentifier = "XMGEmoticonCellReuseIdentifier"
 class EmoticonViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,14 +26,19 @@ class EmoticonViewController: UIViewController {
         view.addSubview(toolbar)
         
         // 2.布局子控件translates转化 Autoresizing自动调整尺寸 Mask屏蔽 Into变成,除 Constraints约束
+        // 使用Auto Layout的方式来布局
         collectionVeiw.translatesAutoresizingMaskIntoConstraints = false
         toolbar.translatesAutoresizingMaskIntoConstraints = false
         
         // 提示: 如果想自己封装一个框架, 最好不要依赖其它框架
+        // 创建一个约束数组
         var cons = [NSLayoutConstraint]()
+        // 创建一个控件数组
         let dict = ["collectionVeiw": collectionVeiw, "toolbar": toolbar]
+        //创建水平方向约束
         cons += NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[collectionVeiw]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: dict)
         cons += NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[toolbar]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: dict)
+        //创建垂直方向约束
         cons += NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[collectionVeiw]-[toolbar(44)]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: dict)
         
         view.addConstraints(cons)
@@ -46,7 +51,10 @@ class EmoticonViewController: UIViewController {
     
     // MARK: - 懒加载
     private lazy var collectionVeiw: UICollectionView = {
-        let clv = UICollectionView(frame: CGRectZero, collectionViewLayout: UICollectionViewFlowLayout())
+        let clv = UICollectionView(frame: CGRectZero, collectionViewLayout: EmoticonLayout())
+        // 注册cell
+        clv.registerClass(EmoticonCell.self, forCellWithReuseIdentifier: XMGEmoticonCellReuseIdentifier)
+        clv.dataSource = self
         return clv
     }()
     
@@ -70,3 +78,77 @@ class EmoticonViewController: UIViewController {
         return bar
     }()
 }
+
+
+
+
+//MARK: - UICollectionViewDataSource
+extension EmoticonViewController: UICollectionViewDataSource
+{
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 21 * 4
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionVeiw.dequeueReusableCellWithReuseIdentifier(XMGEmoticonCellReuseIdentifier, forIndexPath: indexPath) as! EmoticonCell
+        
+        cell.backgroundColor = (indexPath.item % 2 == 0) ? UIColor.redColor() : UIColor.greenColor()
+        
+        return cell
+    }
+}
+//MARK: - 自定义UICollectionViewCell
+class EmoticonCell: UICollectionViewCell {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupUI()
+    }
+    //MARK: - 初始化UI
+    private func setupUI()
+    {
+        contentView.addSubview(iconButton)
+        print(contentView.bounds)
+        iconButton.backgroundColor = UIColor.whiteColor()
+        //        iconButton.frame = contentView.bounds
+        // 设置内边距
+        iconButton.frame = CGRectInset(contentView.bounds, 4, 4)
+        
+    }
+    
+    // MARK: - 懒加载
+    private lazy var iconButton: UIButton = UIButton()
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+}
+
+
+//MARK: - 自定义FlowLayout布局
+class EmoticonLayout: UICollectionViewFlowLayout {
+    
+    override func prepareLayout() {
+        super.prepareLayout()
+        // 1.设置cell相关属性
+        let width = collectionView!.bounds.width / 7
+        itemSize = CGSize(width: width, height: width)
+        minimumInteritemSpacing = 0
+        minimumLineSpacing = 0
+        scrollDirection = UICollectionViewScrollDirection.Horizontal
+        // 2.设置collectionview相关属性
+        collectionView?.pagingEnabled = true
+        collectionView?.bounces = false
+        collectionView?.showsHorizontalScrollIndicator = false
+        
+        // 注意:最好不要乘以0.5, 因为CGFloat不准确, 所以如果乘以0.5在iPhone4/4身上会有问题
+        let y = (collectionView!.bounds.height - 3 * width) * 0.45
+        collectionView?.contentInset = UIEdgeInsets(top: y, left: 0, bottom: y, right: 0)
+        
+    }
+}
+
+
+
+
+
+

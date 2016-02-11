@@ -20,6 +20,8 @@ class ViewController: UIViewController {
         // 2.将表情键盘控制器的view设置为UITextView的inputView
         customTextView.inputView = emoticonVC.view
         
+        
+        
     }
     
     // MARK: - 懒加载
