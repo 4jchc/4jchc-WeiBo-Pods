@@ -30,14 +30,19 @@ import UIKit
     */
 
     /*
-    准备表情模型 扫描emoji表情
+    //MARK: - 3 准备表情模型 扫描emoji表情
     1.获取微博表情的主路径
     (NSBundle.mainBundle().bundlePath as NSString).stringByAppendingPathComponent("Emoticons.bundle")
     2.stringByAppendingPathComponent拼接路径
     3.KVC的使用
     */
 
-
+    /*
+    显示表情
+    1.emojy的大小就是字体的大小
+    2.KVO的使用
+    3.模型Didset的赋值
+    */
 
 
 

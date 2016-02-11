@@ -36,7 +36,7 @@ class EmoticonPackage: NSObject {
     // 浪小花 -> 一组  -> 所有的表情模型(emoticons)
     // 默认 -> 一组  -> 所有的表情模型(emoticons)
     // emoji -> 一组  -> 所有的表情模型(emoticons)
-    class func loadPackages() -> [EmoticonPackage]? {
+    class func loadPackages() -> [EmoticonPackage] {
         let path = NSBundle.mainBundle().pathForResource("emoticons.plist", ofType: nil, inDirectory: "Emoticons.bundle")!
         // 1.加载emoticons.plist
         let dict = NSDictionary(contentsOfFile: path)!
@@ -56,7 +56,7 @@ class EmoticonPackage: NSObject {
     
     /// 加载每一组中所有的表情
     func loadEmoticons() {
-        let emoticonDict = NSDictionary(contentsOfFile: infoPath())!
+        let emoticonDict = NSDictionary(contentsOfFile: infoPath("info.plist"))!
         group_name_cn = emoticonDict["group_name_cn"] as? String
         let dictArray = emoticonDict["emoticons"] as! [[String: String]]
         emoticons = [Emoticon]()
@@ -72,8 +72,8 @@ class EmoticonPackage: NSObject {
      :returns: 全路径
      */
     //MARK: 获取指定文件的全路径
-    func infoPath() -> String {
-        return (EmoticonPackage.emoticonPath().stringByAppendingPathComponent(id!) as NSString).stringByAppendingPathComponent("info.plist")
+    func infoPath(fileName: String) -> String {
+        return (EmoticonPackage.emoticonPath().stringByAppendingPathComponent(id!) as NSString).stringByAppendingPathComponent(fileName)
     }
     //MARK: 获取微博表情的主路径
     class func emoticonPath() -> NSString{
@@ -91,10 +91,34 @@ class Emoticon: NSObject {
     var chs: String?
     /// 表情对应的图片
     var png: String?
+        {
+        didSet{
+            imagePath = (EmoticonPackage.emoticonPath().stringByAppendingPathComponent(id!) as NSString).stringByAppendingPathComponent(png!)
+        }
+    }
     /// emoji表情对应的十六进制字符串
-    var code: String?
+    var code: String?{
+        didSet{
+            // 1.从字符串中取出十六进制的数
+            // 创建一个扫描器, 扫描器可以从字符串中提取我们想要的数据
+            let scanner = NSScanner(string: code!)
+            
+            // 2.将十六进制转换为字符串
+            var result:UInt32 = 0
+            scanner.scanHexInt(&result)
+            
+            // 3.将十六进制转换为emoji字符串
+            emojiStr = "\(Character(UnicodeScalar(result)))"
+        }
+    }
+    
+    var emojiStr: String?
+    
     /// 当前表情对应的文件夹
     var id: String?
+    
+    /// 表情图片的全路径
+    var imagePath: String?
     
     init(dict: [String: String], id: String)
     {

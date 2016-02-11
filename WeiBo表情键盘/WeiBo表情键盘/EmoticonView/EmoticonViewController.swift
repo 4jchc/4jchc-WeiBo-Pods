@@ -77,6 +77,8 @@ class EmoticonViewController: UIViewController {
         bar.items = items
         return bar
     }()
+    
+        private lazy var packages: [EmoticonPackage] = EmoticonPackage.loadPackages()
 }
 
 
@@ -85,20 +87,52 @@ class EmoticonViewController: UIViewController {
 //MARK: - UICollectionViewDataSource
 extension EmoticonViewController: UICollectionViewDataSource
 {
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 21 * 4
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return packages.count
     }
-    
+    // 告诉系统每组有多少行
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return packages[section].emoticons?.count ?? 0
+    }
+    // 告诉系统每行显示什么内容
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionVeiw.dequeueReusableCellWithReuseIdentifier(XMGEmoticonCellReuseIdentifier, forIndexPath: indexPath) as! EmoticonCell
         
         cell.backgroundColor = (indexPath.item % 2 == 0) ? UIColor.redColor() : UIColor.greenColor()
+        
+        // 1.取出对应的组
+        let package = packages[indexPath.section]
+        // 2.取出对应组对应行的模型
+        let emoticon = package.emoticons![indexPath.item]
+        // 3.赋值给cell
+        cell.emoticon = emoticon
         
         return cell
     }
 }
 //MARK: - 自定义UICollectionViewCell
 class EmoticonCell: UICollectionViewCell {
+    
+    var emoticon: Emoticon?
+        {
+        didSet{
+            // 1.判断是否是图片表情
+            if emoticon!.chs != nil
+            {
+                iconButton.setImage(UIImage(contentsOfFile: emoticon!.imagePath!), forState: UIControlState.Normal)
+            }else
+            {
+                // 防止重用
+                iconButton.setImage(nil, forState: UIControlState.Normal)
+            }
+            
+            // 2.设置emoji表情
+            // 注意: 加上??可以防止重用
+            iconButton.setTitle(emoticon!.emojiStr ?? "", forState: UIControlState.Normal)
+        }
+    }
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
@@ -116,7 +150,11 @@ class EmoticonCell: UICollectionViewCell {
     }
     
     // MARK: - 懒加载
-    private lazy var iconButton: UIButton = UIButton()
+    private lazy var iconButton: UIButton = {
+        let btn = UIButton()
+        btn.titleLabel?.font = UIFont.systemFontOfSize(32)
+        return btn
+    }()
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
