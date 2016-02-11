@@ -54,20 +54,36 @@ import UIKit
 
 
     /*
-    添加快速构造方法来设置标识init(isRemoveButton: Bool)
+    //MARK: - 6 添加快速构造方法来设置标识init(isRemoveButton: Bool)
     1.表情分组跳转根据toobar的tag
     collectionVeiw.scrollToItemAtIndexPath(NSIndexPath(forItem: 0, inSection: item.tag)
     */
+
+    /*
+    插入emoji表情
+    1.监听cell的点击设置代理
+    2.禁止按钮点击让父视图cell监听点击
+    iconButton.userInteractionEnabled = false
+    3.定义闭包在init方法中直接传值
+    4.插入光标选中位置 self.customTextView.selectedTextRange
+    replaceRange(self.customTextView.selectedTextRange!, withText: emoticon.emojiStr!)
+    5.闭包强引用
+     weak 相当于OC中的 __weak , 特点对象释放之后会将变量设置为nil
+     unowned 相当于OC中的 unsafe_unretained, 特点对象释放之后不会将变量设置为nil
+    */
+
+
+
 
 //MARK: - 开始💗
 
 /*
 
 class ViewController1: UIViewController {
-    
+
     weak var customTextView: UITextView!
-    
-    
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         

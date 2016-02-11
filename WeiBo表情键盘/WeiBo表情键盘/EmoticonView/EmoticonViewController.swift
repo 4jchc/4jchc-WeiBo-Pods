@@ -9,6 +9,21 @@
 import UIKit
 private let XMGEmoticonCellReuseIdentifier = "XMGEmoticonCellReuseIdentifier"
 class EmoticonViewController: UIViewController {
+    
+    
+    /// 定义一个闭包属性, 用于传递选中的表情模型
+    var emoticonDidSelectedCallBack: (emoticon: Emoticon)->()
+    
+    init(callBack: (emoticon: Emoticon)->())
+    {
+        self.emoticonDidSelectedCallBack = callBack
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.redColor()
@@ -55,6 +70,7 @@ class EmoticonViewController: UIViewController {
         // 注册cell
         clv.registerClass(EmoticonCell.self, forCellWithReuseIdentifier: XMGEmoticonCellReuseIdentifier)
         clv.dataSource = self
+        clv.delegate = self
         return clv
     }()
     
@@ -85,7 +101,7 @@ class EmoticonViewController: UIViewController {
 
 
 //MARK: - UICollectionViewDataSource数据源
-extension EmoticonViewController: UICollectionViewDataSource{
+extension EmoticonViewController: UICollectionViewDataSource, UICollectionViewDelegate{
     
     // 告诉系统每组有多少组
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -110,7 +126,17 @@ extension EmoticonViewController: UICollectionViewDataSource{
         
         return cell
     }
+    // 选中某一个cell时调用
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        //        print(indexPath.item)
+        let emoticon = packages[indexPath.section].emoticons![indexPath.item]
+        emoticonDidSelectedCallBack(emoticon: emoticon)
+    }
+    
 }
+
+
+
 //MARK: - 自定义UICollectionViewCell
 class EmoticonCell: UICollectionViewCell {
     
@@ -154,6 +180,8 @@ class EmoticonCell: UICollectionViewCell {
         //        iconButton.frame = contentView.bounds
         // 设置内边距
         iconButton.frame = CGRectInset(contentView.bounds, 4, 4)
+        // 禁止按钮点击
+        iconButton.userInteractionEnabled = false
         
     }
     
