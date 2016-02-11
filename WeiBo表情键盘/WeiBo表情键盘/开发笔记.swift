@@ -73,7 +73,7 @@ import UIKit
     */
 
     /*
-    插入图片表情
+    //MARK: - 8 插入图片表情
     1. 创建附件NSText Attachment附属物
     let attachment = NSTextAttachment()
     设置了附件的大小
@@ -92,7 +92,14 @@ import UIKit
     self.customTextView.selectedRange = NSMakeRange(range.location + 1, 0)
     */
 
-
+    /*
+    获取发送文本
+    1.迭代遍历属性文本
+     self.customTextView.attributedText.enumerate列举AttributesInRange
+     遍历的时候传递给我们的objc是一个字典, 如果字典中的NSAttachment这个key有值
+     那么就证明当前是一个图片
+    2.自定义NSTextAttachment 设置属性-保存当时插入时的对应表情的文字
+    */
 
 //MARK: - 开始💗
 

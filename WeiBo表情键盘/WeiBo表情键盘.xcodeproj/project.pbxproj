@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		961533E71C6C6228003BB1E4 /* Emoticons.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 961533E61C6C6228003BB1E4 /* Emoticons.bundle */; };
 		961533E91C6C6519003BB1E4 /* EmoticonPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961533E81C6C6519003BB1E4 /* EmoticonPackage.swift */; };
+		9631E98B1C6CCB050011E567 /* EmoticonTextAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9631E98A1C6CCB050011E567 /* EmoticonTextAttachment.swift */; };
 		96E1BA111C6B76AD004A2422 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E1BA101C6B76AD004A2422 /* AppDelegate.swift */; };
 		96E1BA131C6B76AD004A2422 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E1BA121C6B76AD004A2422 /* ViewController.swift */; };
 		96E1BA161C6B76AD004A2422 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96E1BA141C6B76AD004A2422 /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 /* Begin PBXFileReference section */
 		961533E61C6C6228003BB1E4 /* Emoticons.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Emoticons.bundle; sourceTree = "<group>"; };
 		961533E81C6C6519003BB1E4 /* EmoticonPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonPackage.swift; sourceTree = "<group>"; };
+		9631E98A1C6CCB050011E567 /* EmoticonTextAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonTextAttachment.swift; sourceTree = "<group>"; };
 		96E1BA0D1C6B76AD004A2422 /* WeiBo表情键盘.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WeiBo表情键盘.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96E1BA101C6B76AD004A2422 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96E1BA121C6B76AD004A2422 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				961533E61C6C6228003BB1E4 /* Emoticons.bundle */,
 				96E1BA3F1C6B7900004A2422 /* EmoticonViewController.swift */,
 				961533E81C6C6519003BB1E4 /* EmoticonPackage.swift */,
+				9631E98A1C6CCB050011E567 /* EmoticonTextAttachment.swift */,
 			);
 			name = EmoticonView;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				96E1BA131C6B76AD004A2422 /* ViewController.swift in Sources */,
 				96E1BA401C6B7900004A2422 /* EmoticonViewController.swift in Sources */,
 				961533E91C6C6519003BB1E4 /* EmoticonPackage.swift in Sources */,
+				9631E98B1C6CCB050011E567 /* EmoticonTextAttachment.swift in Sources */,
 				96E1BA421C6B795F004A2422 /* 开发笔记.swift in Sources */,
 				96E1BA111C6B76AD004A2422 /* AppDelegate.swift in Sources */,
 			);

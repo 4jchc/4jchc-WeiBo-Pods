@@ -9,6 +9,46 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    
+    
+    @IBAction func itemClick(sender: AnyObject) {
+        
+        var strM = String()
+        // 后去需要发送给服务器的数据
+        self.customTextView.attributedText.enumerateAttributesInRange( NSMakeRange(0, self.customTextView.attributedText.length), options: NSAttributedStringEnumerationOptions(rawValue: 0)) { (objc, range, _) -> Void in
+            /*
+            // 遍历的时候传递给我们的objc是一个字典, 如果字典中的NSAttachment这个key有值
+            // 那么就证明当前是一个图片
+            print(objc["NSAttachment"])
+            // range就是纯字符串的范围
+            // 如果纯字符串中间有图片表情, 那么range就会传递多次
+            print(range)
+            let res = (self.customTextView.text as NSString).substringWithRange(range)
+            print(res)
+            print("++++++++++++++++++++++++++")
+            */
+            
+            
+            if objc["NSAttachment"] != nil
+            {
+                let attachment =  objc["NSAttachment"] as! EmoticonTextAttachment
+                // 图片
+                //                strM += "[图片]"
+                strM += attachment.chs!
+            }else
+            {
+                // 文字
+                strM += (self.customTextView.text as NSString).substringWithRange(range)
+            }
+            
+            
+        }
+        print("strM = \(strM)")
+        
+    }
+    
+    
 
     @IBOutlet weak var customTextView: UITextView!
     override func viewDidLoad() {
@@ -36,7 +76,9 @@ class ViewController: UIViewController {
         // 2.判断当前点击的是否是表情图片
         if emoticon.png != nil{
             // 1.创建附件
-            let attachment = NSTextAttachment()
+            //let attachment = NSTextAttachment()
+            let attachment = EmoticonTextAttachment()
+            attachment.chs = emoticon.chs
             attachment.image = UIImage(contentsOfFile: emoticon.imagePath!)
             // 设置了附件的大小
             attachment.bounds = CGRectMake(0, -4, 20, 20)
