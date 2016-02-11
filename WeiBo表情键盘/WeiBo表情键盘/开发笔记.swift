@@ -60,7 +60,7 @@ import UIKit
     */
 
     /*
-    插入emoji表情
+    //MARK: - 7 插入emoji表情
     1.监听cell的点击设置代理
     2.禁止按钮点击让父视图cell监听点击
     iconButton.userInteractionEnabled = false
@@ -72,6 +72,25 @@ import UIKit
      unowned 相当于OC中的 unsafe_unretained, 特点对象释放之后不会将变量设置为nil
     */
 
+    /*
+    插入图片表情
+    1. 创建附件NSText Attachment附属物
+    let attachment = NSTextAttachment()
+    设置了附件的大小
+    attachment.bounds = CGRectMake(0, -4, 20, 20)
+    2. 根据附件创建属性字符串
+    let imageText = NSAttributedString(attachment: attachment)
+    3. 拿到当前所有的内容
+    let strM = NSMutableAttributedString(attributedString: self.customTextView.attributedText)
+    4. 插入表情到当前光标所在的位置
+    let range = self.customTextView.selectedRange
+    strM.replaceCharactersInRange(range, withAttributedString: imageText)
+    5. 将替换后的字符串赋值给UITextView
+    self.customTextView.attributedText = strM
+    6. 恢复光标所在的位置
+     两个参数: 第一个是指定光标所在的位置, 第二个参数是选中文本的个数
+    self.customTextView.selectedRange = NSMakeRange(range.location + 1, 0)
+    */
 
 
 

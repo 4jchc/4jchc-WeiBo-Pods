@@ -33,6 +33,34 @@ class ViewController: UIViewController {
         if emoticon.emojiStr != nil{
             self.customTextView.replaceRange(self.customTextView.selectedTextRange!, withText: emoticon.emojiStr!)
         }
+        // 2.判断当前点击的是否是表情图片
+        if emoticon.png != nil{
+            // 1.创建附件
+            let attachment = NSTextAttachment()
+            attachment.image = UIImage(contentsOfFile: emoticon.imagePath!)
+            // 设置了附件的大小
+            attachment.bounds = CGRectMake(0, -4, 20, 20)
+            
+            // 2. 根据附件创建属性字符串
+            let imageText = NSAttributedString(attachment: attachment)
+            
+            
+            // 3.拿到当前所有的内容
+            let strM = NSMutableAttributedString(attributedString: self.customTextView.attributedText)
+            
+            // 4.插入表情到当前光标所在的位置
+            let range = self.customTextView.selectedRange
+            strM.replaceCharactersInRange(range, withAttributedString: imageText)
+            // 属性字符串有自己默认的尺寸
+            strM.addAttribute(NSFontAttributeName, value: UIFont.systemFontOfSize(19), range: NSMakeRange(range.location, 1))
+            
+            // 5.将替换后的字符串赋值给UITextView
+            self.customTextView.attributedText = strM
+            // 恢复光标所在的位置
+            // 两个参数: 第一个是指定光标所在的位置, 第二个参数是选中文本的个数
+            self.customTextView.selectedRange = NSMakeRange(range.location + 1, 0)
+            
+        }
     }
     
     deinit
