@@ -46,7 +46,7 @@ class EmoticonViewController: UIViewController {
     
     func itemClick(item: UIBarButtonItem)
     {
-        print(item.tag)
+        collectionVeiw.scrollToItemAtIndexPath(NSIndexPath(forItem: 0, inSection: item.tag), atScrollPosition: UICollectionViewScrollPosition.Left, animated: true)
     }
     
     // MARK: - 懒加载
@@ -84,9 +84,10 @@ class EmoticonViewController: UIViewController {
 
 
 
-//MARK: - UICollectionViewDataSource
-extension EmoticonViewController: UICollectionViewDataSource
-{
+//MARK: - UICollectionViewDataSource数据源
+extension EmoticonViewController: UICollectionViewDataSource{
+    
+    // 告诉系统每组有多少组
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return packages.count
     }

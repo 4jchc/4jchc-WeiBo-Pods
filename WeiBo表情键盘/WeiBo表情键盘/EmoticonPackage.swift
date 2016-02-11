@@ -37,13 +37,21 @@ class EmoticonPackage: NSObject {
     // 默认 -> 一组  -> 所有的表情模型(emoticons)
     // emoji -> 一组  -> 所有的表情模型(emoticons)
     class func loadPackages() -> [EmoticonPackage] {
+        
+        var packages = [EmoticonPackage]()
+        // 0.创建最近组
+        let pk = EmoticonPackage(id: "")
+        pk.group_name_cn = "最近"
+        pk.emoticons = [Emoticon]()
+        pk.appendEmtyEmoticons()
+        packages.append(pk)
+
         let path = NSBundle.mainBundle().pathForResource("emoticons.plist", ofType: nil, inDirectory: "Emoticons.bundle")!
         // 1.加载emoticons.plist
         let dict = NSDictionary(contentsOfFile: path)!
         // 2.或emoticons中获取packages
         let dictArray = dict["packages"] as! [[String:AnyObject]]
         // 3.遍历packages数组
-        var packages = [EmoticonPackage]()
         for d in dictArray
         {
             //MARK: 4.通过取出ID, 创建对应的组
@@ -65,7 +73,8 @@ class EmoticonPackage: NSObject {
         var index = 0
         for dict in dictArray{ // 固定102
             
-            if index == 20 {
+            if index == 20
+            {
                 print("添加删除")
                 emoticons?.append(Emoticon(isRemoveButton: true))
                 index = 0
