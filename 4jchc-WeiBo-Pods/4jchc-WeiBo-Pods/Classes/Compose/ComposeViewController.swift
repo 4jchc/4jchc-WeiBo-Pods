@@ -214,19 +214,18 @@ class ComposeViewController: UIViewController {
     //MARK: 发送文本微博
     func sendStatus()
     {
-        let path = "2/statuses/update.json"
-        let params = ["access_token":UserAccount.loadAccount()?.access_token! , "status": textView.text]
+        print(textView.text)
+        // 更改图文混排
+        print(textView.emoticonAttributedText())
         
-        NetworkTools.shareNetworkTools().POST(path, parameters: params , progress: { (progress) -> Void in
+        let path = "2/statuses/update.json"
+        let params = ["access_token":UserAccount.loadAccount()!.access_token! , "status": textView.emoticonAttributedText()]
+        NetworkTools.shareNetworkTools().POST(path, parameters: params, success: { (_, JSON) -> Void in
             
-            printLog("progress进度\(progress)")
-            
-            },success: { (_, JSON) -> Void in
-                
-                // 1.提示用户发送成功
-                SVProgressHUD.showSuccessWithStatus("发送成功", maskType: SVProgressHUDMaskType.Black)
-                // 2.关闭发送界面
-                self.close()
+            // 1.提示用户发送成功
+            SVProgressHUD.showSuccessWithStatus("发送成功", maskType: SVProgressHUDMaskType.Black)
+            // 2.关闭发送界面
+            self.close()
             }) { (_, error) -> Void in
                 print(error)
                 // 3.提示用户发送失败
