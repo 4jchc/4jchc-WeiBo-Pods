@@ -8,12 +8,29 @@
 
 
     /*
-    布局图片选择器界面
+    //MARK: 1 布局图片选择器界面
     1.VFL的使用
     2.collocation的强化学习
     */
 
+    /*
+    显示图片
+    1.父子关系使用代理
+     设置允许用户编辑选中的图片
+     开发中如果需要上传头像, 那么请让用户编辑之后再上传
+     这样可以得到一张正方形的图片, 以便于后期处理(圆形)
+     vc.allowsEditing = true
+    2.照片选择器必须要遵守UINavigationControllerDelegate,UIImagePickerControllerDelegate
 
+    3.case PhotoLibrary 照片库(所有的照片，拍照&用 iTunes & iPhoto `同步`的照片 - 不能删除)
+     case SavedPhotosAlbum 相册 (自己拍照保存的, 可以随便删除)
+     case Camera    相机
+    4.判断能否打开照片库
+     !UIImagePickerController.isSourceTypeAvailable( UIImagePickerControllerSourceType.PhotoLibrary)
+    5.图片的个数判断---本身cell就有一个图片
+     cell.image = (pictureImages.count == indexPath.item) ? nil : pictureImages[indexPath.item]
+    6.自定义cell的image.有值隐藏加号图片设置本地图片删除按钮显示.可以交互yes
+    */
 
 
 
