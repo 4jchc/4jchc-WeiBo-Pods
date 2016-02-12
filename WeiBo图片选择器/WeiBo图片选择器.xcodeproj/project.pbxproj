@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		96AEC6CC1C6DC57500F6A3FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEC6CB1C6DC57500F6A3FA /* AppDelegate.swift */; };
-		96AEC6CE1C6DC57500F6A3FA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEC6CD1C6DC57500F6A3FA /* ViewController.swift */; };
-		96AEC6D11C6DC57500F6A3FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96AEC6CF1C6DC57500F6A3FA /* Main.storyboard */; };
 		96AEC6D31C6DC57500F6A3FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96AEC6D21C6DC57500F6A3FA /* Assets.xcassets */; };
 		96AEC6D61C6DC57500F6A3FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96AEC6D41C6DC57500F6A3FA /* LaunchScreen.storyboard */; };
 		96AEC6E11C6DC57500F6A3FA /* WeiBo_____Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEC6E01C6DC57500F6A3FA /* WeiBo_____Tests.swift */; };
 		96AEC6EC1C6DC57500F6A3FA /* WeiBo_____UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEC6EB1C6DC57500F6A3FA /* WeiBo_____UITests.swift */; };
+		96AEC6FB1C6DC65200F6A3FA /* WeiBo图片选择器-开发笔记.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEC6FA1C6DC65200F6A3FA /* WeiBo图片选择器-开发笔记.swift */; };
+		96AEC6FD1C6DC69C00F6A3FA /* PhotoSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEC6FC1C6DC69C00F6A3FA /* PhotoSelectorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +36,6 @@
 /* Begin PBXFileReference section */
 		96AEC6C81C6DC57500F6A3FA /* WeiBo图片选择器.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WeiBo图片选择器.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96AEC6CB1C6DC57500F6A3FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		96AEC6CD1C6DC57500F6A3FA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		96AEC6D01C6DC57500F6A3FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		96AEC6D21C6DC57500F6A3FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		96AEC6D51C6DC57500F6A3FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		96AEC6D71C6DC57500F6A3FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +45,8 @@
 		96AEC6E71C6DC57500F6A3FA /* WeiBo图片选择器UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WeiBo图片选择器UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96AEC6EB1C6DC57500F6A3FA /* WeiBo_____UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeiBo_____UITests.swift"; sourceTree = "<group>"; };
 		96AEC6ED1C6DC57500F6A3FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96AEC6FA1C6DC65200F6A3FA /* WeiBo图片选择器-开发笔记.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WeiBo图片选择器-开发笔记.swift"; sourceTree = "<group>"; };
+		96AEC6FC1C6DC69C00F6A3FA /* PhotoSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoSelectorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,9 +97,8 @@
 		96AEC6CA1C6DC57500F6A3FA /* WeiBo图片选择器 */ = {
 			isa = PBXGroup;
 			children = (
+				96AEC6F91C6DC61700F6A3FA /* PhotoSelector */,
 				96AEC6CB1C6DC57500F6A3FA /* AppDelegate.swift */,
-				96AEC6CD1C6DC57500F6A3FA /* ViewController.swift */,
-				96AEC6CF1C6DC57500F6A3FA /* Main.storyboard */,
 				96AEC6D21C6DC57500F6A3FA /* Assets.xcassets */,
 				96AEC6D41C6DC57500F6A3FA /* LaunchScreen.storyboard */,
 				96AEC6D71C6DC57500F6A3FA /* Info.plist */,
@@ -123,6 +122,15 @@
 				96AEC6ED1C6DC57500F6A3FA /* Info.plist */,
 			);
 			path = "WeiBo图片选择器UITests";
+			sourceTree = "<group>";
+		};
+		96AEC6F91C6DC61700F6A3FA /* PhotoSelector */ = {
+			isa = PBXGroup;
+			children = (
+				96AEC6FA1C6DC65200F6A3FA /* WeiBo图片选择器-开发笔记.swift */,
+				96AEC6FC1C6DC69C00F6A3FA /* PhotoSelectorViewController.swift */,
+			);
+			path = PhotoSelector;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,7 +239,6 @@
 			files = (
 				96AEC6D61C6DC57500F6A3FA /* LaunchScreen.storyboard in Resources */,
 				96AEC6D31C6DC57500F6A3FA /* Assets.xcassets in Resources */,
-				96AEC6D11C6DC57500F6A3FA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,7 +263,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96AEC6CE1C6DC57500F6A3FA /* ViewController.swift in Sources */,
+				96AEC6FB1C6DC65200F6A3FA /* WeiBo图片选择器-开发笔记.swift in Sources */,
+				96AEC6FD1C6DC69C00F6A3FA /* PhotoSelectorViewController.swift in Sources */,
 				96AEC6CC1C6DC57500F6A3FA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,14 +301,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		96AEC6CF1C6DC57500F6A3FA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				96AEC6D01C6DC57500F6A3FA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		96AEC6D41C6DC57500F6A3FA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
