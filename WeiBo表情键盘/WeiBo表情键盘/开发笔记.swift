@@ -7,9 +7,9 @@
 //
 import UIKit
 
-
+//MARK: - 💗第一天
     /*
-    //MARK: - 1.界面布局
+    //MARK:  1.界面布局
     1.控制器嵌套控制器要设置父子控制器
     addChildViewController
     2.设置UITextView的弹出自定义键盘
@@ -21,7 +21,7 @@ import UIKit
     */
 
     /*
-    //MARK: - 2.完善键盘表情布局
+    //MARK:  2.完善键盘表情布局
     1.input输入 Accessory副的,辅助的 View
     2.设置内边距 里面的视图相对于主视图
     iconButton.frame = CGRectInset(contentView.bounds, 4, 4)
@@ -30,7 +30,7 @@ import UIKit
     */
 
     /*
-    //MARK: - 3 准备表情模型 扫描emoji表情
+    //MARK:  3 准备表情模型 扫描emoji表情
     1.获取微博表情的主路径
     (NSBundle.mainBundle().bundlePath as NSString).stringByAppendingPathComponent("Emoticons.bundle")
     2.stringByAppendingPathComponent拼接路径
@@ -38,7 +38,7 @@ import UIKit
     */
 
     /*
-    //MARK: - 4 显示表情
+    //MARK:  4 显示表情
     1.emojy的大小就是字体的大小
     2.KVO的使用
     3.模型Didset的赋值
@@ -46,7 +46,7 @@ import UIKit
 
 
     /*
-    //MARK: - 5 完善表情模型
+    //MARK:  5 完善表情模型
     1.添加删除按钮和空白按钮
     2.遍历count-20添加标识
     3.分2中情况--够21,那第21标记为删除.如果不足要添加空白按钮和删除按钮
@@ -54,13 +54,13 @@ import UIKit
 
 
     /*
-    //MARK: - 6 添加快速构造方法来设置标识init(isRemoveButton: Bool)
+    //MARK:  6 添加快速构造方法来设置标识init(isRemoveButton: Bool)
     1.表情分组跳转根据toobar的tag
     collectionVeiw.scrollToItemAtIndexPath(NSIndexPath(forItem: 0, inSection: item.tag)
     */
 
     /*
-    //MARK: - 7 插入emoji表情
+    //MARK:  7 插入emoji表情
     1.监听cell的点击设置代理
     2.禁止按钮点击让父视图cell监听点击
     iconButton.userInteractionEnabled = false
@@ -73,7 +73,7 @@ import UIKit
     */
 
     /*
-    //MARK: - 8 插入图片表情
+    //MARK:  8 插入图片表情
     1. 创建附件NSText Attachment附属物
     let attachment = NSTextAttachment()
     设置了附件的大小
@@ -93,7 +93,7 @@ import UIKit
     */
 
     /*
-    //MARK: - 9 获取发送文本
+    //MARK:  9 获取发送文本
     1.迭代遍历属性文本
      self.customTextView.attributedText.enumerate列举AttributesInRange
      遍历的时候传递给我们的objc是一个字典, 如果字典中的NSAttachment这个key有值
@@ -102,13 +102,30 @@ import UIKit
     */
 
     /*
-    重构-删除按钮处理-最近表情添加
+    //MARK:  10 重构-删除按钮处理-最近表情添加
     1.deleteBackward
     2.排序对数组进行排序
     var result = emoticons?.sort({ (e1, e2) -> Bool in
     return e1.times > e2.times
     })
     */
+//MARK: - 💗第二天
+
+    /*
+    表情键盘bug修复Font图片的大小
+    1.字体的高度--font.lineHeight
+    2.单例--表情只加载一次
+    static let packageList:[EmoticonPackage] = EmoticonPackage.loadPackages()
+    3.单例加载模型数组
+    */
+
+
+
+
+
+
+
+
 
 //MARK: - 开始💗
 
@@ -131,7 +148,7 @@ class ViewController1: UIViewController {
         setupUI()
     }
     
-    //MARK: - 初始化UI
+    //MARK:  初始化UI
     ///  初始化UI
     private func setupUI(){
         

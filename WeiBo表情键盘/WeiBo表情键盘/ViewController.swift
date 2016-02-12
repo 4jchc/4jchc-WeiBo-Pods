@@ -109,7 +109,7 @@ class ViewController: UIViewController {
         }
         */
         // TODO: 还不够完美
-        self.customTextView.insertEmoticon(emoticon, font: 20)
+        self.customTextView.insertEmoticon(emoticon)
     }
     
     deinit

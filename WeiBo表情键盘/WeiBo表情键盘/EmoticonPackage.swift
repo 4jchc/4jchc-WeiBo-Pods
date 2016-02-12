@@ -31,12 +31,14 @@ class EmoticonPackage: NSObject {
     var group_name_cn : String?
     /// 当前组所有的表情对象
     var emoticons: [Emoticon]?
+    //MARK: 单例
+    static let packageList:[EmoticonPackage] = EmoticonPackage.loadPackages()
     
     /// 获取所有组的表情数组
     // 浪小花 -> 一组  -> 所有的表情模型(emoticons)
     // 默认 -> 一组  -> 所有的表情模型(emoticons)
     // emoji -> 一组  -> 所有的表情模型(emoticons)
-    class func loadPackages() -> [EmoticonPackage] {
+    private class func loadPackages() -> [EmoticonPackage] {
         
         var packages = [EmoticonPackage]()
         // 0.创建最近组

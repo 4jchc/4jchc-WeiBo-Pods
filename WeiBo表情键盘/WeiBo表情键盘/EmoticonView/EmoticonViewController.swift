@@ -94,7 +94,7 @@ class EmoticonViewController: UIViewController {
         return bar
     }()
     
-        private lazy var packages: [EmoticonPackage] = EmoticonPackage.loadPackages()
+        private lazy var packages: [EmoticonPackage] = EmoticonPackage.packageList
 }
 
 
