@@ -489,11 +489,11 @@ import UIKit
 
 
     /*
-    发送文本微博
+    //MARK: 2 发送文本微博
     */
 
     /*
-    布局toobar工具条
+    //MARK: 3 布局toobar工具条
     1.UITextView下拉弹簧效果
     textView.alwaysBounceVertical = true
      键盘消失模式On Drag拖
@@ -505,9 +505,16 @@ import UIKit
     */
 
     /*
-    1.<#多行注释#>
-    2.<#多行注释#>
-    3.<#多行注释#>
+    添加表情键盘
+    1.先关闭键盘在弹出自定义键盘
+    2.关闭-打开会有2次调用toobar会跳跃
+    取出键盘的动画节奏UIKeyboard Animation活动性 Curve曲线 UserInfo用户信息 Key
+     let curve = notify.userInfo![UIKeyboardAnimationCurveUserInfoKey] as! NSNumber
+    设置动画节奏不设置toobar会跳
+     UIView.setAnimationCurve(UIViewAnimationCurve(rawValue: curve.integerValue)!)
+    3.当输入图片的时候自己主动促发textViewDidChange方法
+     delegate?.textViewDidChange!(self)
+    4.ipad适配不完善
     */
 
 

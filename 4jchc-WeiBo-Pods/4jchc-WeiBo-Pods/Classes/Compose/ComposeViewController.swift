@@ -11,6 +11,10 @@ import SVProgressHUD
 
 class ComposeViewController: UIViewController {
     
+    private lazy var emoticonVC: EmoticonViewController = EmoticonViewController { [unowned self] (emoticon) -> () in
+        self.textView.insertEmoticon(emoticon)
+    }
+    
     /// 工具条底部约束
     var toolbarBottonCons: NSLayoutConstraint?
     
@@ -19,6 +23,8 @@ class ComposeViewController: UIViewController {
         view.backgroundColor = UIColor.whiteColor()
         // 0.注册通知监听键盘弹出和消失
         NSNotificationCenter.defaultCenter().addObserver(self , selector: "keyboardChange:", name: UIKeyboardWillChangeFrameNotification, object: nil)
+        // 1.将键盘控制器添加为当前控制器的子控制器
+        addChildViewController(emoticonVC)
         // 1.初始化导航条
         setupNav()
         // 2.初始化输入框
@@ -47,12 +53,32 @@ class ComposeViewController: UIViewController {
         // 3.更新界面
         let duration = notify.userInfo![UIKeyboardAnimationDurationUserInfoKey] as! NSNumber
         
+        
+        /*
+        工具条回弹是因为执行了两次动画, 而系统自带的键盘的动画节奏(曲线) 7
+        7在apple API中并没有提供给我们, 但是我们可以使用
+        7这种节奏有一个特点: 如果连续执行两次动画, 不管上一次有没有执行完毕, 都会立刻执行下一次
+        也就是说上一次可能会被忽略
+        
+        如果将动画节奏设置为7, 那么动画的时长无论如何都会自动修改为0.5
+        
+        UIView动画的本质是核心动画, 所以可以给核心动画设置动画节奏
+        */
+        // 1.取出键盘的动画节奏UIKeyboard Animation活动性 Curve曲线 UserInfo用户信息 Key
+        let curve = notify.userInfo![UIKeyboardAnimationCurveUserInfoKey] as! NSNumber
+        
         UIView.animateWithDuration(duration.doubleValue) { () -> Void in
+            //MARK:  2.设置动画节奏不设置toobar会跳
+            UIView.setAnimationCurve(UIViewAnimationCurve(rawValue: curve.integerValue)!)
+            
             self.view.layoutIfNeeded()
         }
         
+        let anim = toolbar.layer.animationForKey("position")
+        print("duration = \(anim?.duration)")
         
     }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -112,7 +138,19 @@ class ComposeViewController: UIViewController {
     ///  切换表情键盘
     func inputEmoticon()
     {
+        print(__FUNCTION__)
+        // 结论: 如果是系统自带的键盘, 那么inputView = nil
+        //      如果不是系统自带的键盘, 那么inputView != nil
+        //        print(textView.inputView)
         
+        // 1.关闭键盘resign放弃
+        textView.resignFirstResponder()
+        
+        // 2.设置inputView
+        textView.inputView = (textView.inputView == nil) ? emoticonVC.view : nil
+        
+        // 3.从新召唤出键盘
+        textView.becomeFirstResponder()
     }
     //MARK: - 初始化输入视图
     ///  初始化输入视图
@@ -199,13 +237,14 @@ class ComposeViewController: UIViewController {
     // MARK: - 懒加载
     private lazy var textView: UITextView = {
         let tv = UITextView()
+        tv.font = UIFont.systemFontOfSize(20)
         tv.delegate = self
         return tv
     }()
     
     private lazy var placeholderLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFontOfSize(13)
+        label.font = UIFont.systemFontOfSize(20)
         label.textColor = UIColor.darkGrayColor()
         label.text = "分享新鲜事..."
         return label
@@ -217,6 +256,7 @@ extension ComposeViewController: UITextViewDelegate {
     
     func textViewDidChange(textView: UITextView) {
         
+        // 注意点: 输入图片表情的时候不会促发textViewDidChange
         placeholderLabel.hidden = textView.hasText()
         navigationItem.rightBarButtonItem?.enabled = textView.hasText()
     }
