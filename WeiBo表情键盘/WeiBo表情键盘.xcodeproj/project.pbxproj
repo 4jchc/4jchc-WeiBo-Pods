@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		961533E71C6C6228003BB1E4 /* Emoticons.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 961533E61C6C6228003BB1E4 /* Emoticons.bundle */; };
-		961533E91C6C6519003BB1E4 /* EmoticonPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961533E81C6C6519003BB1E4 /* EmoticonPackage.swift */; };
-		9631E98B1C6CCB050011E567 /* EmoticonTextAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9631E98A1C6CCB050011E567 /* EmoticonTextAttachment.swift */; };
-		9631E98D1C6CD2140011E567 /* UITextView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9631E98C1C6CD2140011E567 /* UITextView+Extension.swift */; };
+		966E2F571C6D8B7D009B36A6 /* EmoticonPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966E2F511C6D8B7D009B36A6 /* EmoticonPackage.swift */; };
+		966E2F581C6D8B7D009B36A6 /* Emoticons.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 966E2F521C6D8B7D009B36A6 /* Emoticons.bundle */; };
+		966E2F591C6D8B7D009B36A6 /* EmoticonTextAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966E2F531C6D8B7D009B36A6 /* EmoticonTextAttachment.swift */; };
+		966E2F5A1C6D8B7D009B36A6 /* EmoticonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966E2F541C6D8B7D009B36A6 /* EmoticonViewController.swift */; };
+		966E2F5B1C6D8B7D009B36A6 /* UITextView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966E2F551C6D8B7D009B36A6 /* UITextView+Extension.swift */; };
+		966E2F5C1C6D8B7D009B36A6 /* WeiBo表情键盘开发笔记.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966E2F561C6D8B7D009B36A6 /* WeiBo表情键盘开发笔记.swift */; };
 		96E1BA111C6B76AD004A2422 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E1BA101C6B76AD004A2422 /* AppDelegate.swift */; };
 		96E1BA131C6B76AD004A2422 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E1BA121C6B76AD004A2422 /* ViewController.swift */; };
 		96E1BA161C6B76AD004A2422 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96E1BA141C6B76AD004A2422 /* Main.storyboard */; };
@@ -18,8 +20,6 @@
 		96E1BA1B1C6B76AD004A2422 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96E1BA191C6B76AD004A2422 /* LaunchScreen.storyboard */; };
 		96E1BA261C6B76AD004A2422 /* WeiBo____Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E1BA251C6B76AD004A2422 /* WeiBo____Tests.swift */; };
 		96E1BA311C6B76AD004A2422 /* WeiBo____UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E1BA301C6B76AD004A2422 /* WeiBo____UITests.swift */; };
-		96E1BA401C6B7900004A2422 /* EmoticonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E1BA3F1C6B7900004A2422 /* EmoticonViewController.swift */; };
-		96E1BA421C6B795F004A2422 /* 开发笔记.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E1BA411C6B795F004A2422 /* 开发笔记.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,10 +40,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		961533E61C6C6228003BB1E4 /* Emoticons.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Emoticons.bundle; sourceTree = "<group>"; };
-		961533E81C6C6519003BB1E4 /* EmoticonPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonPackage.swift; sourceTree = "<group>"; };
-		9631E98A1C6CCB050011E567 /* EmoticonTextAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonTextAttachment.swift; sourceTree = "<group>"; };
-		9631E98C1C6CD2140011E567 /* UITextView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+Extension.swift"; sourceTree = "<group>"; };
+		966E2F511C6D8B7D009B36A6 /* EmoticonPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonPackage.swift; sourceTree = "<group>"; };
+		966E2F521C6D8B7D009B36A6 /* Emoticons.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Emoticons.bundle; sourceTree = "<group>"; };
+		966E2F531C6D8B7D009B36A6 /* EmoticonTextAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonTextAttachment.swift; sourceTree = "<group>"; };
+		966E2F541C6D8B7D009B36A6 /* EmoticonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonViewController.swift; sourceTree = "<group>"; };
+		966E2F551C6D8B7D009B36A6 /* UITextView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+Extension.swift"; sourceTree = "<group>"; };
+		966E2F561C6D8B7D009B36A6 /* WeiBo表情键盘开发笔记.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WeiBo表情键盘开发笔记.swift"; sourceTree = "<group>"; };
 		96E1BA0D1C6B76AD004A2422 /* WeiBo表情键盘.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WeiBo表情键盘.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96E1BA101C6B76AD004A2422 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96E1BA121C6B76AD004A2422 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,8 +59,6 @@
 		96E1BA2C1C6B76AD004A2422 /* WeiBo表情键盘UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WeiBo表情键盘UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96E1BA301C6B76AD004A2422 /* WeiBo____UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeiBo____UITests.swift"; sourceTree = "<group>"; };
 		96E1BA321C6B76AD004A2422 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		96E1BA3F1C6B7900004A2422 /* EmoticonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmoticonViewController.swift; path = EmoticonView/EmoticonViewController.swift; sourceTree = "<group>"; };
-		96E1BA411C6B795F004A2422 /* 开发笔记.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "开发笔记.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +86,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		966E2F501C6D8B7D009B36A6 /* EmoticonView */ = {
+			isa = PBXGroup;
+			children = (
+				966E2F511C6D8B7D009B36A6 /* EmoticonPackage.swift */,
+				966E2F521C6D8B7D009B36A6 /* Emoticons.bundle */,
+				966E2F531C6D8B7D009B36A6 /* EmoticonTextAttachment.swift */,
+				966E2F541C6D8B7D009B36A6 /* EmoticonViewController.swift */,
+				966E2F551C6D8B7D009B36A6 /* UITextView+Extension.swift */,
+				966E2F561C6D8B7D009B36A6 /* WeiBo表情键盘开发笔记.swift */,
+			);
+			path = EmoticonView;
+			sourceTree = "<group>";
+		};
 		96E1BA041C6B76AD004A2422 = {
 			isa = PBXGroup;
 			children = (
@@ -109,8 +122,7 @@
 		96E1BA0F1C6B76AD004A2422 /* WeiBo表情键盘 */ = {
 			isa = PBXGroup;
 			children = (
-				96E1BA411C6B795F004A2422 /* 开发笔记.swift */,
-				96E1BA3E1C6B78C2004A2422 /* EmoticonView */,
+				966E2F501C6D8B7D009B36A6 /* EmoticonView */,
 				96E1BA101C6B76AD004A2422 /* AppDelegate.swift */,
 				96E1BA121C6B76AD004A2422 /* ViewController.swift */,
 				96E1BA141C6B76AD004A2422 /* Main.storyboard */,
@@ -137,18 +149,6 @@
 				96E1BA321C6B76AD004A2422 /* Info.plist */,
 			);
 			path = "WeiBo表情键盘UITests";
-			sourceTree = "<group>";
-		};
-		96E1BA3E1C6B78C2004A2422 /* EmoticonView */ = {
-			isa = PBXGroup;
-			children = (
-				961533E61C6C6228003BB1E4 /* Emoticons.bundle */,
-				96E1BA3F1C6B7900004A2422 /* EmoticonViewController.swift */,
-				961533E81C6C6519003BB1E4 /* EmoticonPackage.swift */,
-				9631E98A1C6CCB050011E567 /* EmoticonTextAttachment.swift */,
-				9631E98C1C6CD2140011E567 /* UITextView+Extension.swift */,
-			);
-			name = EmoticonView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,7 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96E1BA1B1C6B76AD004A2422 /* LaunchScreen.storyboard in Resources */,
-				961533E71C6C6228003BB1E4 /* Emoticons.bundle in Resources */,
+				966E2F581C6D8B7D009B36A6 /* Emoticons.bundle in Resources */,
 				96E1BA181C6B76AD004A2422 /* Assets.xcassets in Resources */,
 				96E1BA161C6B76AD004A2422 /* Main.storyboard in Resources */,
 			);
@@ -283,13 +283,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9631E98D1C6CD2140011E567 /* UITextView+Extension.swift in Sources */,
+				966E2F5A1C6D8B7D009B36A6 /* EmoticonViewController.swift in Sources */,
 				96E1BA131C6B76AD004A2422 /* ViewController.swift in Sources */,
-				96E1BA401C6B7900004A2422 /* EmoticonViewController.swift in Sources */,
-				961533E91C6C6519003BB1E4 /* EmoticonPackage.swift in Sources */,
-				9631E98B1C6CCB050011E567 /* EmoticonTextAttachment.swift in Sources */,
-				96E1BA421C6B795F004A2422 /* 开发笔记.swift in Sources */,
+				966E2F5C1C6D8B7D009B36A6 /* WeiBo表情键盘开发笔记.swift in Sources */,
 				96E1BA111C6B76AD004A2422 /* AppDelegate.swift in Sources */,
+				966E2F571C6D8B7D009B36A6 /* EmoticonPackage.swift in Sources */,
+				966E2F591C6D8B7D009B36A6 /* EmoticonTextAttachment.swift in Sources */,
+				966E2F5B1C6D8B7D009B36A6 /* UITextView+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
