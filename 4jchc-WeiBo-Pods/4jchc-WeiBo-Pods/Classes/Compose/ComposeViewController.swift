@@ -8,17 +8,51 @@
 
 import UIKit
 import SVProgressHUD
+
 class ComposeViewController: UIViewController {
+    
+    /// 工具条底部约束
+    var toolbarBottonCons: NSLayoutConstraint?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.whiteColor()
+        // 0.注册通知监听键盘弹出和消失
+        NSNotificationCenter.defaultCenter().addObserver(self , selector: "keyboardChange:", name: UIKeyboardWillChangeFrameNotification, object: nil)
         // 1.初始化导航条
         setupNav()
         // 2.初始化输入框
         setupInpuView()
+        // 3.初始化工具条
+        setupToolbar()
     }
-    
+
+     //MARK:  只要键盘改变就会调用
+     ///  只要键盘改变就会调用
+    func keyboardChange(notify: NSNotification)
+    {
+        print(notify)
+        // 1.取出键盘最终的rect
+        let value = notify.userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue
+        let rect = value.CGRectValue()
+        
+        // 2.修改工具条的约束
+        // 弹出 : Y = 409 height = 258
+        // 关闭 : Y = 667 height = 258
+        // 667 - 409 = 258
+        // 667 - 667 = 0
+        let height = UIScreen.mainScreen().bounds.height
+        toolbarBottonCons?.constant = -(height - rect.origin.y)
+        
+        // 3.更新界面
+        let duration = notify.userInfo![UIKeyboardAnimationDurationUserInfoKey] as! NSNumber
+        
+        UIView.animateWithDuration(duration.doubleValue) { () -> Void in
+            self.view.layoutIfNeeded()
+        }
+        
+        
+    }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -32,11 +66,65 @@ class ComposeViewController: UIViewController {
         // 主动隐藏键盘
         textView.resignFirstResponder()
     }
+    //MARK:  初始化UIToolbar工具条
+    ///  初始化UIToolbar工具条
+    private func setupToolbar()
+    {
+        // 1.添加子控件
+        view.addSubview(toolbar)
+        
+        // 2.添加按钮
+        var items = [UIBarButtonItem]()
+        let itemSettings = [["imageName": "compose_toolbar_picture", "action": "selectPicture"],
+            
+            ["imageName": "compose_mentionbutton_background"],
+            
+            ["imageName": "compose_trendbutton_background"],
+            
+            ["imageName": "compose_emoticonbutton_background", "action": "inputEmoticon"],
+            
+            ["imageName": "compose_addbutton_background"]]
+        for dict in itemSettings
+        {
+            
+            let item = UIBarButtonItem(imageName: dict["imageName"]!, target: self, action: dict["action"])
+            items.append(item)
+            items.append(UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil))
+        }
+        items.removeLast()
+        toolbar.items = items
+        
+        // 3布局toolbar
+        let width = UIScreen.mainScreen().bounds.width
+        let cons = toolbar.xmg_AlignInner(type: XMG_AlignType.BottomLeft, referView: view, size: CGSize(width: width, height: 44))
+        // 拿到底部约束
+        toolbarBottonCons = toolbar.xmg_Constraint(cons, attribute: NSLayoutAttribute.Bottom)
+    }
+    
+    //MARK:  选择相片
+    ///  选择相片
+    func selectPicture()
+    {
+        
+    }
+    
+    //MARK:  切换表情键盘
+    ///  切换表情键盘
+    func inputEmoticon()
+    {
+        
+    }
+    //MARK: - 初始化输入视图
+    ///  初始化输入视图
     private func setupInpuView()
     {
         // 1.添加子控件
         view.addSubview(textView)
         textView.addSubview(placeholderLabel)
+        // 下拉弹簧效果
+        textView.alwaysBounceVertical = true
+        // 键盘消失模式On Drag拖
+        textView.keyboardDismissMode = UIScrollViewKeyboardDismissMode.OnDrag
         
         // 2.布局子控件
         textView.xmg_Fill(view)
@@ -96,11 +184,11 @@ class ComposeViewController: UIViewController {
             printLog("progress进度\(progress)")
             
             },success: { (_, JSON) -> Void in
-
-            // 1.提示用户发送成功
-            SVProgressHUD.showSuccessWithStatus("发送成功", maskType: SVProgressHUDMaskType.Black)
-            // 2.关闭发送界面
-            self.close()
+                
+                // 1.提示用户发送成功
+                SVProgressHUD.showSuccessWithStatus("发送成功", maskType: SVProgressHUDMaskType.Black)
+                // 2.关闭发送界面
+                self.close()
             }) { (_, error) -> Void in
                 print(error)
                 // 3.提示用户发送失败
@@ -122,6 +210,7 @@ class ComposeViewController: UIViewController {
         label.text = "分享新鲜事..."
         return label
     }()
+    private lazy var toolbar: UIToolbar = UIToolbar()
 }
 
 extension ComposeViewController: UITextViewDelegate {

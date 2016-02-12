@@ -4,17 +4,52 @@ import Foundation
 import UIKit
 extension UIBarButtonItem{
     
+    /*
+    
+    //MARK:  快速创建UIButton类型的按钮(图片正常--高亮状态)
+    ///  快速创建UIButton类型的按钮(图片正常--高亮状态)
+    class func creatBarButtonItem(imageName:String, target: AnyObject?, action:Selector?) ->UIBarButtonItem {
+    let btn = UIButton()
+    btn.setImage(UIImage(named: imageName), forState: UIControlState.Normal)
+    btn.setImage(UIImage(named: imageName + "_highlighted"), forState: UIControlState.Highlighted)
+    btn.addTarget(target, action: action, forControlEvents: UIControlEvents.TouchUpInside)
+    btn.sizeToFit()
+    return UIBarButtonItem(customView: btn)
+    }
 
-    // 如果在func前面加上class, 就相当于OC中的+
-    class func creatBarButtonItem(imageName:String, target: AnyObject?, action:Selector) ->UIBarButtonItem {
+    */
+
+    //MARK:  快速创建UIButton类型的按钮(图片正常--高亮状态)
+    ///  快速创建UIButton类型的按钮(图片正常--高亮状态)
+    class func creatBarButtonItem(imageName:String, target: AnyObject?, action:String?) ->UIBarButtonItem {
         let btn = UIButton()
         btn.setImage(UIImage(named: imageName), forState: UIControlState.Normal)
         btn.setImage(UIImage(named: imageName + "_highlighted"), forState: UIControlState.Highlighted)
-        btn.addTarget(target, action: action, forControlEvents: UIControlEvents.TouchUpInside)
+        if action != nil
+        {
+            // 如果是自己封装一个按钮, 最好传入字符串, 然后再将字符串包装为Selector
+            btn.addTarget(target, action: Selector(action!), forControlEvents: UIControlEvents.TouchUpInside)
+        }
         btn.sizeToFit()
         return UIBarButtonItem(customView: btn)
     }
+    //MARK: - init方法中的action为string类型
+    ///  init方法中的action为string类型
+    convenience init(imageName:String, target: AnyObject?, action: String?)
+    {
+        let btn = UIButton()
+        btn.setImage(UIImage(named: imageName), forState: UIControlState.Normal)
+        btn.setImage(UIImage(named: imageName + "_highlighted"), forState: UIControlState.Highlighted)
+        if action != nil
+        {
+            // 如果是自己封装一个按钮, 最好传入字符串, 然后再将字符串包装为Selector
+            btn.addTarget(target, action: Selector(action!), forControlEvents: UIControlEvents.TouchUpInside)
+        }
+        btn.sizeToFit()
+        self.init(customView: btn)
+    }
     
+
     //给 UIBarButtonItem分类添加一个方法 返回一个 UIBarButtonItem对象
     class func ItemWithTitleImageTarget(image_Nor_Hig_Name: String = "", title: String = "", target: AnyObject?, action: Selector)->UIBarButtonItem {
         //创建一个 button

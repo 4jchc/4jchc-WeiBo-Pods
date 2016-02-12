@@ -96,7 +96,7 @@
 		960C4CBD1C5E365400735B33 /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
 		960FCF651C67268400997732 /* HomeRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeRefreshView.xib; sourceTree = "<group>"; };
 		960FCF671C6726F100997732 /* HomeRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeRefreshControl.swift; sourceTree = "<group>"; };
-		9621911D1C59FA1200C3CE35 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
+		9621911D1C59FA1200C3CE35 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIBarButtonItem+Extension.swift"; path = "../Common/UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
 		963097F71C61D39B0073B432 /* NewfeatureCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewfeatureCollectionViewController.swift; sourceTree = "<group>"; };
 		964B20A71C645F41001BABF2 /* NSDate+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Extension.swift"; sourceTree = "<group>"; };
 		964B20A91C647642001BABF2 /* UIKit+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIKit+Extension.swift"; sourceTree = "<group>"; };
@@ -330,7 +330,6 @@
 		96EE27F31C586FAD00002CF4 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				9621911D1C59FA1200C3CE35 /* UIBarButtonItem+Extension.swift */,
 				9688A92B1C5A05EF0002FE2D /* TitleButton.swift */,
 			);
 			path = Common;
@@ -393,6 +392,7 @@
 		96EE27FE1C586FAD00002CF4 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				9621911D1C59FA1200C3CE35 /* UIBarButtonItem+Extension.swift */,
 				96EBA0041C5DFEA100F523A6 /* NetworkTools.swift */,
 				964B20A71C645F41001BABF2 /* NSDate+Extension.swift */,
 				968249821C5E5150004A17FF /* String+Extension.swift */,

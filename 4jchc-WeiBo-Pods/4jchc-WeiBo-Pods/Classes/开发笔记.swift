@@ -492,5 +492,18 @@ import UIKit
     发送文本微博
     */
 
+    /*
+    布局toobar工具条
+    1.UITextView下拉弹簧效果
+    textView.alwaysBounceVertical = true
+     键盘消失模式On Drag拖
+    textView.keyboardDismissMode = UIScrollViewKeyboardDismissMode.OnDrag
+    2.拿到toobar底部约束
+    toolbar.xmg_Constraint(cons, attribute: NSLayoutAttribute.Bottom)
+    3.监听键盘的弹出消失
+    NSNotificationCenter.defaultCenter().addObserver(self , selector: "keyboardChange:", name: UIKeyboardWillChangeFrameNotification, object: nil)
+    */
+
+
 
 
