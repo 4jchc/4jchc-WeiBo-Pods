@@ -505,7 +505,7 @@ import UIKit
     */
 
     /*
-    添加表情键盘
+    //MARK: 4 添加表情键盘
     1.先关闭键盘在弹出自定义键盘
     2.关闭-打开会有2次调用toobar会跳跃
     取出键盘的动画节奏UIKeyboard Animation活动性 Curve曲线 UserInfo用户信息 Key
@@ -518,8 +518,7 @@ import UIKit
     */
 
     /*
-    完善集成表情键盘
-    1.<#多行注释#>
-    2.<#多行注释#>
-    3.<#多行注释#>
+    集成图片选择器
+    1.父子控制器的添加
+    2.设置约束.xmg_AlignInner拿到底部约束xmg_Constraint
     */

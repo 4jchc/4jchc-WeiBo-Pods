@@ -11,9 +11,13 @@ import SVProgressHUD
 
 class ComposeViewController: UIViewController {
     
+    /// 表情键盘
     private lazy var emoticonVC: EmoticonViewController = EmoticonViewController { [unowned self] (emoticon) -> () in
         self.textView.insertEmoticon(emoticon)
     }
+    /// 图片选择器
+    private lazy var photoSelectorVC: PhotoSelectorViewController = PhotoSelectorViewController()
+    
     
     /// 工具条底部约束
     var toolbarBottonCons: NSLayoutConstraint?
@@ -25,11 +29,14 @@ class ComposeViewController: UIViewController {
         NSNotificationCenter.defaultCenter().addObserver(self , selector: "keyboardChange:", name: UIKeyboardWillChangeFrameNotification, object: nil)
         // 1.将键盘控制器添加为当前控制器的子控制器
         addChildViewController(emoticonVC)
+        addChildViewController(photoSelectorVC)
         // 1.初始化导航条
         setupNav()
         // 2.初始化输入框
         setupInpuView()
-        // 3.初始化工具条
+        // 3.初始化图片选择器
+        setupPhotoView()
+        // 4.初始化工具条
         setupToolbar()
     }
 
@@ -79,19 +86,23 @@ class ComposeViewController: UIViewController {
         
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        // 主动召唤键盘
-        textView.becomeFirstResponder()
-    }
-    
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         
         // 主动隐藏键盘
         textView.resignFirstResponder()
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if photoViewHeightCons?.constant == 0
+        {
+            // 主动召唤键盘
+            textView.becomeFirstResponder()
+        }
+    }
+    
     //MARK:  初始化UIToolbar工具条
     ///  初始化UIToolbar工具条
     private func setupToolbar()
@@ -129,9 +140,27 @@ class ComposeViewController: UIViewController {
     
     //MARK:  选择相片
     ///  选择相片
-    func selectPicture()
-    {
+    func selectPicture(){
         
+        // 1.关闭键盘
+        textView.resignFirstResponder()
+        
+        // 2.调整图片选择器的高度
+        photoViewHeightCons?.constant = UIScreen.mainScreen().bounds.height * 0.6
+    }
+    
+    //MARK:  设置图片选择器的位置
+    ///  设置图片选择器的位置
+    func setupPhotoView(){
+        // 1.添加图片选择器
+        view.insertSubview(photoSelectorVC.view, belowSubview: toolbar)
+        
+        // 2.布局图片选择器
+        let size = UIScreen.mainScreen().bounds.size
+        let widht = size.width
+        let height: CGFloat = 0 // size.height * 0.6
+        let cons = photoSelectorVC.view.xmg_AlignInner(type: XMG_AlignType.BottomLeft, referView: view, size: CGSize(width: widht, height: height))
+        photoViewHeightCons = photoSelectorVC.view.xmg_Constraint(cons, attribute: NSLayoutAttribute.Height)
     }
     
     //MARK:  切换表情键盘
