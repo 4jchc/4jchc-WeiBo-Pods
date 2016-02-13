@@ -19,7 +19,9 @@ class StatusForwardTableViewCell: StatusTableViewCell {
         didSet{
             let name = status?.retweeted_status?.user?.name ?? ""
             let text = status?.retweeted_status?.text ?? ""
-            forwardLabel.text = name + ": " + text
+            //forwardLabel.text = name + ": " + text
+            // 图文混排
+            forwardLabel.attributedText = EmoticonPackage.emoticonString(name + ": " + text)
         }
     }
     

@@ -542,15 +542,17 @@ import UIKit
 
 
     /*
-    隔离AFN发送微博
+    //MARK: 7 隔离AFN发送微博
     1.当拖拽的时候隐藏图片选择器
     2.隔离AFN
     */
 
     /*
-    微博字数提醒
+    //MARK: 8 微博字数提醒
     1.xmg_AlignVertical垂直排列 xmg_AlignInner内部排列
     */
 
 
-
+    /*
+    1.显示首页表情
+    */

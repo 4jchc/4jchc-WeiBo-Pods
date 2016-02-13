@@ -50,8 +50,9 @@ class StatusTableViewCell: UITableViewCell {
             topView.status = status
             
             // 设置正文
-            contentLabel.text = status?.text
-            
+            //contentLabel.text = status?.text
+            // 图文混排
+            contentLabel.attributedText = EmoticonPackage.emoticonString(status?.text ?? "")
             
             // 设置配图的尺寸
             //pictureView.status = status 不设置判断会转发的 会没有配图

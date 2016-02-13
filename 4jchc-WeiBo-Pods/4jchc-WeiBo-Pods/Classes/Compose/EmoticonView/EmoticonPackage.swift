@@ -34,9 +34,8 @@ class EmoticonPackage: NSObject {
     //MARK: 单例
     static let packageList:[EmoticonPackage] = EmoticonPackage.loadPackages()
     
-    
-    //MARK:  匹配 显示表情
-    ///  匹配 显示表情
+    //MARK:   根据传入的字符串,返回匹配 表情 属性字符串
+    ///  根据传入的字符串,返回匹配 表情 属性字符串
     class func emoticonString(str: String) -> NSAttributedString? {
         // 生成完整的属性字符串
         let strM = NSMutableAttributedString(string: str)
