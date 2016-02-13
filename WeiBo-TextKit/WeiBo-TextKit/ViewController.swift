@@ -12,6 +12,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var customLabel: XMGLabel!
     
+    @IBOutlet weak var customTextView: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

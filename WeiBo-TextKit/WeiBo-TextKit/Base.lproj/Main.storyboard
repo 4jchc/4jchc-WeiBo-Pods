@@ -28,20 +28,36 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VXW-pH-nxS" customClass="XMGTextView" customModule="WeiBo_TextKit" customModuleProvider="target">
+                                <rect key="frame" x="20" y="137" width="560" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="fJ0-3k-uTJ"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="SgA-fA-wKg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Dje-as-sWU"/>
+                            <constraint firstItem="VXW-pH-nxS" firstAttribute="width" secondItem="SgA-fA-wKg" secondAttribute="width" id="FJg-4s-gwh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="SgA-fA-wKg" secondAttribute="trailing" id="YvV-DT-4e3"/>
                             <constraint firstItem="SgA-fA-wKg" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="haK-nq-7Zb"/>
+                            <constraint firstItem="VXW-pH-nxS" firstAttribute="trailing" secondItem="SgA-fA-wKg" secondAttribute="trailing" id="nO0-ga-L2y"/>
+                            <constraint firstItem="VXW-pH-nxS" firstAttribute="top" secondItem="SgA-fA-wKg" secondAttribute="bottom" constant="17" id="wGB-sr-k7K"/>
+                            <constraint firstItem="VXW-pH-nxS" firstAttribute="leading" secondItem="SgA-fA-wKg" secondAttribute="leading" id="zRu-g2-74n"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="customLabel" destination="SgA-fA-wKg" id="z3t-3O-l1d"/>
+                        <outlet property="customTextView" destination="VXW-pH-nxS" id="ZMf-QH-LHb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="288" y="351"/>
         </scene>
     </scenes>
 </document>
