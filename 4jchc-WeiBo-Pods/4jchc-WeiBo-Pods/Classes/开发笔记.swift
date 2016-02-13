@@ -526,7 +526,7 @@ import UIKit
 
 
     /*
-    发送图片微博
+    //MARK: 6 发送图片微博
     1.添加AFN-SVP代码段
     2.使用constructingBodyWithBlock来上传二进制数据
     将数据转换为二进制
@@ -541,7 +541,11 @@ import UIKit
     */
 
 
-
+    /*
+    隔离AFN发送微博
+    1.当拖拽的时候隐藏图片选择器
+    2.隔离AFN
+    */
 
 
 

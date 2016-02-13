@@ -95,6 +95,10 @@ class EmoticonViewController: UIViewController {
     }()
     
         private lazy var packages: [EmoticonPackage] = EmoticonPackage.packageList
+    
+    deinit{
+        print("**\(super.classForCoder)--已销毁")
+    }
 }
 
 

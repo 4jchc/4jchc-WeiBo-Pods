@@ -33,6 +33,13 @@ class PhotoSelectorViewController: UIViewController {
         view.addConstraints(cons)
         
     }
+    
+    //MARK: 关闭控制器
+    ///  关闭控制器
+    func close()
+    {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
     // MARK: - 懒加载
     private lazy var collcetionView: UICollectionView = {
         let clv = UICollectionView(frame: CGRectZero, collectionViewLayout: PhotoSelectorViewLayout())
@@ -42,13 +49,16 @@ class PhotoSelectorViewController: UIViewController {
     }()
     
     lazy var pictureImages = [UIImage]()
-    
+
+    deinit{
+        print("**\(super.classForCoder)--已销毁")
+    }
 }
 
 extension PhotoSelectorViewController: UICollectionViewDataSource, PhotoSelectorCellDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate
 {
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-     
+        
         return pictureImages.count + 1
     }
     
@@ -148,7 +158,7 @@ extension PhotoSelectorViewController: UICollectionViewDataSource, PhotoSelector
         picker.dismissViewControllerAnimated(true, completion: nil)
     }
     
-
+    
 }
 @objc
 protocol PhotoSelectorCellDelegate : NSObjectProtocol
@@ -218,13 +228,13 @@ class PhotoSelectorCell: UICollectionViewCell {
     
     func addBtnClick()
     {
- 
+        
         PhotoCellDelegate?.photoDidAddSelector!(self)
     }
     
     func removeBtnClick()
     {
-
+        
         PhotoCellDelegate?.photoDidRemoveSelector!(self)
     }
     

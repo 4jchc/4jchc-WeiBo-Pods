@@ -142,7 +142,7 @@ class ComposeViewController: UIViewController {
     //MARK:  选择相片
     ///  选择相片
     func selectPicture(){
-        
+        photoSelectorVC.view.hidden = false
         // 1.关闭键盘
         textView.resignFirstResponder()
         
@@ -232,89 +232,29 @@ class ComposeViewController: UIViewController {
         navigationItem.titleView = titleView
     }
     
-    /**
-     关闭控制器
-     */
-    
+    //MARK: 关闭控制器
+    ///  关闭控制器
     func close()
     {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
     //MARK: 发送文本微博
-    func sendStatus1()
-    {
-        print(textView.text)
-        // 更改图文混排
-        print(textView.emoticonAttributedText())
+    func sendStatus(){
         
-        let path = "2/statuses/update.json"
-        let params = ["access_token":UserAccount.loadAccount()!.access_token! , "status": textView.emoticonAttributedText()]
-        NetworkTools.shareNetworkTools().POST(path, parameters: params,progress: { (progress) -> Void in} ,success: { (_, JSON) -> Void in
-            
+        let text = textView.emoticonAttributedText()
+        let image = photoSelectorVC.pictureImages.first
+
+        
+        NetworkTools.shareNetworkTools().sendStatus(text , image: image, successCallback: { (status) -> () in
             // 1.提示用户发送成功
             SVProgressHUD.showSuccessWithStatus("发送成功", maskType: SVProgressHUDMaskType.Black)
             // 2.关闭发送界面
             self.close()
-            }) { (_, error) -> Void in
+            }) { (error) -> () in
                 print(error)
                 // 3.提示用户发送失败
                 SVProgressHUD.showErrorWithStatus("发送失败", maskType: SVProgressHUDMaskType.Black)
-        }
-
-    }
-    
-    func sendStatus()
-    {
-        print(textView.text)
-        print(textView.emoticonAttributedText())
-        
-        if let image = photoSelectorVC.pictureImages.first
-        {
-            // 发送图片微博
-            let path = "2/statuses/upload.json"
-            let params = ["access_token":UserAccount.loadAccount()!.access_token! , "status": textView.emoticonAttributedText()]
-            NetworkTools.shareNetworkTools().POST(path, parameters: params, constructingBodyWithBlock: { (formData) -> Void in
-                // 1.将数据转换为二进制
-                let data = UIImagePNGRepresentation(image)
-                
-                // 2.上传数据
-                /*
-                第一个参数: 需要上传的二进制数据
-                第二个参数: 服务端对应哪个的字段名称
-                第三个参数: 文件的名称(在大部分服务器上可以随便写)
-                第四个参数: 数据类型, 通用类型application/octet-stream
-                */
-                formData.appendPartWithFileData(data!
-                    , name:"pic", fileName:"abc.png", mimeType:"application/octet-stream");
-                
-                },progress: { (progress) -> Void in} , success: { (_, JSON) -> Void in
-                    // 1.提示用户发送成功
-                    SVProgressHUD.showSuccessWithStatus("发送成功", maskType: SVProgressHUDMaskType.Black)
-                    // 2.关闭发送界面
-                    self.close()
-                    
-                }, failure: { (_, error) -> Void in
-                    print(error)
-                    // 3.提示用户发送失败
-                    SVProgressHUD.showErrorWithStatus("发送失败", maskType: SVProgressHUDMaskType.Black)
-            })
-        }else
-        {
-            // 发送文字微博
-            let path = "2/statuses/update.json"
-            let params = ["access_token":UserAccount.loadAccount()!.access_token! , "status": textView.emoticonAttributedText()]
-            NetworkTools.shareNetworkTools().POST(path, parameters: params,progress: { (progress) -> Void in} , success: { (_, JSON) -> Void in
-                
-                // 1.提示用户发送成功
-                SVProgressHUD.showSuccessWithStatus("发送成功", maskType: SVProgressHUDMaskType.Black)
-                // 2.关闭发送界面
-                self.close()
-                }) { (_, error) -> Void in
-                    print(error)
-                    // 3.提示用户发送失败
-                    SVProgressHUD.showErrorWithStatus("发送失败", maskType: SVProgressHUDMaskType.Black)
-            }
         }
         
     }
@@ -335,15 +275,24 @@ class ComposeViewController: UIViewController {
         return label
     }()
     private lazy var toolbar: UIToolbar = UIToolbar()
+    
+    deinit{
+        print("\(super.classForCoder)--❤️已销毁")
+    }
 }
 
-extension ComposeViewController: UITextViewDelegate {
+extension ComposeViewController: UITextViewDelegate ,UIScrollViewDelegate{
     
     func textViewDidChange(textView: UITextView) {
         
         // 注意点: 输入图片表情的时候不会促发textViewDidChange
         placeholderLabel.hidden = textView.hasText()
         navigationItem.rightBarButtonItem?.enabled = textView.hasText()
+    }
+    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        printLog("开始拖拽")
+        photoSelectorVC.view.hidden = true
+       
     }
 }
 
