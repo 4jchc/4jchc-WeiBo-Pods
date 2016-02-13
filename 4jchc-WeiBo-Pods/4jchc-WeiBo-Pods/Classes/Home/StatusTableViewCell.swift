@@ -10,6 +10,7 @@
 
 import UIKit
 import SDWebImage
+import KILabel
 
 let XMGPictureViewCellReuseIdentifier = "XMGPictureViewCellReuseIdentifier"
 
@@ -115,11 +116,33 @@ class StatusTableViewCell: UITableViewCell {
     private lazy var topView: StatusTableViewTopView = StatusTableViewTopView()
     
     /// 正文
+    /*
     lazy var contentLabel: UILabel =
     {
         let label = UILabel.createLabel(UIColor.darkGrayColor(), fontSize: 15)
         label.numberOfLines = 0
         label.preferredMaxLayoutWidth = UIScreen.mainScreen().bounds.width - 20
+        return label
+    }()
+    */
+    lazy var contentLabel: KILabel =
+    {
+        //        let label = UILabel.createLabel(UIColor.darkGrayColor(), fontSize: 15)
+        
+        let label = KILabel()
+        label.textColor = UIColor.darkGrayColor()
+        label.font = UIFont.systemFontOfSize(15)
+        label.numberOfLines = 0
+        label.preferredMaxLayoutWidth = UIScreen.mainScreen().bounds.width - 20
+        
+        // 监听URL
+        label.urlLinkTapHandler =  {
+            (label, string, range)
+           // (^KILinkTapHandler)(KILabel *label, NSString *string, NSRange range);
+            in
+            print(string)
+        }
+        
         return label
     }()
     
