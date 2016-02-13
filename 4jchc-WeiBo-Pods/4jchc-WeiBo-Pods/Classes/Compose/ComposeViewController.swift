@@ -18,9 +18,10 @@ class ComposeViewController: UIViewController {
     /// 图片选择器
     private lazy var photoSelectorVC: PhotoSelectorViewController = PhotoSelectorViewController()
     
-    
     /// 工具条底部约束
     var toolbarBottonCons: NSLayoutConstraint?
+    /// 图片选择器高度约束
+    var photoViewHeightCons: NSLayoutConstraint?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -241,7 +242,7 @@ class ComposeViewController: UIViewController {
     }
     
     //MARK: 发送文本微博
-    func sendStatus()
+    func sendStatus1()
     {
         print(textView.text)
         // 更改图文混排
@@ -249,7 +250,7 @@ class ComposeViewController: UIViewController {
         
         let path = "2/statuses/update.json"
         let params = ["access_token":UserAccount.loadAccount()!.access_token! , "status": textView.emoticonAttributedText()]
-        NetworkTools.shareNetworkTools().POST(path, parameters: params, success: { (_, JSON) -> Void in
+        NetworkTools.shareNetworkTools().POST(path, parameters: params,progress: { (progress) -> Void in} ,success: { (_, JSON) -> Void in
             
             // 1.提示用户发送成功
             SVProgressHUD.showSuccessWithStatus("发送成功", maskType: SVProgressHUDMaskType.Black)
@@ -260,6 +261,62 @@ class ComposeViewController: UIViewController {
                 // 3.提示用户发送失败
                 SVProgressHUD.showErrorWithStatus("发送失败", maskType: SVProgressHUDMaskType.Black)
         }
+
+    }
+    
+    func sendStatus()
+    {
+        print(textView.text)
+        print(textView.emoticonAttributedText())
+        
+        if let image = photoSelectorVC.pictureImages.first
+        {
+            // 发送图片微博
+            let path = "2/statuses/upload.json"
+            let params = ["access_token":UserAccount.loadAccount()!.access_token! , "status": textView.emoticonAttributedText()]
+            NetworkTools.shareNetworkTools().POST(path, parameters: params, constructingBodyWithBlock: { (formData) -> Void in
+                // 1.将数据转换为二进制
+                let data = UIImagePNGRepresentation(image)
+                
+                // 2.上传数据
+                /*
+                第一个参数: 需要上传的二进制数据
+                第二个参数: 服务端对应哪个的字段名称
+                第三个参数: 文件的名称(在大部分服务器上可以随便写)
+                第四个参数: 数据类型, 通用类型application/octet-stream
+                */
+                formData.appendPartWithFileData(data!
+                    , name:"pic", fileName:"abc.png", mimeType:"application/octet-stream");
+                
+                },progress: { (progress) -> Void in} , success: { (_, JSON) -> Void in
+                    // 1.提示用户发送成功
+                    SVProgressHUD.showSuccessWithStatus("发送成功", maskType: SVProgressHUDMaskType.Black)
+                    // 2.关闭发送界面
+                    self.close()
+                    
+                }, failure: { (_, error) -> Void in
+                    print(error)
+                    // 3.提示用户发送失败
+                    SVProgressHUD.showErrorWithStatus("发送失败", maskType: SVProgressHUDMaskType.Black)
+            })
+        }else
+        {
+            // 发送文字微博
+            let path = "2/statuses/update.json"
+            let params = ["access_token":UserAccount.loadAccount()!.access_token! , "status": textView.emoticonAttributedText()]
+            NetworkTools.shareNetworkTools().POST(path, parameters: params,progress: { (progress) -> Void in} , success: { (_, JSON) -> Void in
+                
+                // 1.提示用户发送成功
+                SVProgressHUD.showSuccessWithStatus("发送成功", maskType: SVProgressHUDMaskType.Black)
+                // 2.关闭发送界面
+                self.close()
+                }) { (_, error) -> Void in
+                    print(error)
+                    // 3.提示用户发送失败
+                    SVProgressHUD.showErrorWithStatus("发送失败", maskType: SVProgressHUDMaskType.Black)
+            }
+        }
+        
     }
     
     // MARK: - 懒加载
@@ -289,5 +346,6 @@ extension ComposeViewController: UITextViewDelegate {
         navigationItem.rightBarButtonItem?.enabled = textView.hasText()
     }
 }
+
 
 

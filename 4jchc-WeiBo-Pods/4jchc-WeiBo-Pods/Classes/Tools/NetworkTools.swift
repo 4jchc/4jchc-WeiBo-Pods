@@ -6,6 +6,8 @@
 //  Copyright © 2016年 蒋进. All rights reserved.
 //
 
+
+//MARK: - AFNetworking
 import UIKit
 import AFNetworking
 
@@ -25,5 +27,9 @@ class NetworkTools: AFHTTPSessionManager {
     class func shareNetworkTools() -> NetworkTools {
         return tools
     }
+
 }
+
+
+
 

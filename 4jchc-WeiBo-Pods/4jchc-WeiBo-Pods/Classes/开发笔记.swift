@@ -518,7 +518,31 @@ import UIKit
     */
 
     /*
-    集成图片选择器
+    //MARK: 5 集成图片选择器
     1.父子控制器的添加
     2.设置约束.xmg_AlignInner拿到底部约束xmg_Constraint
     */
+
+
+
+    /*
+    发送图片微博
+    1.添加AFN-SVP代码段
+    2.使用constructingBodyWithBlock来上传二进制数据
+    将数据转换为二进制
+    let data = UIImagePNGRepresentation(image)
+    3.上传数据
+    第一个参数: 需要上传的二进制数据
+    第二个参数: name    服务端对应哪个的字段名称
+    第三个参数: fileName   文件的名称(在大部分服务器上可以随便写)
+    第四个参数: mimeType   数据类型, 通用类型application/octet-stream
+    formData.appendPartWithFileData(data!
+    , name:"pic", fileName:"abc.png", mimeType:"application/octet-stream");
+    */
+
+
+
+
+
+
+

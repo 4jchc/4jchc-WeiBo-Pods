@@ -41,7 +41,7 @@ class PhotoSelectorViewController: UIViewController {
         return clv
     }()
     
-    private lazy var pictureImages = [UIImage]()
+    lazy var pictureImages = [UIImage]()
     
 }
 
