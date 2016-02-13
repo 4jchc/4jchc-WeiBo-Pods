@@ -15,6 +15,12 @@
 		9666BEB31C6F577900183BA9 /* WeiBo_____Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9666BEB21C6F577900183BA9 /* WeiBo_____Tests.swift */; };
 		9666BEBE1C6F577900183BA9 /* WeiBo_____UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9666BEBD1C6F577900183BA9 /* WeiBo_____UITests.swift */; };
 		9666BECC1C6F57A400183BA9 /* 正则表达式开发笔记.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9666BECB1C6F57A400183BA9 /* 正则表达式开发笔记.swift */; };
+		9666BED41C6F64DA00183BA9 /* EmoticonPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9666BECE1C6F64DA00183BA9 /* EmoticonPackage.swift */; };
+		9666BED51C6F64DA00183BA9 /* Emoticons.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9666BECF1C6F64DA00183BA9 /* Emoticons.bundle */; };
+		9666BED61C6F64DA00183BA9 /* EmoticonTextAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9666BED01C6F64DA00183BA9 /* EmoticonTextAttachment.swift */; };
+		9666BED71C6F64DA00183BA9 /* EmoticonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9666BED11C6F64DA00183BA9 /* EmoticonViewController.swift */; };
+		9666BED81C6F64DA00183BA9 /* UITextView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9666BED21C6F64DA00183BA9 /* UITextView+Extension.swift */; };
+		9666BED91C6F64DA00183BA9 /* WeiBo表情键盘开发笔记.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9666BED31C6F64DA00183BA9 /* WeiBo表情键盘开发笔记.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,12 @@
 		9666BEBD1C6F577900183BA9 /* WeiBo_____UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeiBo_____UITests.swift"; sourceTree = "<group>"; };
 		9666BEBF1C6F577900183BA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9666BECB1C6F57A400183BA9 /* 正则表达式开发笔记.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "正则表达式开发笔记.swift"; sourceTree = "<group>"; };
+		9666BECE1C6F64DA00183BA9 /* EmoticonPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonPackage.swift; sourceTree = "<group>"; };
+		9666BECF1C6F64DA00183BA9 /* Emoticons.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Emoticons.bundle; sourceTree = "<group>"; };
+		9666BED01C6F64DA00183BA9 /* EmoticonTextAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonTextAttachment.swift; sourceTree = "<group>"; };
+		9666BED11C6F64DA00183BA9 /* EmoticonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonViewController.swift; sourceTree = "<group>"; };
+		9666BED21C6F64DA00183BA9 /* UITextView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+Extension.swift"; sourceTree = "<group>"; };
+		9666BED31C6F64DA00183BA9 /* WeiBo表情键盘开发笔记.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WeiBo表情键盘开发笔记.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +111,7 @@
 		9666BE9C1C6F577900183BA9 /* WeiBo正则表达式 */ = {
 			isa = PBXGroup;
 			children = (
+				9666BECD1C6F64DA00183BA9 /* EmoticonView */,
 				9666BECB1C6F57A400183BA9 /* 正则表达式开发笔记.swift */,
 				9666BE9D1C6F577900183BA9 /* AppDelegate.swift */,
 				9666BE9F1C6F577900183BA9 /* ViewController.swift */,
@@ -126,6 +139,20 @@
 				9666BEBF1C6F577900183BA9 /* Info.plist */,
 			);
 			path = "WeiBo正则表达式UITests";
+			sourceTree = "<group>";
+		};
+		9666BECD1C6F64DA00183BA9 /* EmoticonView */ = {
+			isa = PBXGroup;
+			children = (
+				9666BECE1C6F64DA00183BA9 /* EmoticonPackage.swift */,
+				9666BECF1C6F64DA00183BA9 /* Emoticons.bundle */,
+				9666BED01C6F64DA00183BA9 /* EmoticonTextAttachment.swift */,
+				9666BED11C6F64DA00183BA9 /* EmoticonViewController.swift */,
+				9666BED21C6F64DA00183BA9 /* UITextView+Extension.swift */,
+				9666BED31C6F64DA00183BA9 /* WeiBo表情键盘开发笔记.swift */,
+			);
+			name = EmoticonView;
+			path = "../../4jchc-WeiBo-Pods/4jchc-WeiBo-Pods/Classes/Compose/EmoticonView";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9666BEA81C6F577900183BA9 /* LaunchScreen.storyboard in Resources */,
+				9666BED51C6F64DA00183BA9 /* Emoticons.bundle in Resources */,
 				9666BEA51C6F577900183BA9 /* Assets.xcassets in Resources */,
 				9666BEA31C6F577900183BA9 /* Main.storyboard in Resources */,
 			);
@@ -259,8 +287,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9666BED81C6F64DA00183BA9 /* UITextView+Extension.swift in Sources */,
+				9666BED61C6F64DA00183BA9 /* EmoticonTextAttachment.swift in Sources */,
 				9666BEA01C6F577900183BA9 /* ViewController.swift in Sources */,
 				9666BE9E1C6F577900183BA9 /* AppDelegate.swift in Sources */,
+				9666BED91C6F64DA00183BA9 /* WeiBo表情键盘开发笔记.swift in Sources */,
+				9666BED41C6F64DA00183BA9 /* EmoticonPackage.swift in Sources */,
+				9666BED71C6F64DA00183BA9 /* EmoticonViewController.swift in Sources */,
 				9666BECC1C6F57A400183BA9 /* 正则表达式开发笔记.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,6 +521,7 @@
 				9666BEC41C6F577900183BA9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9666BEC51C6F577900183BA9 /* Build configuration list for PBXNativeTarget "WeiBo正则表达式Tests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +530,7 @@
 				9666BEC71C6F577900183BA9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9666BEC81C6F577900183BA9 /* Build configuration list for PBXNativeTarget "WeiBo正则表达式UITests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +539,7 @@
 				9666BECA1C6F577900183BA9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
