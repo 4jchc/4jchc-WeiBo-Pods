@@ -22,3 +22,15 @@
     for checkingRes in res
     */
 
+
+    /*
+    倒着替换
+    var count = res.count
+    while count > 0
+    {
+    // 0.从后面开始取--res--数组
+    let checkingRes = res[--count]
+    重构完善表情类
+    */
+
+

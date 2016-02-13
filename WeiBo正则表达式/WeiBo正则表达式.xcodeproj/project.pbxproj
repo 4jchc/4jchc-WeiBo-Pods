@@ -111,8 +111,8 @@
 		9666BE9C1C6F577900183BA9 /* WeiBo正则表达式 */ = {
 			isa = PBXGroup;
 			children = (
-				9666BECD1C6F64DA00183BA9 /* EmoticonView */,
 				9666BECB1C6F57A400183BA9 /* 正则表达式开发笔记.swift */,
+				9666BECD1C6F64DA00183BA9 /* EmoticonView */,
 				9666BE9D1C6F577900183BA9 /* AppDelegate.swift */,
 				9666BE9F1C6F577900183BA9 /* ViewController.swift */,
 				9666BEA11C6F577900183BA9 /* Main.storyboard */,

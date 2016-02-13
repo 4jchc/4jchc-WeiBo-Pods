@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    
+    @IBOutlet var customLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         /*
@@ -23,6 +25,10 @@ class ViewController: UIViewController {
         phoneNum()
         weiBo()
         weiBo1()
+       
+        
+        let str1 = "@jack12:【动物尖叫合辑】#肥猪流#猫头鹰这么https://www.520it.com 尖叫[偷笑]、@南哥: 老鼠这么[吃惊]、@江哥: 莫名奇#小笼包#妙的笑到最后[嘻嘻]！~ http://t.cn/zYBuKZ8"
+        customLabel.attributedText = EmoticonPackage.emoticonString(str1)!
     }
     
     private func checkQQ2(str: String)
@@ -214,5 +220,138 @@ class ViewController: UIViewController {
         }
         
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    /*
+    func weiBo3(){
+        
+        /*
+        let str = "[爱你]"
+        let emoticon = EmoticonPackage.packageList[1].emoticons?.filter({ (e) -> Bool in
+        print(e.chs)
+        return e.chs == str
+        }).last
+        print("chs = \(emoticon!.chs), imagePath = \(emoticon!.imagePath)")
+        
+        */
+        /*
+        let str = "[好爱哦]"
+        let emoticon = EmoticonPackage.packageList[3].emoticons?.filter({ (e) -> Bool in
+        return e.chs == str
+        }).last
+        print("chs = \(emoticon!.chs), imagePath = \(emoticon!.imagePath)")
+        */
+        
+        /*
+        let str = "[爱你]"
+        var emoticon: Emoticon?
+        for package in EmoticonPackage.packageList
+        {
+        emoticon = package.emoticons?.filter({ (e) -> Bool in
+        return e.chs == str
+        }).last
+        
+        if emoticon != nil{
+        break
+        }
+        }
+        print("chs = \(emoticon?.chs), imagePath = \(emoticon?.imagePath)")
+        */
+        
+        
+        // 今天[太阳]天气[云朵]非常好[good]
+        
+        
+        let str = "@jack12:【动物尖叫合辑】#肥猪流#猫头鹰这么https://www.520it.com 尖叫[偷笑]、@南哥: 老鼠这么[吃惊]、@江哥: 莫名奇#小笼包#妙的笑到最后[嘻嘻]！~ http://t.cn/zYBuKZ8"
+        
+        // 生成完整的属性字符串
+        let strM = NSMutableAttributedString(string: str)
+        do{
+            // 1.创建规则
+            let pattern = "\\[.*?\\]"
+            
+            // 2.创建正则表达式对象
+            let regex = try NSRegularExpression(pattern: pattern, options: NSRegularExpressionOptions.CaseInsensitive)
+            // 3.开始匹配
+            let res = regex.matchesInString(str, options: NSMatchingOptions(rawValue: 0), range: NSMakeRange(0, str.characters.count))
+            // 4取出结果
+            /*
+            // 有问题: 正向替换会修改字符串的长度, 会影响后面字符串的range
+            for checkingRes in res
+            {
+            // 1.拿到匹配到的表情字符串
+            let tempStr = (str as NSString).substringWithRange(checkingRes.range)
+            print(tempStr)
+            // 2.根据表情字符串查找对应的表情模型
+            if let emoticon = emoticonWithStr(tempStr)
+            {
+            // 3.根据表情模型生成属性字符串
+            let attrStr = EmoticonTextAttachment.imageText(emoticon, font: UIFont.systemFontOfSize(18))
+            // 4.添加属性字符串
+            strM.replaceCharactersInRange(checkingRes.range, withAttributedString: attrStr)
+            }
+            
+            }
+            */
+            var count = res.count
+            while count > 0
+            {
+                // 0.从后面开始取
+                let checkingRes = res[--count]
+                
+                // 1.拿到匹配到的表情字符串
+                let tempStr = (str as NSString).substringWithRange(checkingRes.range)
+                //                print(tempStr)
+                // 2.根据表情字符串查找对应的表情模型
+                if let emoticon = emoticonWithStr(tempStr)
+                {
+                    print(emoticon.chs)
+                    // 3.根据表情模型生成属性字符串
+                    let attrStr = EmoticonTextAttachment.imageText(emoticon, font: UIFont.systemFontOfSize(18))
+                    // 4.添加属性字符串
+                    strM.replaceCharactersInRange(checkingRes.range, withAttributedString: attrStr)
+                }
+                
+                
+            }
+            
+            // 拿到替换之后的属性字符串
+            customLabel.attributedText = strM
+        }catch
+        {
+            print(error)
+        }
+    }
+    /**
+     根据表情文字找到对应的表情模型
+     
+     :param: str 表情文字
+     
+     :returns: 表情模型
+     */
+    func emoticonWithStr(str: String) -> Emoticon?
+    {
+        var emoticon: Emoticon?
+        for package in EmoticonPackage.packageList
+        {
+            emoticon = package.emoticons?.filter({ (e) -> Bool in
+                return e.chs == str
+            }).last
+            
+            if emoticon != nil{
+                break
+            }
+        }
+        return emoticon
+    }
+    
+    */
     
 }

@@ -34,6 +34,77 @@ class EmoticonPackage: NSObject {
     //MARK: 单例
     static let packageList:[EmoticonPackage] = EmoticonPackage.loadPackages()
     
+    
+    //MARK:  匹配 显示表情
+    ///  匹配 显示表情
+    class func emoticonString(str: String) -> NSAttributedString? {
+        // 生成完整的属性字符串
+        let strM = NSMutableAttributedString(string: str)
+        do{
+            // 1.创建规则
+            let pattern = "\\[.*?\\]"
+            
+            // 2.创建正则表达式对象
+            let regex = try NSRegularExpression(pattern: pattern, options: NSRegularExpressionOptions.CaseInsensitive)
+            // 3.开始匹配
+            let res = regex.matchesInString(str, options: NSMatchingOptions(rawValue: 0), range: NSMakeRange(0, str.characters.count))
+            // 4取出结果
+            var count = res.count
+            while count > 0
+            {
+                // 0.从后面开始取
+                let checkingRes = res[--count]
+                
+                // 1.拿到匹配到的表情字符串
+                let tempStr = (str as NSString).substringWithRange(checkingRes.range)
+                // 2.根据表情字符串查找对应的表情模型
+                if let emoticon = emoticonWithStr(tempStr)
+                {
+                    print(emoticon.chs)
+                    // 3.根据表情模型生成属性字符串
+                    let attrStr = EmoticonTextAttachment.imageText(emoticon, font: UIFont.systemFontOfSize(18))
+                    // 4.添加属性字符串
+                    strM.replaceCharactersInRange(checkingRes.range, withAttributedString: attrStr)
+                }
+            }
+            
+            // 拿到替换之后的属性字符串
+            return strM
+        }catch
+        {
+            print(error)
+            return nil
+        }
+    }
+    //MARK: 根据表情文字找到对应的表情模型
+    /**
+     根据表情文字找到对应的表情模型
+     
+     :param: str 表情文字
+     
+     :returns: 表情模型
+     */
+    class func emoticonWithStr(str: String) -> Emoticon?
+    {
+        var emoticon: Emoticon?
+        for package in EmoticonPackage.packageList
+        {
+            emoticon = package.emoticons?.filter({ (e) -> Bool in
+                return e.chs == str
+            }).last
+            
+            if emoticon != nil{
+                break
+            }
+        }
+        return emoticon
+    }
+    
+    
+    
+    
+    
+    //MARK: 获取所有组的表情数组
     /// 获取所有组的表情数组
     // 浪小花 -> 一组  -> 所有的表情模型(emoticons)
     // 默认 -> 一组  -> 所有的表情模型(emoticons)
