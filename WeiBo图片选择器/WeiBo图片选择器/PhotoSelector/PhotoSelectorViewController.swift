@@ -115,11 +115,32 @@ extension PhotoSelectorViewController: UICollectionViewDataSource, PhotoSelector
      :param: editingInfo 编辑之后的图片
      */
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
-        //        print(image)
+        
+        /*
+        注意: 一般情况下,只要涉及到从相册中获取图片的功能, 都需要处理内存
+        
+        一般情况下一个应用程序启动会占用20M左右的内存, 当内存飙升到500M左右的时候系统就会发送内存警告, 此时就需要释放内存 , 否则就会闪退
+        只要内存释放到100M左右, 那么系统就不会闪退我们的应用程序
+        也就是说一个应用程序占用的内存20~100时是比较安全的内容范围
+        */
+        print(image)
         //        print(editingInfo)
         
+        /*
+        // 注意: 1.如果是通过JPEG来压缩图片, 图片压缩之后是不保真的
+        //       2.苹果官方不推荐我们使用JPG图片,因为现实JPG图片的时候解压缩非常消耗性能
+        let data1 = UIImageJPEGRepresentation(image, 1.0)
+        data1?.writeToFile("/Users/xiaomage/Desktop/1.jpg", atomically: true)
+        let data2 = UIImageJPEGRepresentation(image, 0.1)
+        data2?.writeToFile("/Users/xiaomage/Desktop/2.jpg", atomically: true)
+        */
+        let newImage = image.imageWithScale(300)
+        //        let data2 = UIImageJPEGRepresentation(newImage, 1.0)
+        //        data2?.writeToFile("/Users/xiaomage/Desktop/2.jpg", atomically: true)
+        
+        
         // 1.将当前选中的图片添加到数组中
-        pictureImages.append(image)
+        pictureImages.append(newImage)
         collcetionView.reloadData()
         
         

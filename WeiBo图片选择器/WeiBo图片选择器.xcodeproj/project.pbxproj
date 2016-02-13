@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9664908F1C6ED2CB0009D844 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9664908E1C6ED2CB0009D844 /* UIImage+Extension.swift */; };
 		96AEC6CC1C6DC57500F6A3FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEC6CB1C6DC57500F6A3FA /* AppDelegate.swift */; };
 		96AEC6D31C6DC57500F6A3FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96AEC6D21C6DC57500F6A3FA /* Assets.xcassets */; };
 		96AEC6D61C6DC57500F6A3FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96AEC6D41C6DC57500F6A3FA /* LaunchScreen.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9664908E1C6ED2CB0009D844 /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		96AEC6C81C6DC57500F6A3FA /* WeiBo图片选择器.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WeiBo图片选择器.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96AEC6CB1C6DC57500F6A3FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96AEC6D21C6DC57500F6A3FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				96AEC6FA1C6DC65200F6A3FA /* WeiBo图片选择器-开发笔记.swift */,
+				9664908E1C6ED2CB0009D844 /* UIImage+Extension.swift */,
 				96AEC6FC1C6DC69C00F6A3FA /* PhotoSelectorViewController.swift */,
 			);
 			path = PhotoSelector;
@@ -264,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96AEC6FB1C6DC65200F6A3FA /* WeiBo图片选择器-开发笔记.swift in Sources */,
+				9664908F1C6ED2CB0009D844 /* UIImage+Extension.swift in Sources */,
 				96AEC6FD1C6DC69C00F6A3FA /* PhotoSelectorViewController.swift in Sources */,
 				96AEC6CC1C6DC57500F6A3FA /* AppDelegate.swift in Sources */,
 			);
@@ -484,6 +488,7 @@
 				96AEC6F21C6DC57500F6A3FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		96AEC6F31C6DC57500F6A3FA /* Build configuration list for PBXNativeTarget "WeiBo图片选择器Tests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +497,7 @@
 				96AEC6F51C6DC57500F6A3FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		96AEC6F61C6DC57500F6A3FA /* Build configuration list for PBXNativeTarget "WeiBo图片选择器UITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +506,7 @@
 				96AEC6F81C6DC57500F6A3FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
