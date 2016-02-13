@@ -110,7 +110,7 @@ class ComposeViewController: UIViewController {
     {
         // 1.添加子控件
         view.addSubview(toolbar)
-        
+        view.addSubview(tipLabel)
         // 2.添加按钮
         var items = [UIBarButtonItem]()
         let itemSettings = [["imageName": "compose_toolbar_picture", "action": "selectPicture"],
@@ -137,6 +137,7 @@ class ComposeViewController: UIViewController {
         let cons = toolbar.xmg_AlignInner(type: XMG_AlignType.BottomLeft, referView: view, size: CGSize(width: width, height: 44))
         // 拿到底部约束
         toolbarBottonCons = toolbar.xmg_Constraint(cons, attribute: NSLayoutAttribute.Bottom)
+        tipLabel.xmg_AlignVertical(type: XMG_AlignType.TopRight, referView: toolbar, size: nil, offset: CGPoint(x: -10, y: -10))
     }
     
     //MARK:  选择相片
@@ -276,10 +277,17 @@ class ComposeViewController: UIViewController {
     }()
     private lazy var toolbar: UIToolbar = UIToolbar()
     
+    private lazy var tipLabel: UILabel = {
+        let label = UILabel()
+        
+        return label
+    }()
     deinit{
         print("\(super.classForCoder)--❤️已销毁")
     }
 }
+
+private let maxTipLength = 10
 
 extension ComposeViewController: UITextViewDelegate ,UIScrollViewDelegate{
     
@@ -288,6 +296,13 @@ extension ComposeViewController: UITextViewDelegate ,UIScrollViewDelegate{
         // 注意点: 输入图片表情的时候不会促发textViewDidChange
         placeholderLabel.hidden = textView.hasText()
         navigationItem.rightBarButtonItem?.enabled = textView.hasText()
+        
+        // 当前已经输入的内容长度
+        let count =  textView.emoticonAttributedText().characters.count
+        let res = maxTipLength - count
+        tipLabel.textColor = (res > 0) ? UIColor.darkGrayColor() : UIColor.redColor()
+        tipLabel.text = res == maxTipLength ? "" : "\(res)"
+        
     }
     func scrollViewWillBeginDragging(scrollView: UIScrollView) {
         printLog("开始拖拽")

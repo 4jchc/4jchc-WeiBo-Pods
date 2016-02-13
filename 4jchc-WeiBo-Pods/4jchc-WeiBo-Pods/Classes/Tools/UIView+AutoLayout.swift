@@ -13,7 +13,7 @@
 2.horizontal--水平的
 3.Vertical--垂直的
 4.Align--排列 Inner--内部的
-
+xmg_AlignVertical垂直排列 xmg_AlignInner内部排列
 */
 import UIKit
 /**

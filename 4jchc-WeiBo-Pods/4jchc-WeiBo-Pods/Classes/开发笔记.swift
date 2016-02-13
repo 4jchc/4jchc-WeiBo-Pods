@@ -547,6 +547,10 @@ import UIKit
     2.隔离AFN
     */
 
+    /*
+    微博字数提醒
+    1.xmg_AlignVertical垂直排列 xmg_AlignInner内部排列
+    */
 
 
 
