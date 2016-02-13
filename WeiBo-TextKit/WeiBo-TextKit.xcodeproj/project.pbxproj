@@ -14,6 +14,8 @@
 		9666BEF31C6F79EB00183BA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9666BEF11C6F79EB00183BA9 /* LaunchScreen.storyboard */; };
 		9666BEFE1C6F79EB00183BA9 /* WeiBo_TextKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9666BEFD1C6F79EB00183BA9 /* WeiBo_TextKitTests.swift */; };
 		9666BF091C6F79EB00183BA9 /* WeiBo_TextKitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9666BF081C6F79EB00183BA9 /* WeiBo_TextKitUITests.swift */; };
+		9666BF171C6F7BE000183BA9 /* XMGLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9666BF161C6F7BE000183BA9 /* XMGLabel.swift */; };
+		9666BF1B1C6F829F00183BA9 /* 开发笔记.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9666BF1A1C6F829F00183BA9 /* 开发笔记.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		9666BF041C6F79EB00183BA9 /* WeiBo-TextKitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WeiBo-TextKitUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9666BF081C6F79EB00183BA9 /* WeiBo_TextKitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeiBo_TextKitUITests.swift; sourceTree = "<group>"; };
 		9666BF0A1C6F79EB00183BA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9666BF161C6F7BE000183BA9 /* XMGLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMGLabel.swift; sourceTree = "<group>"; };
+		9666BF1A1C6F829F00183BA9 /* 开发笔记.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "开发笔记.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,9 +101,11 @@
 		9666BEE71C6F79EB00183BA9 /* WeiBo-TextKit */ = {
 			isa = PBXGroup;
 			children = (
+				9666BF1A1C6F829F00183BA9 /* 开发笔记.swift */,
 				9666BEE81C6F79EB00183BA9 /* AppDelegate.swift */,
 				9666BEEA1C6F79EB00183BA9 /* ViewController.swift */,
 				9666BEEC1C6F79EB00183BA9 /* Main.storyboard */,
+				9666BF161C6F7BE000183BA9 /* XMGLabel.swift */,
 				9666BEEF1C6F79EB00183BA9 /* Assets.xcassets */,
 				9666BEF11C6F79EB00183BA9 /* LaunchScreen.storyboard */,
 				9666BEF41C6F79EB00183BA9 /* Info.plist */,
@@ -256,7 +262,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9666BF171C6F7BE000183BA9 /* XMGLabel.swift in Sources */,
 				9666BEEB1C6F79EB00183BA9 /* ViewController.swift in Sources */,
+				9666BF1B1C6F829F00183BA9 /* 开发笔记.swift in Sources */,
 				9666BEE91C6F79EB00183BA9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
