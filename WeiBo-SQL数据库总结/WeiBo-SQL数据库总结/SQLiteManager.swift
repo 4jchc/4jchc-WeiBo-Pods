@@ -34,7 +34,82 @@ class SQLiteManager: NSObject {
             action(manager: self)
         }
     }
+    /// 自定义一个SQLITE_TRANSIENT, 覆盖系统的
+    private let SQLITE_TRANSIENT = unsafeBitCast(-1, sqlite3_destructor_type.self)
     
+
+    //MARK:  预编译batch程序组,批量Exec执行 SQL
+    ///  预编译batch程序组,批量Exec执行 SQL
+    func batchExecSQL(sql:String, args: CVarArgType...) -> Bool
+    {
+        
+        // 1.将SQL语句转换为C语言
+        let cSQL = sql.cStringUsingEncoding(NSUTF8StringEncoding)!
+        
+        // 2.预编译SQL语句
+        var stmt: COpaquePointer = nil
+        if sqlite3_prepare_v2(db, cSQL, -1, &stmt, nil) != SQLITE_OK
+        {
+            print("预编译失败")
+            sqlite3_finalize(stmt)
+            return false
+        }
+        
+        // 3.绑定数据
+        var index:Int32 = 1
+        for objc in args
+        {
+            if objc is Int
+            {
+                //                print("通过int方法绑定数据 \(objc)")
+                // 第二个参数就是SQL中('?', ?)的位置, 注意: 从1开始
+                sqlite3_bind_int64(stmt, index, sqlite3_int64(objc as! Int))
+            }else if objc is Double
+            {
+                //                print("通过Double方法绑定数据 \(objc)")
+                sqlite3_bind_double(stmt, index, objc as! Double)
+            }else if objc is String
+            {
+                //                print("通过Text方法绑定数据 \(objc)")
+                let text = objc as! String
+                let cText = text.cStringUsingEncoding(NSUTF8StringEncoding)!
+                // 第三个参数: 需要绑定的字符串, C语言
+                // 第四个参数: 第三个参数的长度, 传入-1系统自动计算
+                // 第五个参数: OC中直接传nil, 但是Swift传入nil会有大问题
+                /*
+                typedef void (*sqlite3_destructor_type)(void*);
+                
+                #define SQLITE_STATIC      ((sqlite3_destructor_type)0)
+                #define SQLITE_TRANSIENT   ((sqlite3_destructor_type)-1)
+                
+                第五个参数如果传入SQLITE_STATIC/nil, 那么系统不会保存需要绑定的数据, 如果需要绑定的数据提前释放了, 那么系统就随便绑定一个值
+                第五个参数如果传入SQLITE_TRANSIENT, 那么系统会对需要绑定的值进行一次copy, 直到绑定成功之后再释放
+                */
+                sqlite3_bind_text(stmt, index, cText, -1, SQLITE_TRANSIENT)
+            }
+            index++
+        }
+        
+        // 4.执行SQL语句
+        if sqlite3_step(stmt) != SQLITE_DONE
+        {
+            print("执行SQL语句失败")
+            return false
+        }
+        
+        // 5.重置STMT
+        if sqlite3_reset(stmt) != SQLITE_OK
+        {
+            print("重置失败")
+            return false
+        }
+        
+        // 6.关闭STMT
+        // 注意点: 只要用到了stmt, 一定要关闭
+        sqlite3_finalize(stmt)
+        
+        return true
+    }
     // MARK: - 事务相关
     // MARK: 1.开启事务
     ///  开启事务
@@ -167,6 +242,10 @@ class SQLiteManager: NSObject {
             // 将当前获取到的这一条记录添加到数组中
             records.append(record)
         }
+        
+        // 6.关闭STMT
+        // 注意点: 只要用到了stmt, 一定要关闭
+        sqlite3_finalize(stmt)
         
         // 返回查询到的数据
         return records

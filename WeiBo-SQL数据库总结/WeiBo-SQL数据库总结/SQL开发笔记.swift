@@ -455,20 +455,31 @@ func 基本查询指令(){
 
 
     /*
-    面试题一次性插入1万条数据
-    在子线程执行串行队列保证插入数据不混乱
+    MARK: 2 面试题一次性插入1万条数据
+    GCD在子线程执行串行队列保证插入数据不混乱
     闭包传值的使用
     */
 
 
     /*
-    面试题--开启事务(自己开启一个事务就会提交一个事务这样会重复1万次)
+    MARK: 3 面试题--开启事务(自己开启一个事务就会提交一个事务这样会重复1万次)
     1.每次插入前手动开启事务
     2.插入完成提交事务
     3.插入失败回滚事务-回滚之后一定要跳出循环停止更新
     */
 
 
-
+    /*
+    MARK: 4 面试题--开启事务(预编译绑定优化性能1秒1万)
+    1.var stmt: COpaquePointer = nil 使用完要关闭
+    sqlite3_finalize(stmt)
+    2.预编译绑定优化性能1秒1万
+    3.参数args: CVarArgType... 的使用CVarArgType
+    for objc in args 遍历判断
+    4. sqlite3_bind_text 第五个参数如果传入SQLITE_TRANSIENT, 那么系统会对需要绑定的值进行一次copy
+    直到绑定成功之后再释放 需要自定义
+    自定义一个SQLITE_TRANSIENT, 覆盖系统的
+    private let SQLITE_TRANSIENT = unsafeBitCast(-1, sqlite3_destructor_type.self)
+    */
 
 
