@@ -14,6 +14,15 @@
 		9650A4901C70B65600DE5D61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9650A48E1C70B65600DE5D61 /* LaunchScreen.storyboard */; };
 		9650A49B1C70B65600DE5D61 /* WeiBo_FMDBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9650A49A1C70B65600DE5D61 /* WeiBo_FMDBTests.swift */; };
 		9650A4A61C70B65600DE5D61 /* WeiBo_FMDBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9650A4A51C70B65600DE5D61 /* WeiBo_FMDBUITests.swift */; };
+		9650A4D91C70B80D00DE5D61 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9650A4CC1C70B80D00DE5D61 /* FMDatabase.m */; };
+		9650A4DA1C70B80D00DE5D61 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9650A4CE1C70B80D00DE5D61 /* FMDatabaseAdditions.m */; };
+		9650A4DB1C70B80D00DE5D61 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 9650A4D01C70B80D00DE5D61 /* FMDatabasePool.m */; };
+		9650A4DC1C70B80D00DE5D61 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 9650A4D21C70B80D00DE5D61 /* FMDatabaseQueue.m */; };
+		9650A4DD1C70B80D00DE5D61 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 9650A4D51C70B80D00DE5D61 /* FMResultSet.m */; };
+		9650A4DE1C70B80D00DE5D61 /* FMDatabaseAdditionsVariadic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9650A4D71C70B80D00DE5D61 /* FMDatabaseAdditionsVariadic.swift */; };
+		9650A4DF1C70B80D00DE5D61 /* FMDatabaseVariadic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9650A4D81C70B80D00DE5D61 /* FMDatabaseVariadic.swift */; };
+		9650A4E11C70B87D00DE5D61 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9650A4E01C70B87D00DE5D61 /* libsqlite3.0.tbd */; };
+		9650A4E31C70B89E00DE5D61 /* FMDB开发笔记.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9650A4E21C70B89E00DE5D61 /* FMDB开发笔记.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +56,22 @@
 		9650A4A11C70B65600DE5D61 /* WeiBo-FMDBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WeiBo-FMDBUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9650A4A51C70B65600DE5D61 /* WeiBo_FMDBUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeiBo_FMDBUITests.swift; sourceTree = "<group>"; };
 		9650A4A71C70B65600DE5D61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9650A4C91C70B76E00DE5D61 /* Swift-Bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Swift-Bridge.h"; sourceTree = "<group>"; };
+		9650A4CB1C70B80D00DE5D61 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		9650A4CC1C70B80D00DE5D61 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		9650A4CD1C70B80D00DE5D61 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		9650A4CE1C70B80D00DE5D61 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		9650A4CF1C70B80D00DE5D61 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		9650A4D01C70B80D00DE5D61 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		9650A4D11C70B80D00DE5D61 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		9650A4D21C70B80D00DE5D61 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		9650A4D31C70B80D00DE5D61 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		9650A4D41C70B80D00DE5D61 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		9650A4D51C70B80D00DE5D61 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		9650A4D71C70B80D00DE5D61 /* FMDatabaseAdditionsVariadic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMDatabaseAdditionsVariadic.swift; sourceTree = "<group>"; };
+		9650A4D81C70B80D00DE5D61 /* FMDatabaseVariadic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMDatabaseVariadic.swift; sourceTree = "<group>"; };
+		9650A4E01C70B87D00DE5D61 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		9650A4E21C70B89E00DE5D61 /* FMDB开发笔记.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FMDB开发笔记.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9650A4E11C70B87D00DE5D61 /* libsqlite3.0.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +103,7 @@
 		9650A4791C70B65600DE5D61 = {
 			isa = PBXGroup;
 			children = (
+				9650A4E01C70B87D00DE5D61 /* libsqlite3.0.tbd */,
 				9650A4841C70B65600DE5D61 /* WeiBo-FMDB */,
 				9650A4991C70B65600DE5D61 /* WeiBo-FMDBTests */,
 				9650A4A41C70B65600DE5D61 /* WeiBo-FMDBUITests */,
@@ -97,12 +124,15 @@
 		9650A4841C70B65600DE5D61 /* WeiBo-FMDB */ = {
 			isa = PBXGroup;
 			children = (
+				9650A4CA1C70B80D00DE5D61 /* fmdb */,
 				9650A4851C70B65600DE5D61 /* AppDelegate.swift */,
 				9650A4871C70B65600DE5D61 /* ViewController.swift */,
+				9650A4C91C70B76E00DE5D61 /* Swift-Bridge.h */,
 				9650A4891C70B65600DE5D61 /* Main.storyboard */,
 				9650A48C1C70B65600DE5D61 /* Assets.xcassets */,
 				9650A48E1C70B65600DE5D61 /* LaunchScreen.storyboard */,
 				9650A4911C70B65600DE5D61 /* Info.plist */,
+				9650A4E21C70B89E00DE5D61 /* FMDB开发笔记.swift */,
 			);
 			path = "WeiBo-FMDB";
 			sourceTree = "<group>";
@@ -123,6 +153,34 @@
 				9650A4A71C70B65600DE5D61 /* Info.plist */,
 			);
 			path = "WeiBo-FMDBUITests";
+			sourceTree = "<group>";
+		};
+		9650A4CA1C70B80D00DE5D61 /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				9650A4CB1C70B80D00DE5D61 /* FMDatabase.h */,
+				9650A4CC1C70B80D00DE5D61 /* FMDatabase.m */,
+				9650A4CD1C70B80D00DE5D61 /* FMDatabaseAdditions.h */,
+				9650A4CE1C70B80D00DE5D61 /* FMDatabaseAdditions.m */,
+				9650A4CF1C70B80D00DE5D61 /* FMDatabasePool.h */,
+				9650A4D01C70B80D00DE5D61 /* FMDatabasePool.m */,
+				9650A4D11C70B80D00DE5D61 /* FMDatabaseQueue.h */,
+				9650A4D21C70B80D00DE5D61 /* FMDatabaseQueue.m */,
+				9650A4D31C70B80D00DE5D61 /* FMDB.h */,
+				9650A4D41C70B80D00DE5D61 /* FMResultSet.h */,
+				9650A4D51C70B80D00DE5D61 /* FMResultSet.m */,
+				9650A4D61C70B80D00DE5D61 /* Swift extensions */,
+			);
+			path = fmdb;
+			sourceTree = "<group>";
+		};
+		9650A4D61C70B80D00DE5D61 /* Swift extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9650A4D71C70B80D00DE5D61 /* FMDatabaseAdditionsVariadic.swift */,
+				9650A4D81C70B80D00DE5D61 /* FMDatabaseVariadic.swift */,
+			);
+			path = "Swift extensions";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,8 +314,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9650A4D91C70B80D00DE5D61 /* FMDatabase.m in Sources */,
+				9650A4E31C70B89E00DE5D61 /* FMDB开发笔记.swift in Sources */,
 				9650A4881C70B65600DE5D61 /* ViewController.swift in Sources */,
+				9650A4DE1C70B80D00DE5D61 /* FMDatabaseAdditionsVariadic.swift in Sources */,
+				9650A4DD1C70B80D00DE5D61 /* FMResultSet.m in Sources */,
+				9650A4DB1C70B80D00DE5D61 /* FMDatabasePool.m in Sources */,
 				9650A4861C70B65600DE5D61 /* AppDelegate.swift in Sources */,
+				9650A4DA1C70B80D00DE5D61 /* FMDatabaseAdditions.m in Sources */,
+				9650A4DC1C70B80D00DE5D61 /* FMDatabaseQueue.m in Sources */,
+				9650A4DF1C70B80D00DE5D61 /* FMDatabaseVariadic.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +469,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-jchc.WeiBo-FMDB";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WeiBo-FMDB/Swift-Bridge.h";
 			};
 			name = Debug;
 		};
@@ -414,6 +481,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-jchc.WeiBo-FMDB";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WeiBo-FMDB/Swift-Bridge.h";
 			};
 			name = Release;
 		};
