@@ -14,6 +14,8 @@
 		963CC66B1C7048590079056D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 963CC6691C7048590079056D /* LaunchScreen.storyboard */; };
 		963CC6761C7048590079056D /* WeiBo_SQL_____Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963CC6751C7048590079056D /* WeiBo_SQL_____Tests.swift */; };
 		963CC6811C7048590079056D /* WeiBo_SQL_____UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963CC6801C7048590079056D /* WeiBo_SQL_____UITests.swift */; };
+		963CC68F1C7048CE0079056D /* SQL开发笔记.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963CC68E1C7048CE0079056D /* SQL开发笔记.swift */; };
+		963CC6911C7068850079056D /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 963CC6901C7068850079056D /* libsqlite3.0.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		963CC67C1C7048590079056D /* WeiBo-SQL数据库总结UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WeiBo-SQL数据库总结UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		963CC6801C7048590079056D /* WeiBo_SQL_____UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeiBo_SQL_____UITests.swift"; sourceTree = "<group>"; };
 		963CC6821C7048590079056D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		963CC68E1C7048CE0079056D /* SQL开发笔记.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SQL开发笔记.swift"; sourceTree = "<group>"; };
+		963CC6901C7068850079056D /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				963CC6911C7068850079056D /* libsqlite3.0.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +82,7 @@
 		963CC6541C7048590079056D = {
 			isa = PBXGroup;
 			children = (
+				963CC6901C7068850079056D /* libsqlite3.0.tbd */,
 				963CC65F1C7048590079056D /* WeiBo-SQL数据库总结 */,
 				963CC6741C7048590079056D /* WeiBo-SQL数据库总结Tests */,
 				963CC67F1C7048590079056D /* WeiBo-SQL数据库总结UITests */,
@@ -97,6 +103,7 @@
 		963CC65F1C7048590079056D /* WeiBo-SQL数据库总结 */ = {
 			isa = PBXGroup;
 			children = (
+				963CC68E1C7048CE0079056D /* SQL开发笔记.swift */,
 				963CC6601C7048590079056D /* AppDelegate.swift */,
 				963CC6621C7048590079056D /* ViewController.swift */,
 				963CC6641C7048590079056D /* Main.storyboard */,
@@ -257,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				963CC6631C7048590079056D /* ViewController.swift in Sources */,
+				963CC68F1C7048CE0079056D /* SQL开发笔记.swift in Sources */,
 				963CC6611C7048590079056D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
