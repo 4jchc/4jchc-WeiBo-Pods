@@ -22,6 +22,9 @@ class SQLiteManager: NSObject {
     // 创建一个串行队列DISPATCH调度 _ QUEUE队列 _SERIAL串行的
     let dbQueue = dispatch_queue_create("com.520it.lnj", DISPATCH_QUEUE_SERIAL)
     
+    
+    //MARK:  GCD异步-串行-执行(创建/删除/新增/更新)SQL语句
+    ///  GCD异步-串行-执行(创建/删除/新增/更新)SQL语句
     func execQueueSQL(action: (manager: SQLiteManager)->())
     {
         // 1.开启一个子线程
@@ -32,6 +35,25 @@ class SQLiteManager: NSObject {
         }
     }
     
+    // MARK: - 事务相关
+    // MARK: 1.开启事务
+    ///  开启事务
+    func beginTransaction()
+    {
+        execSQL("BEGIN TRANSACTION")
+    }
+    // MARK: 2.提交事务
+    ///  提交事务
+    func commitTransaction()
+    {
+        execSQL("COMMIT TRANSACTION")
+    }
+    // MARK: 3.回滚事务
+    ///  回滚事务
+    func rollbackTransaction()
+    {
+        execSQL("ROLLBACK TRANSACTION")
+    }
     
     //MARK:  打开数据库
     ///  打开数据库
@@ -86,8 +108,8 @@ class SQLiteManager: NSObject {
      
      :returns: 是否执行成功 true执行成功 false执行失败
      */
-     //MARK:  执行除查询以外的SQL语句
-     ///  执行除查询以外的SQL语句
+     //MARK:  执行(创建/删除/新增/更新)SQL语句
+     ///  执行(创建/删除/新增/更新)SQL语句
     func execSQL(sql: String) -> Bool
     {
         // 0.将Swift字符串转换为C语言字符串

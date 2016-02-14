@@ -21,18 +21,36 @@ class ViewController: UIViewController {
         //        let models = Person.loadPersons()
         //        print(models)
         p.insertQueuePerson()
-        /*
+        
+        
         let start = CFAbsoluteTimeGetCurrent()
+        let manager = SQLiteManager.shareManager()
+        
+        //MARK:  开启事务
+        manager.beginTransaction()
+        
         for i in 0..<10000
         {
-        let p = Person(dict: ["name": "zs + \(i)", "age": 3 + i])
-        p.insertPerson()
+            let p = Person(dict: ["name": "zs + \(i)", "age": 3 + i])
+            p.insertPerson()
+            
+            if i == 1000
+            {
+                manager.rollbackTransaction()
+                // 注意点: 回滚之后一定要跳出循环停止更新
+                break
+            }
+            
+            
         }
         
+        // 提交事务
+        manager.commitTransaction()
+        
         print("耗时 = \(CFAbsoluteTimeGetCurrent() - start)")
-        */
-
+        
     }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
