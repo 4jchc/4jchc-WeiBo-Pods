@@ -23,6 +23,9 @@
 		9650A4DF1C70B80D00DE5D61 /* FMDatabaseVariadic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9650A4D81C70B80D00DE5D61 /* FMDatabaseVariadic.swift */; };
 		9650A4E11C70B87D00DE5D61 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9650A4E01C70B87D00DE5D61 /* libsqlite3.0.tbd */; };
 		9650A4E31C70B89E00DE5D61 /* FMDB开发笔记.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9650A4E21C70B89E00DE5D61 /* FMDB开发笔记.swift */; };
+		9650A4E51C70BA6A00DE5D61 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9650A4E41C70BA6A00DE5D61 /* String+Extension.swift */; };
+		9650A4E71C70BD8100DE5D61 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9650A4E61C70BD8100DE5D61 /* Person.swift */; };
+		9650A4E91C70BDA500DE5D61 /* SQLiteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9650A4E81C70BDA500DE5D61 /* SQLiteManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +75,9 @@
 		9650A4D81C70B80D00DE5D61 /* FMDatabaseVariadic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMDatabaseVariadic.swift; sourceTree = "<group>"; };
 		9650A4E01C70B87D00DE5D61 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		9650A4E21C70B89E00DE5D61 /* FMDB开发笔记.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FMDB开发笔记.swift"; sourceTree = "<group>"; };
+		9650A4E41C70BA6A00DE5D61 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		9650A4E61C70BD8100DE5D61 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		9650A4E81C70BDA500DE5D61 /* SQLiteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,14 +131,17 @@
 			isa = PBXGroup;
 			children = (
 				9650A4CA1C70B80D00DE5D61 /* fmdb */,
-				9650A4851C70B65600DE5D61 /* AppDelegate.swift */,
+				9650A4E21C70B89E00DE5D61 /* FMDB开发笔记.swift */,
+				9650A4E41C70BA6A00DE5D61 /* String+Extension.swift */,
+				9650A4E81C70BDA500DE5D61 /* SQLiteManager.swift */,
+				9650A4E61C70BD8100DE5D61 /* Person.swift */,
 				9650A4871C70B65600DE5D61 /* ViewController.swift */,
-				9650A4C91C70B76E00DE5D61 /* Swift-Bridge.h */,
 				9650A4891C70B65600DE5D61 /* Main.storyboard */,
 				9650A48C1C70B65600DE5D61 /* Assets.xcassets */,
 				9650A48E1C70B65600DE5D61 /* LaunchScreen.storyboard */,
+				9650A4C91C70B76E00DE5D61 /* Swift-Bridge.h */,
+				9650A4851C70B65600DE5D61 /* AppDelegate.swift */,
 				9650A4911C70B65600DE5D61 /* Info.plist */,
-				9650A4E21C70B89E00DE5D61 /* FMDB开发笔记.swift */,
 			);
 			path = "WeiBo-FMDB";
 			sourceTree = "<group>";
@@ -315,10 +324,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9650A4D91C70B80D00DE5D61 /* FMDatabase.m in Sources */,
+				9650A4E51C70BA6A00DE5D61 /* String+Extension.swift in Sources */,
 				9650A4E31C70B89E00DE5D61 /* FMDB开发笔记.swift in Sources */,
+				9650A4E91C70BDA500DE5D61 /* SQLiteManager.swift in Sources */,
 				9650A4881C70B65600DE5D61 /* ViewController.swift in Sources */,
 				9650A4DE1C70B80D00DE5D61 /* FMDatabaseAdditionsVariadic.swift in Sources */,
 				9650A4DD1C70B80D00DE5D61 /* FMResultSet.m in Sources */,
+				9650A4E71C70BD8100DE5D61 /* Person.swift in Sources */,
 				9650A4DB1C70B80D00DE5D61 /* FMDatabasePool.m in Sources */,
 				9650A4861C70B65600DE5D61 /* AppDelegate.swift in Sources */,
 				9650A4DA1C70B80D00DE5D61 /* FMDatabaseAdditions.m in Sources */,
