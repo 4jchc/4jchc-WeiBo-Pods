@@ -426,7 +426,7 @@ func 基本查询指令(){
 //MARK: - 💗开发笔记
 
     /*
-    添加桥接-新建单例
+    MARK: 1 添加桥接-新建单例
     1.自己手动添加动态库选择other,command + shift + G ->添加
     2.c 语言字符串转换
     let cPath = path.cStringUsingEncoding(NSUTF8StringEncoding)!
@@ -454,7 +454,11 @@ func 基本查询指令(){
     */
 
 
-
+    /*
+    面试题一次性插入1万条数据
+    在子线程执行串行队列保证插入数据不混乱
+    闭包传值的使用
+    */
 
 
 

@@ -15,16 +15,26 @@ class SQLiteManager: NSObject {
     class func shareManager() ->SQLiteManager {
         return manager
     }
-
-
+    
     // 数据库对象
     private var db:COpaquePointer = nil
     
-    /**
-     打开数据库
-     
-     :param: SQLiteName 数据库名称
-     */
+    // 创建一个串行队列DISPATCH调度 _ QUEUE队列 _SERIAL串行的
+    let dbQueue = dispatch_queue_create("com.520it.lnj", DISPATCH_QUEUE_SERIAL)
+    
+    func execQueueSQL(action: (manager: SQLiteManager)->())
+    {
+        // 1.开启一个子线程
+        dispatch_async(dbQueue) { () -> Void in
+            print(NSThread.currentThread())
+            // 2.执行闭包
+            action(manager: self)
+        }
+    }
+    
+    
+    //MARK:  打开数据库
+    ///  打开数据库
     func openDB(SQLiteName: String)
     {
         // 0.拿到数据库的路径

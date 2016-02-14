@@ -52,7 +52,24 @@ class Person: NSObject {
         // 2.执行SQL语句
         return SQLiteManager.shareManager().execSQL(sql)
     }
-    
+    //MARK:  异步GCD插入一条记录
+    ///  异步GCD插入一条记录
+    func insertQueuePerson(){
+        
+        assert(name != nil, "必须要给name赋值")
+        
+        SQLiteManager.shareManager().execQueueSQL { (manager) -> () in
+            // 1.编写SQL语句
+            let sql = "INSERT INTO T_Person" +
+                "(name, age)" +
+                "VALUES" +
+            "('\(self.name!)', \(self.age));"
+            // 2.执行SQL语句
+            manager.execSQL(sql)
+            print("当前线程\(NSThread.currentThread())")
+        }
+        
+    }
     //MARK:  插入一条记录
     ///  插入一条记录
     func insertPerson() -> Bool

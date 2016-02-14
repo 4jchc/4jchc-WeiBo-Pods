@@ -13,6 +13,25 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let p = Person(dict: ["name": "zs", "age": 3])
+        //        print(p.insertPerson())
+        //        print(p.updatePerson("ww"))
+        //        print(p.deletePerson())
+        //        let models = Person.loadPersons()
+        //        print(models)
+        p.insertQueuePerson()
+        /*
+        let start = CFAbsoluteTimeGetCurrent()
+        for i in 0..<10000
+        {
+        let p = Person(dict: ["name": "zs + \(i)", "age": 3 + i])
+        p.insertPerson()
+        }
+        
+        print("耗时 = \(CFAbsoluteTimeGetCurrent() - start)")
+        */
+
     }
 
     override func didReceiveMemoryWarning() {
