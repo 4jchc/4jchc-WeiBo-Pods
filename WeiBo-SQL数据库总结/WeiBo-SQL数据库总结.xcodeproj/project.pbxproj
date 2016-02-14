@@ -1,0 +1,507 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		963CC6611C7048590079056D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963CC6601C7048590079056D /* AppDelegate.swift */; };
+		963CC6631C7048590079056D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963CC6621C7048590079056D /* ViewController.swift */; };
+		963CC6661C7048590079056D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 963CC6641C7048590079056D /* Main.storyboard */; };
+		963CC6681C7048590079056D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 963CC6671C7048590079056D /* Assets.xcassets */; };
+		963CC66B1C7048590079056D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 963CC6691C7048590079056D /* LaunchScreen.storyboard */; };
+		963CC6761C7048590079056D /* WeiBo_SQL_____Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963CC6751C7048590079056D /* WeiBo_SQL_____Tests.swift */; };
+		963CC6811C7048590079056D /* WeiBo_SQL_____UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963CC6801C7048590079056D /* WeiBo_SQL_____UITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		963CC6721C7048590079056D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 963CC6551C7048590079056D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 963CC65C1C7048590079056D;
+			remoteInfo = "WeiBo-SQL数据库总结";
+		};
+		963CC67D1C7048590079056D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 963CC6551C7048590079056D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 963CC65C1C7048590079056D;
+			remoteInfo = "WeiBo-SQL数据库总结";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		963CC65D1C7048590079056D /* WeiBo-SQL数据库总结.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WeiBo-SQL数据库总结.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		963CC6601C7048590079056D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		963CC6621C7048590079056D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		963CC6651C7048590079056D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		963CC6671C7048590079056D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		963CC66A1C7048590079056D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		963CC66C1C7048590079056D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		963CC6711C7048590079056D /* WeiBo-SQL数据库总结Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WeiBo-SQL数据库总结Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		963CC6751C7048590079056D /* WeiBo_SQL_____Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeiBo_SQL_____Tests.swift"; sourceTree = "<group>"; };
+		963CC6771C7048590079056D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		963CC67C1C7048590079056D /* WeiBo-SQL数据库总结UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WeiBo-SQL数据库总结UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		963CC6801C7048590079056D /* WeiBo_SQL_____UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeiBo_SQL_____UITests.swift"; sourceTree = "<group>"; };
+		963CC6821C7048590079056D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		963CC65A1C7048590079056D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		963CC66E1C7048590079056D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		963CC6791C7048590079056D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		963CC6541C7048590079056D = {
+			isa = PBXGroup;
+			children = (
+				963CC65F1C7048590079056D /* WeiBo-SQL数据库总结 */,
+				963CC6741C7048590079056D /* WeiBo-SQL数据库总结Tests */,
+				963CC67F1C7048590079056D /* WeiBo-SQL数据库总结UITests */,
+				963CC65E1C7048590079056D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		963CC65E1C7048590079056D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				963CC65D1C7048590079056D /* WeiBo-SQL数据库总结.app */,
+				963CC6711C7048590079056D /* WeiBo-SQL数据库总结Tests.xctest */,
+				963CC67C1C7048590079056D /* WeiBo-SQL数据库总结UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		963CC65F1C7048590079056D /* WeiBo-SQL数据库总结 */ = {
+			isa = PBXGroup;
+			children = (
+				963CC6601C7048590079056D /* AppDelegate.swift */,
+				963CC6621C7048590079056D /* ViewController.swift */,
+				963CC6641C7048590079056D /* Main.storyboard */,
+				963CC6671C7048590079056D /* Assets.xcassets */,
+				963CC6691C7048590079056D /* LaunchScreen.storyboard */,
+				963CC66C1C7048590079056D /* Info.plist */,
+			);
+			path = "WeiBo-SQL数据库总结";
+			sourceTree = "<group>";
+		};
+		963CC6741C7048590079056D /* WeiBo-SQL数据库总结Tests */ = {
+			isa = PBXGroup;
+			children = (
+				963CC6751C7048590079056D /* WeiBo_SQL_____Tests.swift */,
+				963CC6771C7048590079056D /* Info.plist */,
+			);
+			path = "WeiBo-SQL数据库总结Tests";
+			sourceTree = "<group>";
+		};
+		963CC67F1C7048590079056D /* WeiBo-SQL数据库总结UITests */ = {
+			isa = PBXGroup;
+			children = (
+				963CC6801C7048590079056D /* WeiBo_SQL_____UITests.swift */,
+				963CC6821C7048590079056D /* Info.plist */,
+			);
+			path = "WeiBo-SQL数据库总结UITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		963CC65C1C7048590079056D /* WeiBo-SQL数据库总结 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 963CC6851C7048590079056D /* Build configuration list for PBXNativeTarget "WeiBo-SQL数据库总结" */;
+			buildPhases = (
+				963CC6591C7048590079056D /* Sources */,
+				963CC65A1C7048590079056D /* Frameworks */,
+				963CC65B1C7048590079056D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WeiBo-SQL数据库总结";
+			productName = "WeiBo-SQL数据库总结";
+			productReference = 963CC65D1C7048590079056D /* WeiBo-SQL数据库总结.app */;
+			productType = "com.apple.product-type.application";
+		};
+		963CC6701C7048590079056D /* WeiBo-SQL数据库总结Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 963CC6881C7048590079056D /* Build configuration list for PBXNativeTarget "WeiBo-SQL数据库总结Tests" */;
+			buildPhases = (
+				963CC66D1C7048590079056D /* Sources */,
+				963CC66E1C7048590079056D /* Frameworks */,
+				963CC66F1C7048590079056D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				963CC6731C7048590079056D /* PBXTargetDependency */,
+			);
+			name = "WeiBo-SQL数据库总结Tests";
+			productName = "WeiBo-SQL数据库总结Tests";
+			productReference = 963CC6711C7048590079056D /* WeiBo-SQL数据库总结Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		963CC67B1C7048590079056D /* WeiBo-SQL数据库总结UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 963CC68B1C7048590079056D /* Build configuration list for PBXNativeTarget "WeiBo-SQL数据库总结UITests" */;
+			buildPhases = (
+				963CC6781C7048590079056D /* Sources */,
+				963CC6791C7048590079056D /* Frameworks */,
+				963CC67A1C7048590079056D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				963CC67E1C7048590079056D /* PBXTargetDependency */,
+			);
+			name = "WeiBo-SQL数据库总结UITests";
+			productName = "WeiBo-SQL数据库总结UITests";
+			productReference = 963CC67C1C7048590079056D /* WeiBo-SQL数据库总结UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		963CC6551C7048590079056D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "蒋进";
+				TargetAttributes = {
+					963CC65C1C7048590079056D = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					963CC6701C7048590079056D = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = 963CC65C1C7048590079056D;
+					};
+					963CC67B1C7048590079056D = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = 963CC65C1C7048590079056D;
+					};
+				};
+			};
+			buildConfigurationList = 963CC6581C7048590079056D /* Build configuration list for PBXProject "WeiBo-SQL数据库总结" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 963CC6541C7048590079056D;
+			productRefGroup = 963CC65E1C7048590079056D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				963CC65C1C7048590079056D /* WeiBo-SQL数据库总结 */,
+				963CC6701C7048590079056D /* WeiBo-SQL数据库总结Tests */,
+				963CC67B1C7048590079056D /* WeiBo-SQL数据库总结UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		963CC65B1C7048590079056D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				963CC66B1C7048590079056D /* LaunchScreen.storyboard in Resources */,
+				963CC6681C7048590079056D /* Assets.xcassets in Resources */,
+				963CC6661C7048590079056D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		963CC66F1C7048590079056D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		963CC67A1C7048590079056D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		963CC6591C7048590079056D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				963CC6631C7048590079056D /* ViewController.swift in Sources */,
+				963CC6611C7048590079056D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		963CC66D1C7048590079056D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				963CC6761C7048590079056D /* WeiBo_SQL_____Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		963CC6781C7048590079056D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				963CC6811C7048590079056D /* WeiBo_SQL_____UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		963CC6731C7048590079056D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 963CC65C1C7048590079056D /* WeiBo-SQL数据库总结 */;
+			targetProxy = 963CC6721C7048590079056D /* PBXContainerItemProxy */;
+		};
+		963CC67E1C7048590079056D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 963CC65C1C7048590079056D /* WeiBo-SQL数据库总结 */;
+			targetProxy = 963CC67D1C7048590079056D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		963CC6641C7048590079056D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				963CC6651C7048590079056D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		963CC6691C7048590079056D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				963CC66A1C7048590079056D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		963CC6831C7048590079056D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		963CC6841C7048590079056D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		963CC6861C7048590079056D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "WeiBo-SQL数据库总结/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-jchc.WeiBo-SQL-----";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		963CC6871C7048590079056D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "WeiBo-SQL数据库总结/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-jchc.WeiBo-SQL-----";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		963CC6891C7048590079056D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "WeiBo-SQL数据库总结Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-jchc.WeiBo-SQL-----Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeiBo-SQL数据库总结.app/WeiBo-SQL数据库总结";
+			};
+			name = Debug;
+		};
+		963CC68A1C7048590079056D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "WeiBo-SQL数据库总结Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-jchc.WeiBo-SQL-----Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeiBo-SQL数据库总结.app/WeiBo-SQL数据库总结";
+			};
+			name = Release;
+		};
+		963CC68C1C7048590079056D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "WeiBo-SQL数据库总结UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-jchc.WeiBo-SQL-----UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "WeiBo-SQL数据库总结";
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		963CC68D1C7048590079056D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "WeiBo-SQL数据库总结UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-jchc.WeiBo-SQL-----UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "WeiBo-SQL数据库总结";
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		963CC6581C7048590079056D /* Build configuration list for PBXProject "WeiBo-SQL数据库总结" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				963CC6831C7048590079056D /* Debug */,
+				963CC6841C7048590079056D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		963CC6851C7048590079056D /* Build configuration list for PBXNativeTarget "WeiBo-SQL数据库总结" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				963CC6861C7048590079056D /* Debug */,
+				963CC6871C7048590079056D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		963CC6881C7048590079056D /* Build configuration list for PBXNativeTarget "WeiBo-SQL数据库总结Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				963CC6891C7048590079056D /* Debug */,
+				963CC68A1C7048590079056D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		963CC68B1C7048590079056D /* Build configuration list for PBXNativeTarget "WeiBo-SQL数据库总结UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				963CC68C1C7048590079056D /* Debug */,
+				963CC68D1C7048590079056D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 963CC6551C7048590079056D /* Project object */;
+}

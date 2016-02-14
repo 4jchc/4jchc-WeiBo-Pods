@@ -10,6 +10,7 @@ import UIKit
 
 class XMGTextView: UITextView {
     
+
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
         // 1.获取手指点击的位置
