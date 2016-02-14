@@ -12,7 +12,7 @@
 func SQL语句的种类(){
     
     /*
-    
+
     数据定义语句（DDL：Data Definition Language）
     包括create和drop等操作
     在数据库中创建新表或删除表（create table或 drop table）
@@ -421,6 +421,45 @@ func 基本查询指令(){
     */
 
 }
+
+
+//MARK: - 💗开发笔记
+
+    /*
+    添加桥接-新建单例
+    1.自己手动添加动态库选择other,command + shift + G ->添加
+    2.c 语言字符串转换
+    let cPath = path.cStringUsingEncoding(NSUTF8StringEncoding)!
+    3.打开数据库-没有会新建
+    4.在SQLite3中, 除了查询意外(创建/删除/新增/更新)都使用同一个函数
+    sqlite3_exec(db, cSQL, nil, nil, nil) != SQLITE_OK
+
+    查询到的字典数组
+    0.将Swift字符串转换为C语言字符串
+    let cSQL = sql.cStringUsingEncoding(NSUTF8StringEncoding)!
+    1.预编译SQL语句
+    if sqlite3_prepare_v2(db, cSQL, -1, &stmt, nil) != SQLITE_OK
+    2.查询数据
+    sqlite3_step代表取出一条数据, 如果取到了数据就会返回SQLITE_ROW
+    while sqlite3_step(stmt) == SQLITE_ROW
+     2.1拿到当前这条数据所有的列
+        let count = sqlite3_column_count(stmt)
+     2.2拿到每一列的名称
+        let cName = sqlite3_column_name(stmt, index)
+        let name = String(CString: cName, encoding: NSUTF8StringEncoding)!
+
+     2.3拿到每一列的类型 SQLITE_INTEGER
+        let type = sqlite3_column_type(stmt, index)
+     switch case   sqlite3_column_int64(stmt, index)
+    */
+
+
+
+
+
+
+
+
 
 
 

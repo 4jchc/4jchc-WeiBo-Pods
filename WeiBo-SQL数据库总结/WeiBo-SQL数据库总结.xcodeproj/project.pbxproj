@@ -16,6 +16,9 @@
 		963CC6811C7048590079056D /* WeiBo_SQL_____UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963CC6801C7048590079056D /* WeiBo_SQL_____UITests.swift */; };
 		963CC68F1C7048CE0079056D /* SQL开发笔记.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963CC68E1C7048CE0079056D /* SQL开发笔记.swift */; };
 		963CC6911C7068850079056D /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 963CC6901C7068850079056D /* libsqlite3.0.tbd */; };
+		963CC6931C706AD00079056D /* SQLiteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963CC6921C706AD00079056D /* SQLiteManager.swift */; };
+		963CC6951C706D780079056D /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963CC6941C706D780079056D /* String+Extension.swift */; };
+		963CC6981C7074310079056D /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963CC6971C7074310079056D /* Person.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,10 @@
 		963CC6821C7048590079056D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		963CC68E1C7048CE0079056D /* SQL开发笔记.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SQL开发笔记.swift"; sourceTree = "<group>"; };
 		963CC6901C7068850079056D /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		963CC6921C706AD00079056D /* SQLiteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteManager.swift; sourceTree = "<group>"; };
+		963CC6941C706D780079056D /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		963CC6961C706F390079056D /* SQLite-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SQLite-Bridge.h"; sourceTree = "<group>"; };
+		963CC6971C7074310079056D /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,11 +111,15 @@
 			isa = PBXGroup;
 			children = (
 				963CC68E1C7048CE0079056D /* SQL开发笔记.swift */,
+				963CC6921C706AD00079056D /* SQLiteManager.swift */,
+				963CC6971C7074310079056D /* Person.swift */,
+				963CC6941C706D780079056D /* String+Extension.swift */,
 				963CC6601C7048590079056D /* AppDelegate.swift */,
 				963CC6621C7048590079056D /* ViewController.swift */,
 				963CC6641C7048590079056D /* Main.storyboard */,
 				963CC6671C7048590079056D /* Assets.xcassets */,
 				963CC6691C7048590079056D /* LaunchScreen.storyboard */,
+				963CC6961C706F390079056D /* SQLite-Bridge.h */,
 				963CC66C1C7048590079056D /* Info.plist */,
 			);
 			path = "WeiBo-SQL数据库总结";
@@ -263,9 +274,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				963CC6981C7074310079056D /* Person.swift in Sources */,
 				963CC6631C7048590079056D /* ViewController.swift in Sources */,
 				963CC68F1C7048CE0079056D /* SQL开发笔记.swift in Sources */,
 				963CC6611C7048590079056D /* AppDelegate.swift in Sources */,
+				963CC6951C706D780079056D /* String+Extension.swift in Sources */,
+				963CC6931C706AD00079056D /* SQLiteManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +425,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-jchc.WeiBo-SQL-----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WeiBo-SQL数据库总结/SQLite-Bridge.h";
 			};
 			name = Debug;
 		};
@@ -422,6 +437,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-jchc.WeiBo-SQL-----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WeiBo-SQL数据库总结/SQLite-Bridge.h";
 			};
 			name = Release;
 		};
