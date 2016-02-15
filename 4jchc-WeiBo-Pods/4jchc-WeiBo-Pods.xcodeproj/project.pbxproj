@@ -65,6 +65,8 @@
 		96D97ED11C7184A3008521B7 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 96D97EC91C7184A3008521B7 /* FMResultSet.m */; };
 		96D97ED21C7184A3008521B7 /* FMDatabaseAdditionsVariadic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D97ECB1C7184A3008521B7 /* FMDatabaseAdditionsVariadic.swift */; };
 		96D97ED31C7184A3008521B7 /* FMDatabaseVariadic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D97ECC1C7184A3008521B7 /* FMDatabaseVariadic.swift */; };
+		96D97ED51C71857C008521B7 /* SQLiteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D97ED41C71857C008521B7 /* SQLiteManager.swift */; };
+		96D97ED71C718F09008521B7 /* StatusDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D97ED61C718F09008521B7 /* StatusDAO.swift */; };
 		96E1BA031C6B22A6004A2422 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E1BA021C6B22A6004A2422 /* ComposeViewController.swift */; };
 		96EBA0051C5DFEA100F523A6 /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EBA0041C5DFEA100F523A6 /* NetworkTools.swift */; };
 		96EE28051C58709600002CF4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EE28041C58709600002CF4 /* MainViewController.swift */; };
@@ -180,6 +182,8 @@
 		96D97EC91C7184A3008521B7 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		96D97ECB1C7184A3008521B7 /* FMDatabaseAdditionsVariadic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMDatabaseAdditionsVariadic.swift; sourceTree = "<group>"; };
 		96D97ECC1C7184A3008521B7 /* FMDatabaseVariadic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMDatabaseVariadic.swift; sourceTree = "<group>"; };
+		96D97ED41C71857C008521B7 /* SQLiteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteManager.swift; sourceTree = "<group>"; };
+		96D97ED61C718F09008521B7 /* StatusDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusDAO.swift; sourceTree = "<group>"; };
 		96E1BA021C6B22A6004A2422 /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		96EBA0041C5DFEA100F523A6 /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
 		96EE28041C58709600002CF4 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -457,6 +461,7 @@
 				964B20AB1C64EDE9001BABF2 /* StatusPictureView.swift */,
 				96F5A5251C63394E0097AFDB /* Status.swift */,
 				96F5A5271C6347530097AFDB /* User.swift */,
+				96D97ED61C718F09008521B7 /* StatusDAO.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -489,6 +494,7 @@
 		96EE27FE1C586FAD00002CF4 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				96D97ED41C71857C008521B7 /* SQLiteManager.swift */,
 				96D97EBE1C7184A3008521B7 /* fmdb */,
 				9621911D1C59FA1200C3CE35 /* UIBarButtonItem+Extension.swift */,
 				96EBA0041C5DFEA100F523A6 /* NetworkTools.swift */,
@@ -715,6 +721,7 @@
 				96B9D1811C5B5F800037F52B /* QRCodeViewController.swift in Sources */,
 				96B040901C57233E009DBC56 /* AppDelegate.swift in Sources */,
 				9621911E1C59FA1200C3CE35 /* UIBarButtonItem+Extension.swift in Sources */,
+				96D97ED51C71857C008521B7 /* SQLiteManager.swift in Sources */,
 				9653C62F1C5882EB000FAF68 /* DiscoverTableViewController.swift in Sources */,
 				96D97ECD1C7184A3008521B7 /* FMDatabase.m in Sources */,
 				96E1BA031C6B22A6004A2422 /* ComposeViewController.swift in Sources */,
@@ -732,6 +739,7 @@
 				966E2F671C6D8CF1009B36A6 /* EmoticonViewController.swift in Sources */,
 				96EBA0051C5DFEA100F523A6 /* NetworkTools.swift in Sources */,
 				966490951C6EDDBD0009D844 /* UIImage+Extension.swift in Sources */,
+				96D97ED71C718F09008521B7 /* StatusDAO.swift in Sources */,
 				96A26CEF1C5DDBCE001BC12F /* OAuthViewController.swift in Sources */,
 				966E2F691C6D8CF1009B36A6 /* WeiBo表情键盘开发笔记.swift in Sources */,
 				965AC70A1C69A39B001138DD /* PhotoBrowserController.swift in Sources */,

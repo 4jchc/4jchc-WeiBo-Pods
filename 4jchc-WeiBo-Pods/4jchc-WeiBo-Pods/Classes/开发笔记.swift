@@ -554,19 +554,30 @@ import UIKit
 
 
     /*
-    1.显示首页表情
+    //MARK: 9 显示首页表情
     */
 
     /*
-    安装pod 'KILabel'
+    //MARK: 10 安装pod 'KILabel'
     1.显示其它特殊文字高亮点击
     */
 
 
     /*
-    添加FMDB-动态库sql-桥接文件.h
+    //MARK: 11 添加FMDB-动态库sql-桥接文件.h
     */
 
+
+    /*
+    //MARK: 12 建表FMDB保存数据
+    1.托入SQLiteManager.swift
+    设置微博id为主键因为是唯一的
+    2.自定义数据访问接口-----(网络--本地sql)
+    3.JSON就是字典或者是字典数组==[String: AnyObject]或者[[String: AnyObject]]
+     JSON -> 二进制 -> 字符串
+    let data = try! NSJSONSerialization.dataWithJSONObject(dict, options: NSJSONWritingOptions.PrettyPrinted)
+    let statusText = String(data: data, encoding: NSUTF8StringEncoding)!
+    */
 
 
 
