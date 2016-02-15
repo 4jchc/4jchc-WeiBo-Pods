@@ -108,6 +108,36 @@ class Status: NSObject {
     /// 加载微博数据
     class func loadStatuses(since_id: Int,max_id: Int,finished: (models:[Status]?, error:NSError?)->()){
         
+        
+        
+        // 加载微博数据接口{本地-网络}
+        StatusDAO.loadStatuses(since_id, max_id: max_id) { (array, error) -> () in
+            
+            if array == nil
+            {
+                finished(models: nil, error: error)
+            }
+            
+            if error != nil
+            {
+                finished(models: nil, error: error)
+            }
+            
+            // 2.遍历数组, 将字典转换为模型
+            let models = dict2Model(array!)
+            
+            // 3.缓存微博配图
+            cacheStatusImages(models, finished: finished)
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        /*
         let path = "2/statuses/home_timeline.json"
         var params = ["access_token": UserAccount.loadAccount()!.access_token!]
         
@@ -128,8 +158,7 @@ class Status: NSObject {
         }
         
         NetworkTools.shareNetworkTools().GET(path, parameters: params , progress: { (progress) -> Void in
-            
-            printLog("progress进度\(progress)")
+
             
             },success: { (_, JSON) -> Void in
             
@@ -150,7 +179,7 @@ class Status: NSObject {
                 printLog("NetworkTools.shareNetworkTools().GET加载数据 失败\(error)")
                 finished(models: nil, error: error)
         }
-        
+        */
     }
     
     //MARK: - 缓存图片GCD创建一个组

@@ -18,6 +18,63 @@ class StatusDAO: NSObject {
         // 4.将从网络获取的数据缓存起来
     }
     
+
+    //MARK:  加载微博数据接口{本地-网络}
+    ///  加载微博数据接口{本地-网络}
+    class  func loadStatuses(since_id: Int, max_id: Int, finished: ([[String: AnyObject]]?, error: NSError?)->()) {
+        
+        // 1.从本地数据库中获取
+        loadCacheStatuses(since_id, max_id: max_id) { (array) -> () in
+            
+            // 2.如果本地有, 直接返回
+            if !array.isEmpty
+            {
+                print("从数据库中获取")
+                finished(array, error: nil)
+                return
+            }
+            
+            
+            
+            // 3.从网络获取
+            let path = "2/statuses/home_timeline.json"
+            var params = ["access_token": UserAccount.loadAccount()!.access_token!]
+            
+            // 下拉刷新
+            if since_id > 0
+            {
+                params["since_id"] = "\(since_id)"
+            }
+            
+            // 上拉刷新
+            if max_id > 0
+            {
+                params["max_id"] = "\(max_id - 1)"
+            }
+            NetworkTools.shareNetworkTools().GET(path, parameters: params , progress: { (progress) -> Void in
+                
+                },success: { (_, JSON) -> Void in
+
+                let array = JSON!["statuses"] as! [[String : AnyObject]]
+                // 4.将从网络获取的数据缓存起来
+                cacheStatuses(array)
+                print("从网络获取中获取")
+                // 5.返回获取到的数据
+                finished(array, error: nil)
+                
+                //StatusDAO.cacheStatuses(JSON!["statuses"] as! [[String: AnyObject]])
+                
+                }) { (_, error) -> Void in
+                    print(error)
+                    finished(nil, error: error)
+            }
+        }
+    }
+    
+    
+    
+    
+    
     //MARK:  从数据库FMDB中加载缓存数据
     ///  从数据库FMDB中加载缓存数据
     class func loadCacheStatuses(since_id: Int, max_id: Int, finished: ([[String: AnyObject]])->()) {
@@ -29,7 +86,7 @@ class StatusDAO: NSObject {
             sql += "WHERE statusId > \(since_id) \n"
         }else if max_id > 0
         {
-            sql += "WHERE statusId <= \(since_id) \n"
+            sql += "WHERE statusId < \(max_id) \n"
         }
         
         sql += "ORDER BY statusId DESC \n"
