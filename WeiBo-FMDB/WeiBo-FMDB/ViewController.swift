@@ -13,7 +13,10 @@ class ViewController: UIViewController {
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         let p = Person(dict: ["name": "zs", "age": 38])
         print(p.insertPerson())
-        print(Person.loadPersons())
+
+        Person.loadPersons { (models) -> () in
+            print(models)
+        }
     }
 
 
