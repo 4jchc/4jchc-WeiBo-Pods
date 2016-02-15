@@ -57,6 +57,14 @@
 		96C7B81B1C5B1652000A176C /* PopoverPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C7B81A1C5B1652000A176C /* PopoverPresentationController.swift */; };
 		96C7B81D1C5B1665000A176C /* PopoverViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96C7B81C1C5B1665000A176C /* PopoverViewController.storyboard */; };
 		96C7B8211C5B2BB6000A176C /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C7B8201C5B2BB6000A176C /* PopoverViewController.swift */; };
+		96D97EBD1C7183DD008521B7 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 96D97EBC1C7183DD008521B7 /* libsqlite3.0.tbd */; };
+		96D97ECD1C7184A3008521B7 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 96D97EC01C7184A3008521B7 /* FMDatabase.m */; };
+		96D97ECE1C7184A3008521B7 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 96D97EC21C7184A3008521B7 /* FMDatabaseAdditions.m */; };
+		96D97ECF1C7184A3008521B7 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 96D97EC41C7184A3008521B7 /* FMDatabasePool.m */; };
+		96D97ED01C7184A3008521B7 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 96D97EC61C7184A3008521B7 /* FMDatabaseQueue.m */; };
+		96D97ED11C7184A3008521B7 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 96D97EC91C7184A3008521B7 /* FMResultSet.m */; };
+		96D97ED21C7184A3008521B7 /* FMDatabaseAdditionsVariadic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D97ECB1C7184A3008521B7 /* FMDatabaseAdditionsVariadic.swift */; };
+		96D97ED31C7184A3008521B7 /* FMDatabaseVariadic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D97ECC1C7184A3008521B7 /* FMDatabaseVariadic.swift */; };
 		96E1BA031C6B22A6004A2422 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E1BA021C6B22A6004A2422 /* ComposeViewController.swift */; };
 		96EBA0051C5DFEA100F523A6 /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EBA0041C5DFEA100F523A6 /* NetworkTools.swift */; };
 		96EE28051C58709600002CF4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EE28041C58709600002CF4 /* MainViewController.swift */; };
@@ -157,6 +165,21 @@
 		96C7B81A1C5B1652000A176C /* PopoverPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverPresentationController.swift; sourceTree = "<group>"; };
 		96C7B81C1C5B1665000A176C /* PopoverViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PopoverViewController.storyboard; sourceTree = "<group>"; };
 		96C7B8201C5B2BB6000A176C /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
+		96D97EBB1C7183A9008521B7 /* Swift-Bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Swift-Bridge.h"; sourceTree = "<group>"; };
+		96D97EBC1C7183DD008521B7 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		96D97EBF1C7184A3008521B7 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		96D97EC01C7184A3008521B7 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		96D97EC11C7184A3008521B7 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		96D97EC21C7184A3008521B7 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		96D97EC31C7184A3008521B7 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		96D97EC41C7184A3008521B7 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		96D97EC51C7184A3008521B7 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		96D97EC61C7184A3008521B7 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		96D97EC71C7184A3008521B7 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		96D97EC81C7184A3008521B7 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		96D97EC91C7184A3008521B7 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		96D97ECB1C7184A3008521B7 /* FMDatabaseAdditionsVariadic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMDatabaseAdditionsVariadic.swift; sourceTree = "<group>"; };
+		96D97ECC1C7184A3008521B7 /* FMDatabaseVariadic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMDatabaseVariadic.swift; sourceTree = "<group>"; };
 		96E1BA021C6B22A6004A2422 /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		96EBA0041C5DFEA100F523A6 /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
 		96EE28041C58709600002CF4 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -177,6 +200,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96D97EBD1C7183DD008521B7 /* libsqlite3.0.tbd in Frameworks */,
 				420D77E430A16994ABE72253 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -201,6 +225,7 @@
 		71F114366D91ECD7C9DA170D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				96D97EBC1C7183DD008521B7 /* libsqlite3.0.tbd */,
 				B2A5ECAEFE23CAE5CF1CA6A1 /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -293,6 +318,7 @@
 		96B0408E1C57233E009DBC56 /* 4jchc-WeiBo-Pods */ = {
 			isa = PBXGroup;
 			children = (
+				96D97EBB1C7183A9008521B7 /* Swift-Bridge.h */,
 				96EE27F21C586FAD00002CF4 /* Classes */,
 				96B040931C57233E009DBC56 /* Main.storyboard */,
 				96B040961C57233E009DBC56 /* Assets.xcassets */,
@@ -339,6 +365,34 @@
 				96C7B81C1C5B1665000A176C /* PopoverViewController.storyboard */,
 			);
 			name = Popover;
+			sourceTree = "<group>";
+		};
+		96D97EBE1C7184A3008521B7 /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				96D97EBF1C7184A3008521B7 /* FMDatabase.h */,
+				96D97EC01C7184A3008521B7 /* FMDatabase.m */,
+				96D97EC11C7184A3008521B7 /* FMDatabaseAdditions.h */,
+				96D97EC21C7184A3008521B7 /* FMDatabaseAdditions.m */,
+				96D97EC31C7184A3008521B7 /* FMDatabasePool.h */,
+				96D97EC41C7184A3008521B7 /* FMDatabasePool.m */,
+				96D97EC51C7184A3008521B7 /* FMDatabaseQueue.h */,
+				96D97EC61C7184A3008521B7 /* FMDatabaseQueue.m */,
+				96D97EC71C7184A3008521B7 /* FMDB.h */,
+				96D97EC81C7184A3008521B7 /* FMResultSet.h */,
+				96D97EC91C7184A3008521B7 /* FMResultSet.m */,
+				96D97ECA1C7184A3008521B7 /* Swift extensions */,
+			);
+			path = fmdb;
+			sourceTree = "<group>";
+		};
+		96D97ECA1C7184A3008521B7 /* Swift extensions */ = {
+			isa = PBXGroup;
+			children = (
+				96D97ECB1C7184A3008521B7 /* FMDatabaseAdditionsVariadic.swift */,
+				96D97ECC1C7184A3008521B7 /* FMDatabaseVariadic.swift */,
+			);
+			path = "Swift extensions";
 			sourceTree = "<group>";
 		};
 		96E1BA011C6B2280004A2422 /* Compose */ = {
@@ -435,6 +489,7 @@
 		96EE27FE1C586FAD00002CF4 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				96D97EBE1C7184A3008521B7 /* fmdb */,
 				9621911D1C59FA1200C3CE35 /* UIBarButtonItem+Extension.swift */,
 				96EBA0041C5DFEA100F523A6 /* NetworkTools.swift */,
 				964B20A71C645F41001BABF2 /* NSDate+Extension.swift */,
@@ -661,6 +716,7 @@
 				96B040901C57233E009DBC56 /* AppDelegate.swift in Sources */,
 				9621911E1C59FA1200C3CE35 /* UIBarButtonItem+Extension.swift in Sources */,
 				9653C62F1C5882EB000FAF68 /* DiscoverTableViewController.swift in Sources */,
+				96D97ECD1C7184A3008521B7 /* FMDatabase.m in Sources */,
 				96E1BA031C6B22A6004A2422 /* ComposeViewController.swift in Sources */,
 				964B20AA1C647642001BABF2 /* UIKit+Extension.swift in Sources */,
 				96B9D17E1C5B49C60037F52B /* PopoverAnimator.swift in Sources */,
@@ -685,12 +741,18 @@
 				96EE280B1C5870D400002CF4 /* MessageTableViewController.swift in Sources */,
 				96F5A52C1C63952E0097AFDB /* UIButton+Extention.swift in Sources */,
 				964B20A81C645F41001BABF2 /* NSDate+Extension.swift in Sources */,
+				96D97ED31C7184A3008521B7 /* FMDatabaseVariadic.swift in Sources */,
+				96D97ECE1C7184A3008521B7 /* FMDatabaseAdditions.m in Sources */,
 				96A457DA1C65DA650014C069 /* StatusForwardTableViewCell.swift in Sources */,
 				96A457DC1C65DAAB0014C069 /* StatusNormalTableViewCell.swift in Sources */,
+				96D97ECF1C7184A3008521B7 /* FMDatabasePool.m in Sources */,
+				96D97ED11C7184A3008521B7 /* FMResultSet.m in Sources */,
+				96D97ED21C7184A3008521B7 /* FMDatabaseAdditionsVariadic.swift in Sources */,
 				9688A92C1C5A05EF0002FE2D /* TitleButton.swift in Sources */,
 				965AC70C1C69CCCC001138DD /* PhotoBrowserCell.swift in Sources */,
 				9653C6341C588ACD000FAF68 /* NullViewController.swift in Sources */,
 				96C7B81B1C5B1652000A176C /* PopoverPresentationController.swift in Sources */,
+				96D97ED01C7184A3008521B7 /* FMDatabaseQueue.m in Sources */,
 				960FCF681C6726F100997732 /* HomeRefreshControl.swift in Sources */,
 				966490941C6EDDBD0009D844 /* PhotoSelectorViewController.swift in Sources */,
 				960C4CBE1C5E365400735B33 /* UserAccount.swift in Sources */,
@@ -851,6 +913,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jiangjin;
 				PRODUCT_NAME = Fjchc;
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "4jchc-WeiBo-Pods/Swift-Bridge.h";
 			};
 			name = Debug;
 		};
@@ -868,6 +931,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jiangjin;
 				PRODUCT_NAME = Fjchc;
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "4jchc-WeiBo-Pods/Swift-Bridge.h";
 			};
 			name = Release;
 		};
