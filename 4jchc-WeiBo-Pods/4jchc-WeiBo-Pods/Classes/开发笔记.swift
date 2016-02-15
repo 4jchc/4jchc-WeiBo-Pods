@@ -582,7 +582,7 @@ import UIKit
 
 
     /*
-    从数据库读取数据
+    //MARK: 13 从数据库读取数据
     1. 定义SQL语句字 符串的拼接+ FMDBA查询executeQuery语句的使用
     var sql = "SELECT * FROM T_Status \n"
     if since_id > 0
@@ -605,8 +605,15 @@ import UIKit
 
 
 
-/*
-完善缓存逻辑
-1.闭包 把要设置的数据 在内部实现以后. 传递给 外部调用(获取成功的值 或者 失败信息)
-*/
+    /*
+    //MARK: 14 完善缓存逻辑
+    1.闭包 把要设置的数据 在内部实现以后. 传递给 外部调用(获取成功的值 或者 失败信息)
+    */
 
+    /*
+    //MARK: 15 清除缓存数据
+    1.在数据库里在添加一个字段来保存创表时间createDate
+    "createDate TEXT NOT NULL DEFAULT (datetime('now', 'localtime')) \n" +
+    2.判断 createDate的时间是否小于几号.然后删除
+    DELETE FROM T_Status WHERE createDate  <= '2016-02-15 16:20:39';
+    */

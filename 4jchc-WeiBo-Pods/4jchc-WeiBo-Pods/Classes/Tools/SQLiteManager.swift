@@ -43,7 +43,8 @@ class SQLiteManager: NSObject {
         let sql = "CREATE TABLE IF NOT EXISTS T_Status( \n" +
             "statusId INTEGER PRIMARY KEY, \n" +
             "statusText TEXT, \n" +
-            "userId INTEGER \n" +
+            "userId INTEGER, \n" +
+            "createDate TEXT NOT NULL DEFAULT (datetime('now', 'localtime')) \n" +
         "); \n"
         
         // 2.执行SQL语句

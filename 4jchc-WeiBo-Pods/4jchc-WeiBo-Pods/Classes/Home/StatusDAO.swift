@@ -18,7 +18,28 @@ class StatusDAO: NSObject {
         // 4.将从网络获取的数据缓存起来
     }
     
-
+    
+    //MARK:  清空过期的数据
+    ///  清空过期的数据
+    class  func cleanStatuses() {
+        
+        //        let date = NSDate()
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        formatter.locale = NSLocale(localeIdentifier: "en")
+        
+        let date = NSDate(timeIntervalSinceNow: -60)
+        let dateStr = formatter.stringFromDate(date)
+        printLog("清空过期的数据的时间\(dateStr)")
+        //清空过期的数据的时间2016-02-15 16:08:05
+        // 1.定义SQL语句
+        let sql = "DELETE FROM T_Status WHERE createDate  <= '\(dateStr)';"
+        
+        // 2.执行SQL语句
+        SQLiteManager.shareManager().dbQueue?.inDatabase({ (db) -> Void in
+            db.executeUpdate(sql, withArgumentsInArray: nil)
+        })
+    }
     //MARK:  加载微博数据接口{本地-网络}
     ///  加载微博数据接口{本地-网络}
     class  func loadStatuses(since_id: Int, max_id: Int, finished: ([[String: AnyObject]]?, error: NSError?)->()) {
@@ -58,7 +79,7 @@ class StatusDAO: NSObject {
                 let array = JSON!["statuses"] as! [[String : AnyObject]]
                 // 4.将从网络获取的数据缓存起来
                 cacheStatuses(array)
-                print("从网络获取中获取")
+                print("从网络中获取")
                 // 5.返回获取到的数据
                 finished(array, error: nil)
                 
