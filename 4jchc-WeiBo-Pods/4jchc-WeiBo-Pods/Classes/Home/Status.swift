@@ -111,6 +111,8 @@ class Status: NSObject {
         let path = "2/statuses/home_timeline.json"
         var params = ["access_token": UserAccount.loadAccount()!.access_token!]
         
+        //StatusDAO.loadCacheStatuses(since_id, max_id: max_id)
+        
         // 下拉刷新
         if since_id > 0
         {
@@ -134,7 +136,9 @@ class Status: NSObject {
             // 1.取出statuses key对应的数组 (存储的都是字典)
             // 2.遍历数组, 将字典转换为模型
             let models = dict2Model(JSON!["statuses"] as! [[String: AnyObject]])
-            printLog("params \(params)models.count\(models.count)")
+            StatusDAO.cacheStatuses(JSON!["statuses"] as! [[String: AnyObject]])
+                
+                
             //MARK: - 2.通过闭包将数据传递给调用者
            // finished(models: models, error: nil)
                 

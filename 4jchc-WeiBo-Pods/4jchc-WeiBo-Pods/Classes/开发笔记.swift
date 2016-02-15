@@ -581,4 +581,29 @@ import UIKit
 
 
 
+    /*
+    从数据库读取数据
+    1. 定义SQL语句字 符串的拼接+ FMDBA查询executeQuery语句的使用
+    var sql = "SELECT * FROM T_Status \n"
+    if since_id > 0
+    {
+    sql += "WHERE statusId > \(since_id) \n"
+    }else if max_id > 0
+    {
+    sql += "WHERE statusId <= \(since_id) \n"
+    }
+
+    sql += "ORDER BY statusId DESC \n"
+    sql += "LIMIT 20; \n"
+    2. 数据的查询--FMResultSet
+    let res =  db.executeQuery(sql, withArgumentsInArray: nil)
+    3.遍历取出查询到的数据
+    while res.next()
+    1.返回字典数组的原因:通过网络获取返回的也是字典数组,
+    让本地和网络返回的数据类型保持一致, 以便于我们后期处理
+    */
+
+
+
+
 
